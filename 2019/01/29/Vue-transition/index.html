@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Vue-transition | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="2019-01-24 17:58:14  Vue动画在插入、更新或者移除 DOM 时，提供多种不同方式的应用过渡效果。 在 CSS 过渡和动画中自动应用 class 可以配合使用第三方 CSS 动画库，如 Animate.css 在过渡钩子函数中使用 JavaScript 直接操作 DOM 可以配合使用第三方 JavaScript 动画库，如 Velocity.js列表动画效果`代码transi">
+<meta name="keywords" content="transition">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue-transition">
+<meta property="og:url" content="http://github.com/2019/01/29/Vue-transition/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="2019-01-24 17:58:14  Vue动画在插入、更新或者移除 DOM 时，提供多种不同方式的应用过渡效果。 在 CSS 过渡和动画中自动应用 class 可以配合使用第三方 CSS 动画库，如 Animate.css 在过渡钩子函数中使用 JavaScript 直接操作 DOM 可以配合使用第三方 JavaScript 动画库，如 Velocity.js列表动画效果`代码transi">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-01-29T04:06:29.002Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Vue-transition">
+<meta name="twitter:description" content="2019-01-24 17:58:14  Vue动画在插入、更新或者移除 DOM 时，提供多种不同方式的应用过渡效果。 在 CSS 过渡和动画中自动应用 class 可以配合使用第三方 CSS 动画库，如 Animate.css 在过渡钩子函数中使用 JavaScript 直接操作 DOM 可以配合使用第三方 JavaScript 动画库，如 Velocity.js列表动画效果`代码transi">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://github.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Vue-transition" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/01/29/Vue-transition/" class="article-date">
+  <time datetime="2019-01-29T04:05:53.000Z" itemprop="datePublished">2019-01-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Vue-transition
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>2019-01-24 17:58:14</p>
+</blockquote>
+<h2 id="Vue动画"><a href="#Vue动画" class="headerlink" title="Vue动画"></a>Vue动画</h2><h3 id="在插入、更新或者移除-DOM-时，提供多种不同方式的应用过渡效果。"><a href="#在插入、更新或者移除-DOM-时，提供多种不同方式的应用过渡效果。" class="headerlink" title="在插入、更新或者移除 DOM 时，提供多种不同方式的应用过渡效果。"></a>在插入、更新或者移除 DOM 时，提供多种不同方式的应用过渡效果。</h3><ul>
+<li>在 CSS 过渡和动画中自动应用 class</li>
+<li>可以配合使用第三方 CSS 动画库，如 Animate.css</li>
+<li>在过渡钩子函数中使用 JavaScript 直接操作 DOM</li>
+<li>可以配合使用第三方 JavaScript 动画库，如 Velocity.js<h3 id="列表动画效果"><a href="#列表动画效果" class="headerlink" title="列表动画效果"></a>列表动画效果</h3><code>`</code>代码<br>transition这个过渡， 内里只能有一个根元素，且只对根元素起作用<br>duration: 控制Vue设置的类名存在的时间，但是动画效果还是C3设定的时间完成，duration只是延长类名存在时间<br>li:hover{<pre><code>    background-color: hotpink;
+    transition: all 1s ease;
+}
+&lt;!-- 定义动画开始和结束前的状态 --&gt;
+.v-enter,.v-leave-to{
+    transform: translateY(30px);
+}
+&lt;!-- 定义动画开始和结束过程中的状态 --&gt;
+.v-enter-active,.v-leave-active{
+    transition: all 0.7s ease;
+}
+&lt;!-- 
+    1.定义元素位置除了display：none外，移动的效果
+    2.move和leave-active 必须结合起来使用
+    3.在结构元素节点上定义 appear 属性 使初始视图具有出场的效果 --&gt;
+.v-move{
+    transition: all 0.7s ease;
+}
+.v-leave-active{
+    position: absolute;
+}
+</code></pre></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://github.com/2019/01/29/Vue-transition/" data-id="cjrh8zdio000370rjer2e54l1" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/transition/">transition</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/01/29/Vue-components/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Vue-components
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/01/29/Vue-mvvm解析/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Vue-mvvm解析</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/mvvm/">mvvm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/transition/">transition</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/指令/">指令</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/组件/">组件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/路由/">路由</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/mvvm/" style="font-size: 10px;">mvvm</a> <a href="/tags/transition/" style="font-size: 10px;">transition</a> <a href="/tags/指令/" style="font-size: 10px;">指令</a> <a href="/tags/组件/" style="font-size: 10px;">组件</a> <a href="/tags/路由/" style="font-size: 10px;">路由</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/01/29/Vue-router/">Vue-router</a>
+          </li>
+        
+          <li>
+            <a href="/2019/01/29/Vue-components/">Vue-components</a>
+          </li>
+        
+          <li>
+            <a href="/2019/01/29/Vue-transition/">Vue-transition</a>
+          </li>
+        
+          <li>
+            <a href="/2019/01/29/Vue-mvvm解析/">Vue-mvvm解析</a>
+          </li>
+        
+          <li>
+            <a href="/2019/01/29/vue指令及基础知识/">vue指令及基础知识</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Yan Peng<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
