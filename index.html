@@ -304,7 +304,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://github.com/2019/01/29/Vue-router/">
+    <link itemprop="mainEntityOfPage" href="http://github.com/2017/01/29/Vue-router/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yan·Peng">
@@ -323,7 +323,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/01/29/Vue-router/" itemprop="url">Vue-router</a></h1>
+                <a class="post-title-link" href="/2017/01/29/Vue-router/" itemprop="url">Vue-router</a></h1>
         
 
         <div class="post-meta">
@@ -335,8 +335,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-29T12:09:12+08:00">
-                2019-01-29
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-29T12:09:12+08:00">
+                2017-01-29
               </time>
             
 
@@ -353,7 +353,7 @@
 
           
           
-             <span id="/2019/01/29/Vue-router/" class="leancloud_visitors" data-flag-title="Vue-router">
+             <span id="/2017/01/29/Vue-router/" class="leancloud_visitors" data-flag-title="Vue-router">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -386,35 +386,33 @@
       
         
           
-            <blockquote>
-<p>2019-01-28 22:21:41</p>
-</blockquote>
-<h2 id="路由-v-router"><a href="#路由-v-router" class="headerlink" title="路由 v-router"></a>路由 v-router</h2><h3 id="前端路由和后端路由的区别"><a href="#前端路由和后端路由的区别" class="headerlink" title="前端路由和后端路由的区别"></a>前端路由和后端路由的区别</h3><ol>
+            <h2 id="路由-v-router"><a href="#路由-v-router" class="headerlink" title="路由 v-router"></a>路由 v-router</h2><h3 id="前端路由和后端路由的区别"><a href="#前端路由和后端路由的区别" class="headerlink" title="前端路由和后端路由的区别"></a>前端路由和后端路由的区别</h3><ol>
 <li><strong>后端路由:</strong>对于普通网站，所有的超链接都是URL地址，所有的URL地址都对应服务器上对应的资源</li>
 <li><strong>前端路由:</strong>对于单页面应用程序(SPA)来说，主要是通过URL中的hash值来实现不同页面之间的切换；同时，hash有一个特点:HTTP请求中不包括hash相关的内容；所以，单页面程序中的页面跳转主要用hash实现</li>
 <li>在单页面应用程序中，这种通过hash改变切换页面的方式，称作前端路由（区别于后端路由）</li>
 </ol>
 <hr>
-<h3 id="创建一个路由对象及语法规则（不适用于webpack）"><a href="#创建一个路由对象及语法规则（不适用于webpack）" class="headerlink" title="创建一个路由对象及语法规则（不适用于webpack）"></a>创建一个路由对象及语法规则（不适用于webpack）</h3><figure class="highlight plain"><figcaption><span>src </span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">// 引入后，在window全局对象中，就有了一个路由的构造函数，叫做VueRouter</span><br><span class="line">let routerObj = new VueRouter(&#123;</span><br><span class="line">	routes:[ // =&gt; 路由匹配的规则</span><br><span class="line">		&#123;path:&apos;/login&apos;,component:login&#125;,</span><br><span class="line">		&#123;path:&apos;/&apos;,redirect:&apos;/login&apos;&#125; //=&gt; 重定向，强制页面默认在login页面上</span><br><span class="line">		// =&gt; 1.每个路由规则都是一个对象，这个队则身上必须有两个属性</span><br><span class="line">		// =&gt; 2.属性1: 是path，表示监听这个路由地址</span><br><span class="line">		// =&gt; 3.属性2: 是component，表示前面匹配是path，则展示对应的component对应的组件</span><br><span class="line">		// =&gt; 注意: component的属性值必须是一个模板对象,不能是组件名称</span><br><span class="line">	]</span><br><span class="line">&#125;)</span><br><span class="line">通过：router:routerObj </span><br><span class="line">		将路由对象挂载到实例上</span><br><span class="line">通过：router-view </span><br><span class="line">	 将符合path的组件展示在页面上，若出现多个view，则会重复展示符合条件的组件</span><br><span class="line">通过：&lt;router-link to = &quot;/login&quot;&gt;登录&lt;/router-link&gt;</span><br><span class="line">	 &lt;router-link to = &quot;/resister&quot;&gt;注册&lt;/router-link&gt;</span><br><span class="line">	 router-link 相当于a标签，点击，跳转到指定的hash值</span><br></pre></td></tr></table></figure>
-<h3 id="路由传参的两种方式"><a href="#路由传参的两种方式" class="headerlink" title="路由传参的两种方式"></a>路由传参的两种方式</h3><p>1.’?’ 传参，通过this.$route.query.id 获取<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">   &lt;router-link to = &quot;/login?id=10&amp;name=zs&quot;&gt;登录&lt;/router-link&gt;</span><br><span class="line">&#123;path:&apos;/login&apos;,component:login&#125;</span><br><span class="line">console.log(this.$route.query.id)</span><br><span class="line">通过路径?传参方式传入的值，通过query获取</span><br></pre></td></tr></table></figure></p>
-<ol start="2">
-<li><p>在模板中通过:id /: name 先进行占位，然后在vm的实例中进行设置，最后可通过params获取</p>
+<h3 id="创建一个路由对象及语法规则（不适用于webpack）"><a href="#创建一个路由对象及语法规则（不适用于webpack）" class="headerlink" title="创建一个路由对象及语法规则（不适用于webpack）"></a>创建一个路由对象及语法规则（不适用于webpack）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src = &apos;https://unpkg.com/vue-router@2.0.0/dist/vue-router.js&apos;&gt;&lt;/script&gt; </span><br><span class="line">	//第一步安装路由，要在vue.js之后</span><br><span class="line">	// 引入后，在window全局对象中，就有了一个路由的构造函数，叫做VueRouter</span><br><span class="line">	let routerObj = new VueRouter(&#123;</span><br><span class="line">		routes:[ // =&gt; 路由匹配的规则</span><br><span class="line">			&#123;path:&apos;/login&apos;,component:login&#125;,</span><br><span class="line">			&#123;path:&apos;/&apos;,redirect:&apos;/login&apos;&#125; //=&gt; 重定向，强制页面默认在login页面上</span><br><span class="line">	// =&gt; 1.每个路由规则都是一个对象，这个队则身上必须有两个属性</span><br><span class="line">	// =&gt; 2.属性1: 是path，表示监听这个路由地址</span><br><span class="line">	// =&gt; 3.属性2: 是component，表示前面匹配是path，</span><br><span class="line">			则展示对应的component对应的组件</span><br><span class="line">	// =&gt; 注意: component的属性值必须是一个模板对象,不能是组件名称</span><br><span class="line">		]</span><br><span class="line">	&#125;)</span><br><span class="line">	通过：router:routerObj </span><br><span class="line">			将路由对象挂载到实例上</span><br><span class="line">	通过：router-view </span><br><span class="line">		 将符合path的组件展示在页面上，若出现多个view，则会重复展示符合条件的组件</span><br><span class="line">	通过：&lt;router-link to = &quot;/login&quot;&gt;登录&lt;/router-link&gt;</span><br><span class="line">		 &lt;router-link to = &quot;/resister&quot;&gt;注册&lt;/router-link&gt;</span><br><span class="line">		 router-link 相当于a标签，点击，跳转到指定的hash值</span><br></pre></td></tr></table></figure>
+<h3 id="路由传参的两种方式"><a href="#路由传参的两种方式" class="headerlink" title="路由传参的两种方式"></a>路由传参的两种方式</h3><ul>
+<li>‘?’ 传参，通过this.$route.query.id 获取</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">   &lt;router-link to = &quot;/login?id=10&amp;name=zs&quot;&gt;登录&lt;/router-link&gt;</span><br><span class="line">&#123;path:&apos;/login&apos;,component:login&#125;</span><br><span class="line">console.log(this.$route.query.id)</span><br><span class="line">通过路径?传参方式传入的值，通过query获取</span><br></pre></td></tr></table></figure>
+<ul>
+<li>在模板中通过:id /: name 先进行占位，然后在vm的实例中进行设置，最后可通过params获取</li>
+</ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;router-link to = &quot;/register/id=20/name=wl&quot;&gt;注册&lt;/router-link&gt;</span><br><span class="line">&#123;path:&apos;/register/:id/:name&apos;,component:register&#125;</span><br><span class="line">console.log(this.$route.params.id)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>原理:</p>
-</li>
-</ol>
+<p><strong>注意原理:</strong></p>
 <ul>
 <li>1)当我们通过传参时，vue都会通过设置的path，解析出一个正则regexp,去匹配fullpath</li>
 <li>2)当fullpath是?传参时，匹配失败，params为空，但是可以通过query获取</li>
-<li>3)当我们通过设置path占位符时，捕捉到fullpath，可以通过params获取<br><img src="/2019/01/29/Vue-router/query.png" alt="query获取"><br><img src="/2019/01/29/Vue-router/params.png" alt="params获取"><h3 id="路由的嵌套"><a href="#路由的嵌套" class="headerlink" title="路由的嵌套"></a>路由的嵌套</h3></li>
+<li>3)当我们通过设置path占位符时，捕捉到fullpath，可以通过params获取<br><img src="/2017/01/29/Vue-router/query.png" alt="query获取"><br><img src="/2017/01/29/Vue-router/params.png" alt="params获取"></li>
+</ul>
+<h3 id="路由的嵌套"><a href="#路由的嵌套" class="headerlink" title="路由的嵌套"></a>路由的嵌套</h3><ul>
 <li>使用children属性，实现子路由，同时，子路由的path前面，不要带’/‘,否则以根路径开始请求，这样不方便客户理解URL路径<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">let router = new VueRouter(&#123;</span><br><span class="line">        routes: [</span><br><span class="line">            &#123;</span><br><span class="line">                path:&apos;/account&apos;,</span><br><span class="line">                component:account,</span><br><span class="line">                children:[</span><br><span class="line">                    &#123;path:&apos;login&apos;,component:login&#125;,</span><br><span class="line">                    &#123;path:&apos;register&apos;,component:register&#125;</span><br><span class="line">                ]</span><br><span class="line">            &#125;</span><br><span class="line">        ]</span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h3 id="命名视图"><a href="#命名视图" class="headerlink" title="命名视图"></a>命名视图</h3><ul>
-<li><router-view name="left"></router-view>  </li>
-</ul>
-
+<h3 id="命名视图的用法"><a href="#命名视图的用法" class="headerlink" title="命名视图的用法"></a>命名视图的用法</h3><pre><code>&lt;router-view name = &quot;left&quot;&gt;&lt;/router-view &gt;  
+</code></pre>
           
         
       
@@ -462,7 +460,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://github.com/2019/01/29/Vue-components/">
+    <link itemprop="mainEntityOfPage" href="http://github.com/2017/01/29/Vue-components/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yan·Peng">
@@ -481,7 +479,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/01/29/Vue-components/" itemprop="url">Vue-components</a></h1>
+                <a class="post-title-link" href="/2017/01/29/Vue-components/" itemprop="url">Vue-components</a></h1>
         
 
         <div class="post-meta">
@@ -493,8 +491,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-29T12:07:05+08:00">
-                2019-01-29
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-29T12:07:05+08:00">
+                2017-01-29
               </time>
             
 
@@ -511,7 +509,7 @@
 
           
           
-             <span id="/2019/01/29/Vue-components/" class="leancloud_visitors" data-flag-title="Vue-components">
+             <span id="/2017/01/29/Vue-components/" class="leancloud_visitors" data-flag-title="Vue-components">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -544,16 +542,15 @@
       
         
           
-            <blockquote>
-<p>2019-01-28 21:49:59</p>
-</blockquote>
-<h2 id="组件-components"><a href="#组件-components" class="headerlink" title="组件 - components"></a>组件 - components</h2><ul>
+            <h2 id="组件-components"><a href="#组件-components" class="headerlink" title="组件 - components"></a>组件 - components</h2><ul>
 <li>定义: 组件的出现，就是为了拆分vue实例的代码量的，能够让我们以不同的组件，来划分不同的功能模块，将来我们需要什么样的功能，就可以去调用对应的组件即可;</li>
 <li>组件化和模块化的区别<ul>
 <li>模块化:是从代码逻辑的角度进行划分的,方便代码分层开发,保证每个功能模块的只能单一。</li>
-<li>组件化:是从UI界面的角度进行划分的，前端的组件化，方便UI组件的重用。    <h2 id="创建组件的方式"><a href="#创建组件的方式" class="headerlink" title="创建组件的方式"></a>创建组件的方式</h2><h4 id="第一种"><a href="#第一种" class="headerlink" title="第一种"></a>第一种</h4></li>
+<li>组件化:是从UI界面的角度进行划分的，前端的组件化，方便UI组件的重用。    </li>
 </ul>
 </li>
+</ul>
+<h2 id="创建组件的方式"><a href="#创建组件的方式" class="headerlink" title="创建组件的方式"></a>创建组件的方式</h2><h4 id="第一种"><a href="#第一种" class="headerlink" title="第一种"></a>第一种</h4><ul>
 <li><p>1.1 </p>
 <figure class="highlight plain"><figcaption><span>com1 </span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">	template:&quot;&lt;h3&gt;这是使用Vue.extend创建出来的组件&lt;/h3&gt;&quot;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 </li>
@@ -565,19 +562,16 @@
 <h4 id="第三种"><a href="#第三种" class="headerlink" title="第三种"></a>第三种</h4><p>Vue.component(‘mycom2’,{template:’#temp1’})</p>
 <ul>
 <li>在APP控制的区域外，定义一个ID为temp1的template标签，在标签元素节点可以写你想要的代码</li>
-<li>组件中的data<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">let vm2 = new Vue(&#123;</span><br><span class="line">		el:&apos;#app2&apos;,</span><br><span class="line">		data:&#123;</span><br><span class="line">			</span><br><span class="line">		&#125;,</span><br><span class="line">		components:&#123;</span><br><span class="line">			login:&#123;</span><br><span class="line">				template:&apos;#temp1&apos;,</span><br><span class="line">				data:function()&#123;</span><br><span class="line">					return&#123;</span><br><span class="line">						msg:&apos;珠峰&apos;</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;)</span><br></pre></td></tr></table></figure>
+<li>组件中的data<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">let vm2 = new Vue(&#123;</span><br><span class="line">		el:&apos;#app2&apos;,</span><br><span class="line">		data:&#123;</span><br><span class="line">			</span><br><span class="line">		&#125;,</span><br><span class="line">		components:&#123;</span><br><span class="line">			login:&#123;</span><br><span class="line">				template:&apos;#temp1&apos;,</span><br><span class="line">				data:function()&#123;</span><br><span class="line">					return&#123;</span><br><span class="line">						msg:&apos;&apos;</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;)</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h2 id="子父组件的数据和方法传递"><a href="#子父组件的数据和方法传递" class="headerlink" title="子父组件的数据和方法传递"></a>子父组件的数据和方法传递</h2><h2 id="Vue提供的4个标签属性-transition-transition-group-template-component"><a href="#Vue提供的4个标签属性-transition-transition-group-template-component" class="headerlink" title="Vue提供的4个标签属性 transition transition-group template component"></a>Vue提供的4个标签属性 transition transition-group template component</h2><h2 id="子父组件-如何相互传值"><a href="#子父组件-如何相互传值" class="headerlink" title="子父组件 如何相互传值"></a>子父组件 如何相互传值</h2><ul>
-<li><com1 :parentmsg="msg" @parentfuc123="fn"></com1><blockquote>
-<p>父组件通过绑定自定义属性，向子组件内传入data数据<br>父组件通过绑定自定义事件，向子组件内传入methods方法</p>
+<h2 id="Vue提供的4个标签属性"><a href="#Vue提供的4个标签属性" class="headerlink" title="Vue提供的4个标签属性"></a>Vue提供的4个标签属性</h2><blockquote>
+<p>transition<br>transition-group<br>template<br>component </p>
 </blockquote>
-</li>
-<li>props:[‘parentmsg’]    this.$emit(fn,this.msg)<blockquote>
-<p>子组件通过props:[‘自定义属性名-parentmsg’]，接收父组件传进的data数据<br>子组件通过调用$emit(‘自定义方法名-parentfuc123’，第一参数,第二参数…)方法，接收父组件方法，并通过第一参数，第二参数…，同时向父组件内传值</p>
+<h2 id="子父组件-如何相互传值"><a href="#子父组件-如何相互传值" class="headerlink" title="子父组件 如何相互传值"></a>子父组件 如何相互传值</h2><p> <com1 :parentmsg="msg" @parentfuc123="fn"></com1></p>
+<blockquote>
+<p>父组件通过绑定自定义属性，向子组件内传入data数据<br>父组件通过绑定自定义事件，向子组件内传入methods方法<br><strong>props:[‘parentmsg’]    this.$emit(fn,this.msg)</strong><br>子组件通过props:[‘自定义属性名-parentmsg’]，接收父组件传进的data数据<br>子组件通过调用$emit(‘自定义方法名-parentfuc123’，第一参数,第二参数…)方法，接收父组件方法，并通过第一参数，第二参数…，同时向父组件内传值</p>
 </blockquote>
-</li>
-</ul>
 
           
         
@@ -626,7 +620,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://github.com/2019/01/29/Vue-transition/">
+    <link itemprop="mainEntityOfPage" href="http://github.com/2017/01/29/Vue-transition/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yan·Peng">
@@ -645,7 +639,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/01/29/Vue-transition/" itemprop="url">Vue-transition</a></h1>
+                <a class="post-title-link" href="/2017/01/29/Vue-transition/" itemprop="url">Vue-transition</a></h1>
         
 
         <div class="post-meta">
@@ -657,8 +651,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-29T12:05:53+08:00">
-                2019-01-29
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-29T12:05:53+08:00">
+                2017-01-29
               </time>
             
 
@@ -675,7 +669,7 @@
 
           
           
-             <span id="/2019/01/29/Vue-transition/" class="leancloud_visitors" data-flag-title="Vue-transition">
+             <span id="/2017/01/29/Vue-transition/" class="leancloud_visitors" data-flag-title="Vue-transition">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -708,34 +702,34 @@
       
         
           
-            <blockquote>
-<p>2019-01-24 17:58:14</p>
-</blockquote>
-<h2 id="Vue动画"><a href="#Vue动画" class="headerlink" title="Vue动画"></a>Vue动画</h2><h3 id="在插入、更新或者移除-DOM-时，提供多种不同方式的应用过渡效果。"><a href="#在插入、更新或者移除-DOM-时，提供多种不同方式的应用过渡效果。" class="headerlink" title="在插入、更新或者移除 DOM 时，提供多种不同方式的应用过渡效果。"></a>在插入、更新或者移除 DOM 时，提供多种不同方式的应用过渡效果。</h3><ul>
+            <h2 id="Vue动画"><a href="#Vue动画" class="headerlink" title="Vue动画"></a>Vue动画</h2><h3 id="在插入、更新或者移除-DOM-时，提供多种不同方式的应用过渡效果。"><a href="#在插入、更新或者移除-DOM-时，提供多种不同方式的应用过渡效果。" class="headerlink" title="在插入、更新或者移除 DOM 时，提供多种不同方式的应用过渡效果。"></a>在插入、更新或者移除 DOM 时，提供多种不同方式的应用过渡效果。</h3><ul>
 <li>在 CSS 过渡和动画中自动应用 class</li>
 <li>可以配合使用第三方 CSS 动画库，如 Animate.css</li>
 <li>在过渡钩子函数中使用 JavaScript 直接操作 DOM</li>
-<li>可以配合使用第三方 JavaScript 动画库，如 Velocity.js<h3 id="列表动画效果"><a href="#列表动画效果" class="headerlink" title="列表动画效果"></a>列表动画效果</h3><code>`</code>代码<br>transition这个过渡， 内里只能有一个根元素，且只对根元素起作用<br>duration: 控制Vue设置的类名存在的时间，但是动画效果还是C3设定的时间完成，duration只是延长类名存在时间<br>li:hover{<pre><code>    background-color: hotpink;
-    transition: all 1s ease;
-}
-&lt;!-- 定义动画开始和结束前的状态 --&gt;
-.v-enter,.v-leave-to{
-    transform: translateY(30px);
-}
-&lt;!-- 定义动画开始和结束过程中的状态 --&gt;
-.v-enter-active,.v-leave-active{
-    transition: all 0.7s ease;
-}
-&lt;!-- 
-    1.定义元素位置除了display：none外，移动的效果
-    2.move和leave-active 必须结合起来使用
-    3.在结构元素节点上定义 appear 属性 使初始视图具有出场的效果 --&gt;
-.v-move{
-    transition: all 0.7s ease;
-}
-.v-leave-active{
-    position: absolute;
-}
+<li>可以配合使用第三方 JavaScript 动画库，如 Velocity.js<h3 id="列表动画效果"><a href="#列表动画效果" class="headerlink" title="列表动画效果"></a>列表动画效果</h3></li>
+<li>transition这个过渡， 内里只能有一个根元素，且只对根元素起作用</li>
+<li>duration: 控制Vue设置的类名存在的时间，但是动画效果还是C3设定的时间完成，duration只是延长类名存在时间<pre><code>li:hover{
+          background-color: hotpink;
+          transition: all 1s ease;
+      }
+      &lt;!-- 定义动画开始和结束前的状态 --&gt;
+      .v-enter,.v-leave-to{
+          transform: translateY(30px);
+      }
+      &lt;!-- 定义动画开始和结束过程中的状态 --&gt;
+      .v-enter-active,.v-leave-active{
+          transition: all 0.7s ease;
+      }
+      &lt;!-- 
+          1.定义元素位置除了display：none外，移动的效果
+          2.move和leave-active 必须结合起来使用
+          3.在结构元素节点上定义 appear 属性 使初始视图具有出场的效果 --&gt;
+      .v-move{
+          transition: all 0.7s ease;
+      }
+      .v-leave-active{
+          position: absolute;
+      }
 </code></pre></li>
 </ul>
 
@@ -786,7 +780,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://github.com/2019/01/29/Vue-mvvm解析/">
+    <link itemprop="mainEntityOfPage" href="http://github.com/2017/01/29/Vue-mvvm解析/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yan·Peng">
@@ -805,7 +799,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/01/29/Vue-mvvm解析/" itemprop="url">Vue-mvvm解析</a></h1>
+                <a class="post-title-link" href="/2017/01/29/Vue-mvvm解析/" itemprop="url">Vue-mvvm解析</a></h1>
         
 
         <div class="post-meta">
@@ -817,8 +811,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-29T12:04:48+08:00">
-                2019-01-29
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-29T12:04:48+08:00">
+                2017-01-29
               </time>
             
 
@@ -835,7 +829,7 @@
 
           
           
-             <span id="/2019/01/29/Vue-mvvm解析/" class="leancloud_visitors" data-flag-title="Vue-mvvm解析">
+             <span id="/2017/01/29/Vue-mvvm解析/" class="leancloud_visitors" data-flag-title="Vue-mvvm解析">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -870,7 +864,7 @@
           
             <h2 id="Vue-js-的细节"><a href="#Vue-js-的细节" class="headerlink" title="Vue.js 的细节"></a>Vue.js 的细节</h2><ul>
 <li>Vue.js 可以说是MVVM 架构的最佳实践，专注于 MVVM 中的 ViewModel，不仅做到了数据双向绑定，而且也是一款相对来比较轻量级的JS 库，API 简洁，很容易上手。Vue的基础知识网上有现成的教程，此处不再赘述， 下面简单了解一下 Vue.js 关于双向绑定的一些实现细节：</li>
-<li>Vue.js 是采用 Object.defineProperty 的 getter 和 setter，并结合观察者模式来实现数据绑定的。当把一个普通 Javascript 对象传给 Vue 实例来作为它的 data 选项时，Vue 将遍历它的属性，用 Object.defineProperty 将它们转为 getter/setter。用户看不到 getter/setter，但是在内部它们让 Vue 追踪依赖，在属性被访问和修改时通知变化。<br><img src="/2019/01/29/Vue-mvvm解析/MVVM底层原理解析.png" alt="数据双向绑定底层原理图"></li>
+<li>Vue.js 是采用 Object.defineProperty 的 getter 和 setter，并结合观察者模式来实现数据绑定的。当把一个普通 Javascript 对象传给 Vue 实例来作为它的 data 选项时，Vue 将遍历它的属性，用 Object.defineProperty 将它们转为 getter/setter。用户看不到 getter/setter，但是在内部它们让 Vue 追踪依赖，在属性被访问和修改时通知变化。<br><img src="/2017/01/29/Vue-mvvm解析/MVVM底层原理解析.png" alt="数据双向绑定底层原理图"></li>
 <li><code>Observer</code> 数据监听器，能够对数据对象的所有属性进行监听，如有变动可拿到最新值并通知订阅者，内部采用Object.defineProperty的getter和setter来实现。</li>
 <li><code>Compile</code> 指令解析器，它的作用对每个元素节点的指令进行扫描和解析，根据指令模板替换数据，以及绑定相应的更新函数。</li>
 <li><code>Watcher</code> 订阅者， 作为连接 Observer 和 Compile 的桥梁，能够订阅并收到每个属性变动的通知，执行指令绑定的相应回调函数。</li>
@@ -924,7 +918,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://github.com/2019/01/29/vue指令及基础知识/">
+    <link itemprop="mainEntityOfPage" href="http://github.com/2017/01/29/vue指令及基础知识/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yan·Peng">
@@ -943,7 +937,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/01/29/vue指令及基础知识/" itemprop="url">vue指令及基础知识</a></h1>
+                <a class="post-title-link" href="/2017/01/29/vue指令及基础知识/" itemprop="url">vue指令及基础知识</a></h1>
         
 
         <div class="post-meta">
@@ -955,8 +949,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-29T11:48:49+08:00">
-                2019-01-29
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-29T11:48:49+08:00">
+                2017-01-29
               </time>
             
 
@@ -973,7 +967,7 @@
 
           
           
-             <span id="/2019/01/29/vue指令及基础知识/" class="leancloud_visitors" data-flag-title="vue指令及基础知识">
+             <span id="/2017/01/29/vue指令及基础知识/" class="leancloud_visitors" data-flag-title="vue指令及基础知识">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1006,14 +1000,11 @@
       
         
           
-            <blockquote>
-<p>2019-01-22 13:37:49 by YanPeng</p>
-</blockquote>
-<h2 id="VUE"><a href="#VUE" class="headerlink" title="VUE"></a>VUE</h2><ul>
+            <h2 id="VUE"><a href="#VUE" class="headerlink" title="VUE"></a>VUE</h2><ul>
 <li>数据驱动:<strong>操作DOM</strong></li>
 <li>JS的数据类型 基本 和 引用</li>
-<li>改变原数组 —&gt; 数组的变异 <code>pop push shif unshift reverse sort splice(n,m,x,y,z)</code></li>
-<li>不改变原数组 —&gt; <em>slice(n,m) concat indexOf join(‘+’) toString()</em></li>
+<li>改变原数组 —&gt; 数组的变异 <strong>pop push shif unshift reverse sort splice(n,m,x,y,z)</strong></li>
+<li>不改变原数组 —&gt; <strong>slice(n,m) concat indexOf join(‘+’) toString()</strong></li>
 <li>数组的迭代方法 <ul>
 <li>forEach </li>
 <li>map:renturn什么值，就往新数组添加新属性，若没有return值，就添加undefined</li>
@@ -1034,16 +1025,20 @@
 </li>
 <li>reduce((prev,next)=&gt;):结果就是最后一次迭代的return值</li>
 <li>find: 找到满足条件的第一项</li>
-<li>includes(item,index)从index索引值开始查找 找到就是true 找不到就是false<h2 id="NODE基础命令"><a href="#NODE基础命令" class="headerlink" title="NODE基础命令"></a>NODE基础命令</h2></li>
+<li>includes(item,index)从index索引值开始查找 找到就是true 找不到就是false</li>
 </ul>
 </li>
+</ul>
+<h2 id="NODE基础命令"><a href="#NODE基础命令" class="headerlink" title="NODE基础命令"></a>NODE基础命令</h2><ul>
 <li>package.json 是项目的依赖表单</li>
 <li>dependencies:存储的都是生产环境的依赖</li>
 <li>devdependencies:储存的都是开发环境的依赖</li>
 <li>scripts:中存储的都是要执行的命令对应的代码</li>
 <li>npm run hello : 对应的要执行hello对应的代码</li>
 <li>npm i vue –save:在项目中添加依赖，安装依赖</li>
-<li>npm i yarn -g : 全局安装yarn，以后可以使用yarn代替npm 去安装一些依赖<h2 id="VUE-M-V-VM"><a href="#VUE-M-V-VM" class="headerlink" title="VUE - M-V-VM"></a>VUE - M-V-VM</h2></li>
+<li>npm i yarn -g : 全局安装yarn，以后可以使用yarn代替npm 去安装一些依赖</li>
+</ul>
+<h2 id="VUE-M-V-VM"><a href="#VUE-M-V-VM" class="headerlink" title="VUE - M-V-VM"></a>VUE - M-V-VM</h2><ul>
 <li>1.vue 双向数据绑定 ；渐进式；框架</li>
 <li>2.视图 V 数据 M  VM</li>
 <li>3.视图改变 数据自动更新</li>
@@ -1052,27 +1047,44 @@
 <li>核心:vue.js  </li>
 <li>vue-router控制路由 </li>
 <li>vuex 处理数据</li>
-<li>axios 解决请求<br><img src="/2019/01/29/vue指令及基础知识/MVC-MVVM概论.png" alt="MVC 和 MVVM"><h2 id="声明式"><a href="#声明式" class="headerlink" title="声明式"></a>声明式</h2></li>
+<li>axios 解决请求</li>
 </ul>
 </li>
+</ul>
+<p><img src="/2017/01/29/vue指令及基础知识/MVC-MVVM概论.png" alt="MVC 和 MVVM"></p>
+<h2 id="声明式"><a href="#声明式" class="headerlink" title="声明式"></a>声明式</h2><ul>
 <li>编程式 forEach </li>
-<li>声明式 for() 编程式<h2 id="框架"><a href="#框架" class="headerlink" title="框架"></a>框架</h2></li>
+<li>声明式 for() 编程式</li>
+</ul>
+<h2 id="框架"><a href="#框架" class="headerlink" title="框架"></a>框架</h2><ul>
 <li>框架:自己写的代码被框架调用 Vue React Angular BootStrap </li>
-<li>库: 自己调用库的代码<h2 id="Vue的指令"><a href="#Vue的指令" class="headerlink" title="Vue的指令"></a>Vue的指令</h2></li>
+<li>库: 自己调用库的代码</li>
+</ul>
+<h2 id="Vue的指令"><a href="#Vue的指令" class="headerlink" title="Vue的指令"></a>Vue的指令</h2><ul>
 <li>1.v-model: 是vue的指令 name是实例的变量 指令是指让对应的元素做某件事</li>
 <li>2.v-text : 展示对应的文本</li>
 <li>3.v-once : 对应的标签只渲染一次 1~3指令都是行内属性</li>
 <li>4.v-html : 把值中的标签渲染出来</li>
-<li><p>5.v-cloak : </p>
-<figure class="highlight plain"><figcaption><span>&#123;display: none;&#125; <div v-cloak="">&#123;&#123; message &#125;&#125;</div></span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">``` </span><br><span class="line">解决渲染闪烁问题</span><br><span class="line">- 6.v-show : 控制元素的display:ngone 属性</span><br><span class="line">- 7.v-on:click : 给元素绑定事件 简写 `@click = &apos;fn&apos;`</span><br><span class="line">- 8.v-keyup.enter = &apos;fn&apos; : 给元素绑定键盘事件</span><br><span class="line">- 9.v-bind:绑定样式 对象 路径 缩写: `:`</span><br><span class="line">- 10.v-for : 循环显示元素的,可以循环数组，也可以循环`对象、字符串、数字` ，v-for优先级比v-if/else的优先级高，先渲染v-for</span><br><span class="line">- 11.v-if / v-else-if /v-else :直接不加载元素,先做循环再做判断</span><br><span class="line">### v-model指令</span><br><span class="line">- `实现 数据和视图 双向绑定 &lt;input&gt;、&lt;textarea&gt; 及 &lt;select&gt;等表单元素和components组件`</span><br><span class="line">- 单个复选框，绑定到布尔值：</span><br><span class="line">	&lt;input type=&quot;checkbox&quot; id=&quot;checkbox&quot; v-model=&quot;checked&quot;&gt;</span><br><span class="line">```&lt;label for=&quot;checkbox&quot;&gt;&#123;&#123; checked &#125;&#125;&lt;/label&gt;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>CheckBox 多个复选框,绑定到同一个数组：<code>check = []</code><br>  <input type="checkbox" value="CSS" v-model="check"> CSS<br>  <input type="checkbox" value="HTML" v-model="check">HTML<br>  <input type="checkbox" value="JS" v-model="check">JS</p>
+<li>5.v-cloak : <strong>解决渲染闪烁问题</strong><pre><code>[v-cloak] {display: none;} 
+&lt;div v-cloak&gt;{{ message }}&lt;/div&gt;
+</code></pre></li>
+<li>6.v-show : 控制元素的display:ngone 属性</li>
+<li>7.v-on:click : 给元素绑定事件 简写 <code>@click = &#39;fn&#39;</code></li>
+<li>8.v-keyup.enter = ‘fn’ : 给元素绑定键盘事件</li>
+<li>9.v-bind:绑定样式 对象 路径 缩写: <code>:</code></li>
+<li>10.v-for : 循环显示元素的,可以循环数组，也可以循环<code>对象、字符串、数字</code> ，v-for优先级比v-if/else的优先级高，先渲染v-for</li>
+<li>11.v-if / v-else-if /v-else :直接不加载元素,先做循环再做判断<h3 id="v-model指令"><a href="#v-model指令" class="headerlink" title="v-model指令"></a>v-model指令</h3></li>
+<li><code>实现 数据和视图 双向绑定 &lt;input&gt;、&lt;textarea&gt; 及 &lt;select&gt;等表单元素和components组件</code></li>
+<li>单个复选框，绑定到布尔值：  <input type="checkbox" id="checkbox" v-model="checked">
+
 </li>
 </ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;label for=&quot;checkbox&quot;&gt;&#123;&#123; checked &#125;&#125;&lt;/label&gt;</span><br></pre></td></tr></table></figure>
 <ul>
-<li>check 若为 [] <code>一个数组</code>  则3个input框能联系在一起,选择input框，则会在数组中push表单框中的value值<figure class="highlight plain"><figcaption><span>单选框</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 多个input绑定同一个变量即可 --&gt;</span><br><span class="line">&lt;input type=&quot;radio&quot; v-model=&quot;fruit&quot; value=&quot;1&quot;/&gt;🍎</span><br><span class="line">&lt;input type=&quot;radio&quot; v-model=&quot;fruit&quot; value=&quot;2&quot;/&gt;🍌</span><br><span class="line">&lt;input type=&quot;radio&quot; v-model=&quot;fruit&quot; value=&quot;3&quot;/&gt;🍊</span><br></pre></td></tr></table></figure>
-</li>
+<li>CheckBox 多个复选框,绑定到同一个数组：<code>check = []</code><br>  <input type="checkbox" value="CSS" v-model="check"> CSS<br>  <input type="checkbox" value="HTML" v-model="check">HTML<br>  <input type="checkbox" value="JS" v-model="check">JS</li>
+<li>check 若为 [] <code>一个数组</code>  则3个input框能联系在一起,选择input框，则会在数组中push表单框中的value值</li>
 </ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">radio 单选框</span><br><span class="line">	&lt;!-- 多个input绑定同一个变量即可 --&gt;</span><br><span class="line">	&lt;input type=&quot;radio&quot; v-model=&quot;fruit&quot; value=&quot;1&quot;/&gt;🍎</span><br><span class="line">	&lt;input type=&quot;radio&quot; v-model=&quot;fruit&quot; value=&quot;2&quot;/&gt;🍌</span><br><span class="line">	&lt;input type=&quot;radio&quot; v-model=&quot;fruit&quot; value=&quot;3&quot;/&gt;🍊</span><br></pre></td></tr></table></figure>
 <h2 id="v-model实现数据双向绑定的原理"><a href="#v-model实现数据双向绑定的原理" class="headerlink" title="v-model实现数据双向绑定的原理"></a>v-model实现数据双向绑定的原理</h2><h4 id="get方法"><a href="#get方法" class="headerlink" title="get方法"></a>get方法</h4><ul>
 <li>获取数据，当属性依赖于其他data中属性时，其他数据改变，才会触发这个方法，但必不会触发set方法</li>
 <li>最终值是由get方法决定的<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;&#125;;</span><br><span class="line">Object.defineProperty(obj,&apos;name&apos;,&#123;</span><br><span class="line">	get()&#123;return 123&#125;,</span><br><span class="line">    set(val)&#123;</span><br><span class="line">        console.log(val)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line">obj.name = 333;</span><br><span class="line">console.log(obj.name)</span><br></pre></td></tr></table></figure>
@@ -1080,7 +1092,9 @@
 </ul>
 <h4 id="set方法"><a href="#set方法" class="headerlink" title="set方法"></a>set方法</h4><ul>
 <li>使用v-model:进行数据的双向绑定 只有点击改变值的时候，才会触发这个方法，触发这个方法必然触发了get方法</li>
-<li><img src="/2019/01/29/vue指令及基础知识/3.png" alt="get与set的区别"><h2 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h2><h3 id="事件修饰符"><a href="#事件修饰符" class="headerlink" title="事件修饰符"></a>事件修饰符</h3></li>
+<li><img src="/2017/01/29/vue指令及基础知识/3.png" alt="get与set的区别"></li>
+</ul>
+<h2 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h2><h3 id="事件修饰符"><a href="#事件修饰符" class="headerlink" title="事件修饰符"></a>事件修饰符</h3><ul>
 <li>self: 只有点击元素本身的时候才触发</li>
 <li>stop:阻止冒泡</li>
 <li>prevent:阻止默认事件</li>
@@ -1089,22 +1103,28 @@
 <li>passive : 优先执行默认事件，在执行绑定的函数，优化移动端性能，只对滚动行为有效<h3 id="v-model修饰符"><a href="#v-model修饰符" class="headerlink" title="v-model修饰符"></a>v-model修饰符</h3></li>
 <li>number : 将字符串转化为数字 类似 parsefloat的效果</li>
 <li>trim : 自动去除首尾空格</li>
-<li><h2 id="自定义全局键码"><a href="#自定义全局键码" class="headerlink" title="自定义全局键码"></a>自定义全局键码</h2><code>Vue.config.keyCodes.f2 = 113</code> =&gt; 在模板中可以这样使用 <a href="mailto:`@keyup.f2" target="_blank" rel="noopener">`@keyup.f2</a> = fn’’`·<h2 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h2><figure class="highlight plain"><figcaption><span>| changeM&#125;&#125;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line">- 管道符前边是要处理的数据，后边是处理的参数，最终展示的是函数的返回值</span><br><span class="line">- 过滤器是可以连续使用的，下一个过滤器的返回值，是上一个过滤器的返回值</span><br><span class="line">&gt; 全局过滤器和私有过滤器，全局过滤器任何组件都可以调用，私有过滤器只有定义过滤器的组件可以调用</span><br><span class="line">&gt; filter 中的方法 可以重名，不会被冲掉，但尽可能不要重名</span><br><span class="line">```Vue.filter(&apos;过滤器名称&apos;，function()&#123;&#125;) 全局过滤器</span><br><span class="line">	console.log(this) //=&gt; this 指向window</span><br><span class="line">在vm实例中定义</span><br><span class="line">filters:&#123;</span><br><span class="line">	&apos;过滤器名称&apos;:functon()&#123;&#125;</span><br><span class="line">&#125; 私有过滤器</span><br></pre></td></tr></table></figure>
+</ul>
+<h2 id="自定义全局键码"><a href="#自定义全局键码" class="headerlink" title="自定义全局键码"></a>自定义全局键码</h2><p><code>Vue.config.keyCodes.f2 = 113</code> =&gt; 在模板中可以这样使用 <a href="mailto:`@keyup.f2" target="_blank" rel="noopener">`@keyup.f2</a> = fn’’`·</p>
+<h2 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123;money | changeM&#125;&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>管道符前边是要处理的数据，后边是处理的参数，最终展示的是函数的返回值</li>
+<li>过滤器是可以连续使用的，下一个过滤器的返回值，是上一个过滤器的返回值</li>
+<li>全局过滤器和私有过滤器，全局过滤器任何组件都可以调用，私有过滤器只有定义过滤器的组件可以调用</li>
+<li>filter 中的方法 可以重名，不会被冲掉，但尽可能不要重名<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Vue.filter(&apos;过滤器名称&apos;，function()&#123;&#125;) 全局过滤器</span><br><span class="line">	console.log(this) //=&gt; this 指向window</span><br><span class="line">在vm实例中定义</span><br><span class="line">filters:&#123;</span><br><span class="line">	&apos;过滤器名称&apos;:functon()&#123;&#125;</span><br><span class="line">&#125; 私有过滤器</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<blockquote>
-<p>2019-01-25 12:41:48</p>
-</blockquote>
 <h2 id="侦听器-Watch"><a href="#侦听器-Watch" class="headerlink" title="侦听器 Watch"></a>侦听器 Watch</h2><ul>
 <li>异步用监听,但是比较耗性能，能够深层监听，能够返回oldV 和 newV 两个值供实例调用</li>
-<li>深层监听的属性必须是有set和get方法的属性值<h2 id="计算属性-Computed"><a href="#计算属性-Computed" class="headerlink" title="计算属性 Computed"></a>计算属性 Computed</h2></li>
+<li>深层监听的属性必须是有set和get方法的属性值</li>
+</ul>
+<h2 id="计算属性-Computed"><a href="#计算属性-Computed" class="headerlink" title="计算属性 Computed"></a>计算属性 Computed</h2><ul>
 <li>同步用计算属性，但依赖性太强，用到get/set方法</li>
 <li>定义的方法，挂载在vm的实例，不能跟methods和data重名，但是现在不报错，但是不能用，因为methods中的方法会把computed中的方法冲掉</li>
 <li>只要name不发生改变，name2就不发生改变</li>
-<li><p>name2用到谁，就依赖谁</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">computed:&#123;</span><br><span class="line">	name2()&#123;</span><br><span class="line">		return this.name.split(&apos;&apos;).rerverse().join(&apos;&apos;)</span><br><span class="line">	&#125;,</span><br><span class="line">	name3()&#123;</span><br><span class="line">		get()&#123;</span><br><span class="line">			console.log(this.name)</span><br><span class="line">			return 123</span><br><span class="line">		&#125;,</span><br><span class="line">		set(val)&#123;</span><br><span class="line">			// 给name3赋值的时候会触发, set函数</span><br><span class="line">			// val 是外界</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<li>name2用到谁，就依赖谁<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">computed:&#123;</span><br><span class="line">	name2()&#123;</span><br><span class="line">		return this.name.split(&apos;&apos;).rerverse().join(&apos;&apos;)</span><br><span class="line">	&#125;,</span><br><span class="line">	name3()&#123;</span><br><span class="line">		get()&#123;</span><br><span class="line">			console.log(this.name)</span><br><span class="line">			return 123</span><br><span class="line">		&#125;,</span><br><span class="line">		set(val)&#123;</span><br><span class="line">			// 给name3赋值的时候会触发, set函数</span><br><span class="line">			// val 是外界</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
-<li><h2 id="自定义全局指令"><a href="#自定义全局指令" class="headerlink" title="自定义全局指令"></a>自定义全局指令</h2></li>
+</ul>
+<h2 id="自定义全局指令"><a href="#自定义全局指令" class="headerlink" title="自定义全局指令"></a>自定义全局指令</h2><ul>
 <li>使用directive定义全局的指令</li>
 <li>其中参数1：指令的名称，注意，在定义的时候，指令的名称前面，不需要加 -v 前缀</li>
 <li>但是在调用的时候，必须在指令名称前加上 v- 前缀 进行调用</li>

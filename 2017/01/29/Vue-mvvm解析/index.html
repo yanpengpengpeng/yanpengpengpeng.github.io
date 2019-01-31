@@ -91,16 +91,16 @@
 <meta name="keywords" content="mvvm">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Vue-mvvm解析">
-<meta property="og:url" content="http://github.com/2019/01/29/Vue-mvvm解析/index.html">
+<meta property="og:url" content="http://github.com/2017/01/29/Vue-mvvm解析/index.html">
 <meta property="og:site_name" content="颜朋">
 <meta property="og:description" content="Vue.js 的细节 Vue.js 可以说是MVVM 架构的最佳实践，专注于 MVVM 中的 ViewModel，不仅做到了数据双向绑定，而且也是一款相对来比较轻量级的JS 库，API 简洁，很容易上手。Vue的基础知识网上有现成的教程，此处不再赘述， 下面简单了解一下 Vue.js 关于双向绑定的一些实现细节： Vue.js 是采用 Object.defineProperty 的 getter">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://github.com/2019/01/29/Vue-mvvm解析/MVVM底层原理解析.png">
-<meta property="og:updated_time" content="2019-01-29T04:11:41.054Z">
+<meta property="og:image" content="http://github.com/2017/01/29/Vue-mvvm解析/MVVM底层原理解析.png">
+<meta property="og:updated_time" content="2019-01-31T00:29:25.620Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vue-mvvm解析">
 <meta name="twitter:description" content="Vue.js 的细节 Vue.js 可以说是MVVM 架构的最佳实践，专注于 MVVM 中的 ViewModel，不仅做到了数据双向绑定，而且也是一款相对来比较轻量级的JS 库，API 简洁，很容易上手。Vue的基础知识网上有现成的教程，此处不再赘述， 下面简单了解一下 Vue.js 关于双向绑定的一些实现细节： Vue.js 是采用 Object.defineProperty 的 getter">
-<meta name="twitter:image" content="http://github.com/2019/01/29/Vue-mvvm解析/MVVM底层原理解析.png">
+<meta name="twitter:image" content="http://github.com/2017/01/29/Vue-mvvm解析/MVVM底层原理解析.png">
 
 
 
@@ -130,7 +130,7 @@
 
 
 
-  <link rel="canonical" href="http://github.com/2019/01/29/Vue-mvvm解析/">
+  <link rel="canonical" href="http://github.com/2017/01/29/Vue-mvvm解析/">
 
 
 
@@ -306,7 +306,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://github.com/2019/01/29/Vue-mvvm解析/">
+    <link itemprop="mainEntityOfPage" href="http://github.com/2017/01/29/Vue-mvvm解析/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yan·Peng">
@@ -335,8 +335,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-29T12:04:48+08:00">
-                2019-01-29
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-29T12:04:48+08:00">
+                2017-01-29
               </time>
             
 
@@ -353,7 +353,7 @@
 
           
           
-             <span id="/2019/01/29/Vue-mvvm解析/" class="leancloud_visitors" data-flag-title="Vue-mvvm解析">
+             <span id="/2017/01/29/Vue-mvvm解析/" class="leancloud_visitors" data-flag-title="Vue-mvvm解析">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -386,7 +386,7 @@
       
         <h2 id="Vue-js-的细节"><a href="#Vue-js-的细节" class="headerlink" title="Vue.js 的细节"></a>Vue.js 的细节</h2><ul>
 <li>Vue.js 可以说是MVVM 架构的最佳实践，专注于 MVVM 中的 ViewModel，不仅做到了数据双向绑定，而且也是一款相对来比较轻量级的JS 库，API 简洁，很容易上手。Vue的基础知识网上有现成的教程，此处不再赘述， 下面简单了解一下 Vue.js 关于双向绑定的一些实现细节：</li>
-<li>Vue.js 是采用 Object.defineProperty 的 getter 和 setter，并结合观察者模式来实现数据绑定的。当把一个普通 Javascript 对象传给 Vue 实例来作为它的 data 选项时，Vue 将遍历它的属性，用 Object.defineProperty 将它们转为 getter/setter。用户看不到 getter/setter，但是在内部它们让 Vue 追踪依赖，在属性被访问和修改时通知变化。<br><img src="/2019/01/29/Vue-mvvm解析/MVVM底层原理解析.png" alt="数据双向绑定底层原理图"></li>
+<li>Vue.js 是采用 Object.defineProperty 的 getter 和 setter，并结合观察者模式来实现数据绑定的。当把一个普通 Javascript 对象传给 Vue 实例来作为它的 data 选项时，Vue 将遍历它的属性，用 Object.defineProperty 将它们转为 getter/setter。用户看不到 getter/setter，但是在内部它们让 Vue 追踪依赖，在属性被访问和修改时通知变化。<br><img src="/2017/01/29/Vue-mvvm解析/MVVM底层原理解析.png" alt="数据双向绑定底层原理图"></li>
 <li><code>Observer</code> 数据监听器，能够对数据对象的所有属性进行监听，如有变动可拿到最新值并通知订阅者，内部采用Object.defineProperty的getter和setter来实现。</li>
 <li><code>Compile</code> 指令解析器，它的作用对每个元素节点的指令进行扫描和解析，根据指令模板替换数据，以及绑定相应的更新函数。</li>
 <li><code>Watcher</code> 订阅者， 作为连接 Observer 和 Compile 的桥梁，能够订阅并收到每个属性变动的通知，执行指令绑定的相应回调函数。</li>
@@ -422,7 +422,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/01/29/vue指令及基础知识/" rel="next" title="vue指令及基础知识">
+              <a href="/2017/01/29/vue指令及基础知识/" rel="next" title="vue指令及基础知识">
                 <i class="fa fa-chevron-left"></i> vue指令及基础知识
               </a>
             
@@ -432,7 +432,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/01/29/Vue-transition/" rel="prev" title="Vue-transition">
+              <a href="/2017/01/29/Vue-transition/" rel="prev" title="Vue-transition">
                 Vue-transition <i class="fa fa-chevron-right"></i>
               </a>
             
