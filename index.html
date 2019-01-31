@@ -408,26 +408,19 @@
       
         
           
-            <h3 id="TS语法初始化一个项目"><a href="#TS语法初始化一个项目" class="headerlink" title="TS语法初始化一个项目"></a>TS语法初始化一个项目</h3><blockquote>
-<p>1.初始化项目：进入你的编程文件夹后，可以使用npm init -y来初始化项目，生成package.json文件。</p>
-</blockquote>
-<blockquote>
-<p>2.创建tsconfig.json文件，在终端中输入tsc –init：它是一个TypeScript项目的配置文件，可以通过读取它来设置TypeScript编译器的编译参数。</p>
-</blockquote>
-<blockquote>
-<p>3.安装@types/node,使用npm install @types/node –dev-save进行安装。这个主要是解决模块的声明文件问题。</p>
-</blockquote>
-<blockquote>
-<p>4.编写HelloWorld.ts文件，然后进行保存，代码如下。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var a:string = &quot;HelloWorld&quot;</span><br><span class="line">console.log(a)</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<blockquote>
-<p>5.在Vscode的任务菜单下，打开Terminal下的Run Build Task，然后选择tsc：build-tsconfig.json，这时候就会生成一个helloWorld.js文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&quot;use strict&quot;;</span><br><span class="line">var a = &apos;helloworld&apos;;</span><br><span class="line">console.log(a);</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<blockquote>
-<p>6.在终端中输入node helloWorld.js就可以看到结果了。</p>
-</blockquote>
+          TS语法初始化一个项目
+1.初始化项目：进入你的编程文件夹后，可以使用npm init -y来初始化项目，生成package.json文件。
 
-          
+
+2.创建tsconfig.json文件，在终端中输入tsc –init：它是一个TypeScript项目的配置文件，可以通过读取它来设置TypeScrip
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/07/04/TS语法初始化一个项目/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -578,38 +571,19 @@
       
         
           
-            <h2 id="组件-components"><a href="#组件-components" class="headerlink" title="组件 - components"></a>组件 - components</h2><ul>
-<li>定义: 组件的出现，就是为了拆分vue实例的代码量的，能够让我们以不同的组件，来划分不同的功能模块，将来我们需要什么样的功能，就可以去调用对应的组件即可;</li>
-<li>组件化和模块化的区别<ul>
-<li>模块化:是从代码逻辑的角度进行划分的,方便代码分层开发,保证每个功能模块的只能单一。</li>
-<li>组件化:是从UI界面的角度进行划分的，前端的组件化，方便UI组件的重用。    </li>
-</ul>
-</li>
-</ul>
-<h2 id="创建组件的方式"><a href="#创建组件的方式" class="headerlink" title="创建组件的方式"></a>创建组件的方式</h2><h4 id="第一种"><a href="#第一种" class="headerlink" title="第一种"></a>第一种</h4><ul>
-<li><p>1.1 </p>
-<figure class="highlight plain"><figcaption><span>com1 </span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">	template:&quot;&lt;h3&gt;这是使用Vue.extend创建出来的组件&lt;/h3&gt;&quot;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>1.2<br>Vue.component(“mycom1”,com1)  引入的时候,使用<mycom1></mycom1>标签进行渲染<br>可以合并成一步:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">		template:&quot;&lt;h3&gt;这是使用Vue.extend创建出来的组件&lt;/h3&gt;&quot;</span><br><span class="line">&#125;))</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h4 id="第二种"><a href="#第二种" class="headerlink" title="第二种"></a>第二种</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(&apos;mycom2&apos;,&#123;</span><br><span class="line">	template:&apos;&lt;div&gt;&lt;h3&gt;这是使用Vue.extend创建出来的组件&lt;/h3&gt;&lt;span&gt;123&lt;/span&gt;&lt;/div&gt;&apos;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<h4 id="第三种"><a href="#第三种" class="headerlink" title="第三种"></a>第三种</h4><p>Vue.component(‘mycom2’,{template:’#temp1’})</p>
-<ul>
-<li>在APP控制的区域外，定义一个ID为temp1的template标签，在标签元素节点可以写你想要的代码</li>
-<li>组件中的data<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">let vm2 = new Vue(&#123;</span><br><span class="line">		el:&apos;#app2&apos;,</span><br><span class="line">		data:&#123;</span><br><span class="line">			</span><br><span class="line">		&#125;,</span><br><span class="line">		components:&#123;</span><br><span class="line">			login:&#123;</span><br><span class="line">				template:&apos;#temp1&apos;,</span><br><span class="line">				data:function()&#123;</span><br><span class="line">					return&#123;</span><br><span class="line">						msg:&apos;&apos;</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="Vue提供的4个标签属性"><a href="#Vue提供的4个标签属性" class="headerlink" title="Vue提供的4个标签属性"></a>Vue提供的4个标签属性</h2><blockquote>
-<p>transition<br>transition-group<br>template<br>component </p>
-</blockquote>
-<h2 id="子父组件-如何相互传值"><a href="#子父组件-如何相互传值" class="headerlink" title="子父组件 如何相互传值"></a>子父组件 如何相互传值</h2><p> <com1 :parentmsg="msg" @parentfuc123="fn"></com1></p>
-<blockquote>
-<p>父组件通过绑定自定义属性，向子组件内传入data数据<br>父组件通过绑定自定义事件，向子组件内传入methods方法<br><strong>props:[‘parentmsg’]    this.$emit(fn,this.msg)</strong><br>子组件通过props:[‘自定义属性名-parentmsg’]，接收父组件传进的data数据<br>子组件通过调用$emit(‘自定义方法名-parentfuc123’，第一参数,第二参数…)方法，接收父组件方法，并通过第一参数，第二参数…，同时向父组件内传值</p>
-</blockquote>
-
-          
+          组件 - components
+定义: 组件的出现，就是为了拆分vue实例的代码量的，能够让我们以不同的组件，来划分不同的功能模块，将来我们需要什么样的功能，就可以去调用对应的组件即可;
+组件化和模块化的区别
+模块化:是从代码逻辑的角度进行划分的,方便代码分层开发,保证每个功能模块的只能单一。
+组件
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/04/02/Vue-components/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -760,34 +734,17 @@
       
         
           
-            <h2 id="路由-v-router"><a href="#路由-v-router" class="headerlink" title="路由 v-router"></a>路由 v-router</h2><h3 id="前端路由和后端路由的区别"><a href="#前端路由和后端路由的区别" class="headerlink" title="前端路由和后端路由的区别"></a>前端路由和后端路由的区别</h3><ol>
-<li><strong>后端路由:</strong>对于普通网站，所有的超链接都是URL地址，所有的URL地址都对应服务器上对应的资源</li>
-<li><strong>前端路由:</strong>对于单页面应用程序(SPA)来说，主要是通过URL中的hash值来实现不同页面之间的切换；同时，hash有一个特点:HTTP请求中不包括hash相关的内容；所以，单页面程序中的页面跳转主要用hash实现</li>
-<li>在单页面应用程序中，这种通过hash改变切换页面的方式，称作前端路由（区别于后端路由）</li>
-</ol>
-<hr>
-<h3 id="创建一个路由对象及语法规则（不适用于webpack）"><a href="#创建一个路由对象及语法规则（不适用于webpack）" class="headerlink" title="创建一个路由对象及语法规则（不适用于webpack）"></a>创建一个路由对象及语法规则（不适用于webpack）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src = &apos;https://unpkg.com/vue-router@2.0.0/dist/vue-router.js&apos;&gt;&lt;/script&gt; </span><br><span class="line">	//第一步安装路由，要在vue.js之后</span><br><span class="line">	// 引入后，在window全局对象中，就有了一个路由的构造函数，叫做VueRouter</span><br><span class="line">	let routerObj = new VueRouter(&#123;</span><br><span class="line">		routes:[ // =&gt; 路由匹配的规则</span><br><span class="line">			&#123;path:&apos;/login&apos;,component:login&#125;,</span><br><span class="line">			&#123;path:&apos;/&apos;,redirect:&apos;/login&apos;&#125; //=&gt; 重定向，强制页面默认在login页面上</span><br><span class="line">	// =&gt; 1.每个路由规则都是一个对象，这个队则身上必须有两个属性</span><br><span class="line">	// =&gt; 2.属性1: 是path，表示监听这个路由地址</span><br><span class="line">	// =&gt; 3.属性2: 是component，表示前面匹配是path，</span><br><span class="line">			则展示对应的component对应的组件</span><br><span class="line">	// =&gt; 注意: component的属性值必须是一个模板对象,不能是组件名称</span><br><span class="line">		]</span><br><span class="line">	&#125;)</span><br><span class="line">	通过：router:routerObj </span><br><span class="line">			将路由对象挂载到实例上</span><br><span class="line">	通过：router-view </span><br><span class="line">		 将符合path的组件展示在页面上，若出现多个view，则会重复展示符合条件的组件</span><br><span class="line">	通过：&lt;router-link to = &quot;/login&quot;&gt;登录&lt;/router-link&gt;</span><br><span class="line">		 &lt;router-link to = &quot;/resister&quot;&gt;注册&lt;/router-link&gt;</span><br><span class="line">		 router-link 相当于a标签，点击，跳转到指定的hash值</span><br></pre></td></tr></table></figure>
-<h3 id="路由传参的两种方式"><a href="#路由传参的两种方式" class="headerlink" title="路由传参的两种方式"></a>路由传参的两种方式</h3><ul>
-<li>‘?’ 传参，通过this.$route.query.id 获取</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">   &lt;router-link to = &quot;/login?id=10&amp;name=zs&quot;&gt;登录&lt;/router-link&gt;</span><br><span class="line">&#123;path:&apos;/login&apos;,component:login&#125;</span><br><span class="line">console.log(this.$route.query.id)</span><br><span class="line">通过路径?传参方式传入的值，通过query获取</span><br></pre></td></tr></table></figure>
-<ul>
-<li>在模板中通过:id /: name 先进行占位，然后在vm的实例中进行设置，最后可通过params获取</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;router-link to = &quot;/register/id=20/name=wl&quot;&gt;注册&lt;/router-link&gt;</span><br><span class="line">&#123;path:&apos;/register/:id/:name&apos;,component:register&#125;</span><br><span class="line">console.log(this.$route.params.id)</span><br></pre></td></tr></table></figure>
-<p><strong>注意原理:</strong></p>
-<ul>
-<li>1)当我们通过传参时，vue都会通过设置的path，解析出一个正则regexp,去匹配fullpath</li>
-<li>2)当fullpath是?传参时，匹配失败，params为空，但是可以通过query获取</li>
-<li>3)当我们通过设置path占位符时，捕捉到fullpath，可以通过params获取<br><img src="/2018/03/29/Vue-router/query.png" alt="query获取"><br><img src="/2018/03/29/Vue-router/params.png" alt="params获取"></li>
-</ul>
-<h3 id="路由的嵌套"><a href="#路由的嵌套" class="headerlink" title="路由的嵌套"></a>路由的嵌套</h3><ul>
-<li>使用children属性，实现子路由，同时，子路由的path前面，不要带’/‘,否则以根路径开始请求，这样不方便客户理解URL路径<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">let router = new VueRouter(&#123;</span><br><span class="line">        routes: [</span><br><span class="line">            &#123;</span><br><span class="line">                path:&apos;/account&apos;,</span><br><span class="line">                component:account,</span><br><span class="line">                children:[</span><br><span class="line">                    &#123;path:&apos;login&apos;,component:login&#125;,</span><br><span class="line">                    &#123;path:&apos;register&apos;,component:register&#125;</span><br><span class="line">                ]</span><br><span class="line">            &#125;</span><br><span class="line">        ]</span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="命名视图的用法"><a href="#命名视图的用法" class="headerlink" title="命名视图的用法"></a>命名视图的用法</h3><pre><code>&lt;router-view name = &quot;left&quot;&gt;&lt;/router-view &gt;  
-</code></pre>
-          
+          路由 v-router前端路由和后端路由的区别
+后端路由:对于普通网站，所有的超链接都是URL地址，所有的URL地址都对应服务器上对应的资源
+前端路由:对于单页面应用程序(SPA)来说，主要是通过URL中的hash值来实现不同页面之间的切换；同时，hash有一个特点:HTTP请求中不包括hash相关
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/03/29/Vue-router/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -938,38 +895,19 @@
       
         
           
-            <h2 id="Vue动画"><a href="#Vue动画" class="headerlink" title="Vue动画"></a>Vue动画</h2><h3 id="在插入、更新或者移除-DOM-时，提供多种不同方式的应用过渡效果。"><a href="#在插入、更新或者移除-DOM-时，提供多种不同方式的应用过渡效果。" class="headerlink" title="在插入、更新或者移除 DOM 时，提供多种不同方式的应用过渡效果。"></a>在插入、更新或者移除 DOM 时，提供多种不同方式的应用过渡效果。</h3><ul>
-<li>在 CSS 过渡和动画中自动应用 class</li>
-<li>可以配合使用第三方 CSS 动画库，如 Animate.css</li>
-<li>在过渡钩子函数中使用 JavaScript 直接操作 DOM</li>
-<li>可以配合使用第三方 JavaScript 动画库，如 Velocity.js<h3 id="列表动画效果"><a href="#列表动画效果" class="headerlink" title="列表动画效果"></a>列表动画效果</h3></li>
-<li>transition这个过渡， 内里只能有一个根元素，且只对根元素起作用</li>
-<li>duration: 控制Vue设置的类名存在的时间，但是动画效果还是C3设定的时间完成，duration只是延长类名存在时间<pre><code>li:hover{
-          background-color: hotpink;
-          transition: all 1s ease;
-      }
-      &lt;!-- 定义动画开始和结束前的状态 --&gt;
-      .v-enter,.v-leave-to{
-          transform: translateY(30px);
-      }
-      &lt;!-- 定义动画开始和结束过程中的状态 --&gt;
-      .v-enter-active,.v-leave-active{
-          transition: all 0.7s ease;
-      }
-      &lt;!-- 
-          1.定义元素位置除了display：none外，移动的效果
-          2.move和leave-active 必须结合起来使用
-          3.在结构元素节点上定义 appear 属性 使初始视图具有出场的效果 --&gt;
-      .v-move{
-          transition: all 0.7s ease;
-      }
-      .v-leave-active{
-          position: absolute;
-      }
-</code></pre></li>
-</ul>
-
-          
+          Vue动画在插入、更新或者移除 DOM 时，提供多种不同方式的应用过渡效果。
+在 CSS 过渡和动画中自动应用 class
+可以配合使用第三方 CSS 动画库，如 Animate.css
+在过渡钩子函数中使用 JavaScript 直接操作 DOM
+可以配合使用第三方 JavaScript 动画库，
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/03/29/Vue-transition/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1120,16 +1058,16 @@
       
         
           
-            <h2 id="Vue-js-的细节"><a href="#Vue-js-的细节" class="headerlink" title="Vue.js 的细节"></a>Vue.js 的细节</h2><ul>
-<li>Vue.js 可以说是MVVM 架构的最佳实践，专注于 MVVM 中的 ViewModel，不仅做到了数据双向绑定，而且也是一款相对来比较轻量级的JS 库，API 简洁，很容易上手。Vue的基础知识网上有现成的教程，此处不再赘述， 下面简单了解一下 Vue.js 关于双向绑定的一些实现细节：</li>
-<li>Vue.js 是采用 Object.defineProperty 的 getter 和 setter，并结合观察者模式来实现数据绑定的。当把一个普通 Javascript 对象传给 Vue 实例来作为它的 data 选项时，Vue 将遍历它的属性，用 Object.defineProperty 将它们转为 getter/setter。用户看不到 getter/setter，但是在内部它们让 Vue 追踪依赖，在属性被访问和修改时通知变化。<br><img src="/2018/03/26/Vue-mvvm解析/MVVM底层原理解析.png" alt="数据双向绑定底层原理图"></li>
-<li><code>Observer</code> 数据监听器，能够对数据对象的所有属性进行监听，如有变动可拿到最新值并通知订阅者，内部采用Object.defineProperty的getter和setter来实现。</li>
-<li><code>Compile</code> 指令解析器，它的作用对每个元素节点的指令进行扫描和解析，根据指令模板替换数据，以及绑定相应的更新函数。</li>
-<li><code>Watcher</code> 订阅者， 作为连接 Observer 和 Compile 的桥梁，能够订阅并收到每个属性变动的通知，执行指令绑定的相应回调函数。</li>
-<li><code>Dep</code> 消息订阅器，内部维护了一个数组，用来收集订阅者（Watcher），数据变动触发notify 函数，再调用订阅者的 update 方法。<br><em>从图中可以看出，当执行 new Vue() 时，Vue 就进入了初始化阶段，一方面Vue 会遍历 data 选项中的属性，并用 Object.defineProperty 将它们转为 getter/setter，实现数据变化监听功能；另一方面，Vue 的指令编译器Compile 对元素节点的指令进行扫描和解析，初始化视图，并订阅Watcher 来更新视图， 此时Wather 会将自己添加到消息订阅器中(Dep),初始化完毕。</em><br><em>当数据发生变化时，Observer 中的 setter 方法被触发，setter 会立即调用Dep.notify()，Dep 开始遍历所有的订阅者，并调用订阅者的 update 方法，订阅者收到通知后对视图进行相应的更新。</em></li>
-</ul>
-
-          
+          Vue.js 的细节
+Vue.js 可以说是MVVM 架构的最佳实践，专注于 MVVM 中的 ViewModel，不仅做到了数据双向绑定，而且也是一款相对来比较轻量级的JS 库，API 简洁，很容易上手。Vue的基础知识网上有现成的教程，此处不再赘述， 下面简单了解一下 Vue.js 关于双向绑定的
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/03/26/Vue-mvvm解析/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1280,153 +1218,19 @@
       
         
           
-            <h2 id="VUE"><a href="#VUE" class="headerlink" title="VUE"></a>VUE</h2><ul>
-<li>数据驱动:<strong>操作DOM</strong></li>
-<li>JS的数据类型 基本 和 引用</li>
-<li>改变原数组 —&gt; 数组的变异 <strong>pop push shif unshift reverse sort splice(n,m,x,y,z)</strong></li>
-<li>不改变原数组 —&gt; <strong>slice(n,m) concat indexOf join(‘+’) toString()</strong></li>
-<li>数组的迭代方法 <ul>
-<li>forEach </li>
-<li>map:renturn什么值，就往新数组添加新属性，若没有return值，就添加undefined</li>
-<li>filter<ul>
-<li>1)filter的回调函数中return值，若是true，则把当前迭代的项复制一份到新数组arr中</li>
-<li>2)filter的返回值是新数组arr</li>
-</ul>
-</li>
-<li>some:<ul>
-<li>1)回调函数中只要有一个回调函数返回的是true，则整个some 返回值就是ture</li>
-<li>2)只要某个项满足条件，就不在进行迭代</li>
-</ul>
-</li>
-<li>every:<ul>
-<li>1)回调函数，每一个都是true，every的返回值才是true</li>
-<li>2)换句话说就是只要有一个是false ，整个结果就是false</li>
-</ul>
-</li>
-<li>reduce((prev,next)=&gt;):结果就是最后一次迭代的return值</li>
-<li>find: 找到满足条件的第一项</li>
-<li>includes(item,index)从index索引值开始查找 找到就是true 找不到就是false</li>
-</ul>
-</li>
-</ul>
-<h2 id="NODE基础命令"><a href="#NODE基础命令" class="headerlink" title="NODE基础命令"></a>NODE基础命令</h2><ul>
-<li>package.json 是项目的依赖表单</li>
-<li>dependencies:存储的都是生产环境的依赖</li>
-<li>devdependencies:储存的都是开发环境的依赖</li>
-<li>scripts:中存储的都是要执行的命令对应的代码</li>
-<li>npm run hello : 对应的要执行hello对应的代码</li>
-<li>npm i vue –save:在项目中添加依赖，安装依赖</li>
-<li>npm i yarn -g : 全局安装yarn，以后可以使用yarn代替npm 去安装一些依赖</li>
-</ul>
-<h2 id="VUE-M-V-VM"><a href="#VUE-M-V-VM" class="headerlink" title="VUE - M-V-VM"></a>VUE - M-V-VM</h2><ul>
-<li>1.vue 双向数据绑定 ；渐进式；框架</li>
-<li>2.视图 V 数据 M  VM</li>
-<li>3.视图改变 数据自动更新</li>
-<li>4.数据更新 视图自动更改</li>
-<li>5.渐进式: SPA 单页面开发<ul>
-<li>核心:vue.js  </li>
-<li>vue-router控制路由 </li>
-<li>vuex 处理数据</li>
-<li>axios 解决请求</li>
-</ul>
-</li>
-</ul>
-<p><img src="/2018/03/26/vue指令及基础知识/MVC-MVVM概论.png" alt="MVC 和 MVVM"></p>
-<h2 id="声明式"><a href="#声明式" class="headerlink" title="声明式"></a>声明式</h2><ul>
-<li>编程式 forEach </li>
-<li>声明式 for() 编程式</li>
-</ul>
-<h2 id="框架"><a href="#框架" class="headerlink" title="框架"></a>框架</h2><ul>
-<li>框架:自己写的代码被框架调用 Vue React Angular BootStrap </li>
-<li>库: 自己调用库的代码</li>
-</ul>
-<h2 id="Vue的指令"><a href="#Vue的指令" class="headerlink" title="Vue的指令"></a>Vue的指令</h2><ul>
-<li>1.v-model: 是vue的指令 name是实例的变量 指令是指让对应的元素做某件事</li>
-<li>2.v-text : 展示对应的文本</li>
-<li>3.v-once : 对应的标签只渲染一次 1~3指令都是行内属性</li>
-<li>4.v-html : 把值中的标签渲染出来</li>
-<li>5.v-cloak : <strong>解决渲染闪烁问题</strong><pre><code>[v-cloak] {display: none;} 
-&lt;div v-cloak&gt;{{ message }}&lt;/div&gt;
-</code></pre></li>
-<li>6.v-show : 控制元素的display:ngone 属性</li>
-<li>7.v-on:click : 给元素绑定事件 简写 <code>@click = &#39;fn&#39;</code></li>
-<li>8.v-keyup.enter = ‘fn’ : 给元素绑定键盘事件</li>
-<li>9.v-bind:绑定样式 对象 路径 缩写: <code>:</code></li>
-<li>10.v-for : 循环显示元素的,可以循环数组，也可以循环<code>对象、字符串、数字</code> ，v-for优先级比v-if/else的优先级高，先渲染v-for</li>
-<li>11.v-if / v-else-if /v-else :直接不加载元素,先做循环再做判断<h3 id="v-model指令"><a href="#v-model指令" class="headerlink" title="v-model指令"></a>v-model指令</h3></li>
-<li><code>实现 数据和视图 双向绑定 &lt;input&gt;、&lt;textarea&gt; 及 &lt;select&gt;等表单元素和components组件</code></li>
-<li>单个复选框，绑定到布尔值：  <input type="checkbox" id="checkbox" v-model="checked">
-
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;label for=&quot;checkbox&quot;&gt;&#123;&#123; checked &#125;&#125;&lt;/label&gt;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>CheckBox 多个复选框,绑定到同一个数组：<code>check = []</code><br>  <input type="checkbox" value="CSS" v-model="check"> CSS<br>  <input type="checkbox" value="HTML" v-model="check">HTML<br>  <input type="checkbox" value="JS" v-model="check">JS</li>
-<li>check 若为 [] <code>一个数组</code>  则3个input框能联系在一起,选择input框，则会在数组中push表单框中的value值</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">radio 单选框</span><br><span class="line">	&lt;!-- 多个input绑定同一个变量即可 --&gt;</span><br><span class="line">	&lt;input type=&quot;radio&quot; v-model=&quot;fruit&quot; value=&quot;1&quot;/&gt;🍎</span><br><span class="line">	&lt;input type=&quot;radio&quot; v-model=&quot;fruit&quot; value=&quot;2&quot;/&gt;🍌</span><br><span class="line">	&lt;input type=&quot;radio&quot; v-model=&quot;fruit&quot; value=&quot;3&quot;/&gt;🍊</span><br></pre></td></tr></table></figure>
-<h2 id="v-model实现数据双向绑定的原理"><a href="#v-model实现数据双向绑定的原理" class="headerlink" title="v-model实现数据双向绑定的原理"></a>v-model实现数据双向绑定的原理</h2><h4 id="get方法"><a href="#get方法" class="headerlink" title="get方法"></a>get方法</h4><ul>
-<li>获取数据，当属性依赖于其他data中属性时，其他数据改变，才会触发这个方法，但必不会触发set方法</li>
-<li>最终值是由get方法决定的<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;&#125;;</span><br><span class="line">Object.defineProperty(obj,&apos;name&apos;,&#123;</span><br><span class="line">	get()&#123;return 123&#125;,</span><br><span class="line">    set(val)&#123;</span><br><span class="line">        console.log(val)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line">obj.name = 333;</span><br><span class="line">console.log(obj.name)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h4 id="set方法"><a href="#set方法" class="headerlink" title="set方法"></a>set方法</h4><ul>
-<li>使用v-model:进行数据的双向绑定 只有点击改变值的时候，才会触发这个方法，触发这个方法必然触发了get方法</li>
-<li><img src="/2018/03/26/vue指令及基础知识/3.png" alt="get与set的区别"></li>
-</ul>
-<h2 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h2><h3 id="事件修饰符"><a href="#事件修饰符" class="headerlink" title="事件修饰符"></a>事件修饰符</h3><ul>
-<li>self: 只有点击元素本身的时候才触发</li>
-<li>stop:阻止冒泡</li>
-<li>prevent:阻止默认事件</li>
-<li>once: 对应的函数只触发一次</li>
-<li>capture: 让事件在捕获阶段触发</li>
-<li>passive : 优先执行默认事件，在执行绑定的函数，优化移动端性能，只对滚动行为有效<h3 id="v-model修饰符"><a href="#v-model修饰符" class="headerlink" title="v-model修饰符"></a>v-model修饰符</h3></li>
-<li>number : 将字符串转化为数字 类似 parsefloat的效果</li>
-<li>trim : 自动去除首尾空格</li>
-</ul>
-<h2 id="自定义全局键码"><a href="#自定义全局键码" class="headerlink" title="自定义全局键码"></a>自定义全局键码</h2><p><code>Vue.config.keyCodes.f2 = 113</code> =&gt; 在模板中可以这样使用 <a href="mailto:`@keyup.f2" target="_blank" rel="noopener">`@keyup.f2</a> = fn’’`·</p>
-<h2 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123;money | changeM&#125;&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>管道符前边是要处理的数据，后边是处理的参数，最终展示的是函数的返回值</li>
-<li>过滤器是可以连续使用的，下一个过滤器的返回值，是上一个过滤器的返回值</li>
-<li>全局过滤器和私有过滤器，全局过滤器任何组件都可以调用，私有过滤器只有定义过滤器的组件可以调用</li>
-<li>filter 中的方法 可以重名，不会被冲掉，但尽可能不要重名<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Vue.filter(&apos;过滤器名称&apos;，function()&#123;&#125;) 全局过滤器</span><br><span class="line">	console.log(this) //=&gt; this 指向window</span><br><span class="line">在vm实例中定义</span><br><span class="line">filters:&#123;</span><br><span class="line">	&apos;过滤器名称&apos;:functon()&#123;&#125;</span><br><span class="line">&#125; 私有过滤器</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="侦听器-Watch"><a href="#侦听器-Watch" class="headerlink" title="侦听器 Watch"></a>侦听器 Watch</h2><ul>
-<li>异步用监听,但是比较耗性能，能够深层监听，能够返回oldV 和 newV 两个值供实例调用</li>
-<li>深层监听的属性必须是有set和get方法的属性值</li>
-</ul>
-<h2 id="计算属性-Computed"><a href="#计算属性-Computed" class="headerlink" title="计算属性 Computed"></a>计算属性 Computed</h2><ul>
-<li>同步用计算属性，但依赖性太强，用到get/set方法</li>
-<li>定义的方法，挂载在vm的实例，不能跟methods和data重名，但是现在不报错，但是不能用，因为methods中的方法会把computed中的方法冲掉</li>
-<li>只要name不发生改变，name2就不发生改变</li>
-<li>name2用到谁，就依赖谁<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">computed:&#123;</span><br><span class="line">	name2()&#123;</span><br><span class="line">		return this.name.split(&apos;&apos;).rerverse().join(&apos;&apos;)</span><br><span class="line">	&#125;,</span><br><span class="line">	name3()&#123;</span><br><span class="line">		get()&#123;</span><br><span class="line">			console.log(this.name)</span><br><span class="line">			return 123</span><br><span class="line">		&#125;,</span><br><span class="line">		set(val)&#123;</span><br><span class="line">			// 给name3赋值的时候会触发, set函数</span><br><span class="line">			// val 是外界</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="自定义全局指令"><a href="#自定义全局指令" class="headerlink" title="自定义全局指令"></a>自定义全局指令</h2><ul>
-<li>使用directive定义全局的指令</li>
-<li>其中参数1：指令的名称，注意，在定义的时候，指令的名称前面，不需要加 -v 前缀</li>
-<li>但是在调用的时候，必须在指令名称前加上 v- 前缀 进行调用</li>
-<li><p>参数2：是一个对象，这个对象身上，有一些指令相关的函数，这些函数可以在特定的阶段，执行相关的操作</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">	bind:function(el)&#123;  =&gt;每当指令绑定到元素身上的时候，会立即执行这个bind函数，只执行一次</span><br><span class="line">		//1.注意：在每个函数中，第一个参数永远是el，表示被绑定的那个元素，这个el参数以一个原生JS对象</span><br><span class="line">		//2.在元素刚绑定指令的时候，还没有插入到DOM中，这时候，调用focus方法没有起作用</span><br><span class="line">		//3.因为，一个元素只有插入到DOM中，才能获取焦点</span><br><span class="line">		//el.focus()</span><br><span class="line">	&#125;,</span><br><span class="line">	inserted:function(el)&#123;  =&gt;表示元素被插入到DOM中的时候，触发这个inserted函数，触发一次</span><br><span class="line">		el.focus()</span><br><span class="line">	&#125;,</span><br><span class="line">	updated:function(el)&#123;  =&gt;每当VNode更新的时候，会执行updated函数，可能会被触发多次 </span><br><span class="line">		</span><br><span class="line">	&#125;  </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>自定义指令简写:<br><code>Vue.directive(&#39;focus&#39;,function(el,binding){}) 钩子函数</code></p>
-</li>
-<li>钩子函数的参数:<ul>
-<li>指令钩子函数会被传入以下实参</li>
-<li>1.el : 指令所绑定的元素，可以用来直接操作 DOM </li>
-<li>2.binding:<ul>
-<li>name: 指令名，<code>不包括 v- 前缀</code>;</li>
-<li>value:指令的绑定值，例如：v-my-directive=”1 + 1” 中，绑定值为 <code>2</code>;</li>
-<li>expression:字符串形式的指令表达式。例如 v-my-directive=”1 + 1” 中，表达式为 <code>&quot;1 + 1&quot;</code></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-          
+          VUE
+数据驱动:操作DOM
+JS的数据类型 基本 和 引用
+改变原数组 —&gt; 数组的变异 pop push shif unshift reverse sort splice(n,m,x,y,z)
+不改变原数组 —&gt; slice(n,m) concat indexOf join(‘+’)
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/03/26/vue指令及基础知识/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1577,43 +1381,17 @@
       
         
           
-            <h3 id="类的继承和多态"><a href="#类的继承和多态" class="headerlink" title="类的继承和多态"></a>类的继承和多态</h3><hr>
-<h4 id="封装"><a href="#封装" class="headerlink" title="封装:"></a>封装:</h4><ul>
-<li>把实现一个功能的代码放在一个函数中封装起来，以后再想实现这个功能的时候，我们不需要重新的编写代码了，只需要执行对应的函数即可，我们把这种机制就称之为”函数的封装”–&gt;低耦合高内聚:减少页面中的冗余代码,提高代码的重复使用率<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function fn()&#123;</span><br><span class="line">      实现功能的代码</span><br><span class="line">&#125;</span><br><span class="line"> fn();</span><br><span class="line"> fn();</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h4 id="多态"><a href="#多态" class="headerlink" title="多态:"></a>多态:</h4><p>后台语言[java、C#、ASP.net、php…]中的多态：重载、重写<br>重载(Reload)：多个方法,方法名相同,参数的个数或者参数的类型不一样<br>重写(Rewrite)：子类重写父类的方法<br>1)JS中如果函数名相同了,后面的会把前面的函数给覆盖掉,所以JS中不存在重载<br>   fn(); -&gt;2<br>   functionfn(){console.log(1);}<br>2)JS中的多态指的是一个方法的多种形态:一个方法,我们通过传递进来的参数值的不一样,实现不一样的功能<br>根据传递的n和m的值不一样,我们获取的结果也不一样,例如:如果执行的时候不传递任何的参数,返回[0-1)之间的随机小数,如果传递了两个值1/10,返回的是[1-10]之间的随机整数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">function getRandom(n,m)&#123;</span><br><span class="line">    n=Number(n);</span><br><span class="line">    m=Number(m);</span><br><span class="line">    if(isNaN(n) || isNaN(m))&#123;</span><br><span class="line">        returnMath.random();</span><br><span class="line">    &#125;</span><br><span class="line">    if(n&gt;m)&#123;</span><br><span class="line">       n=m+n;</span><br><span class="line">       m=n-m;</span><br><span class="line">       n=n-m;</span><br><span class="line">    &#125;</span><br><span class="line">    return Math.round(Math.random()*(m-n)+n);</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="继承"><a href="#继承" class="headerlink" title="继承:"></a>继承:</h3><h2 id="JS中常用的继承有以下几种方式-子类想要继承父类中的属性和方法"><a href="#JS中常用的继承有以下几种方式-子类想要继承父类中的属性和方法" class="headerlink" title="JS中常用的继承有以下几种方式(子类想要继承父类中的属性和方法)"></a><strong>JS中常用的继承有以下几种方式(子类想要继承父类中的属性和方法)</strong></h2><h4 id="1-原型链继承"><a href="#1-原型链继承" class="headerlink" title="1)原型链继承"></a>1)原型链继承</h4><p><strong>(我们项目中最常用的一种继承方式)</strong><br>A、子类的原型指向父类的一个实例即可-&gt;原理不是把父类中的方法直接的继承复制过来一份,而是通过原型链的查找机制一级级的向上查找使用的<br>B、原型继承是把父类中私有和公有的属性和方法都当做子类中公有的<br>C、子类可以通过原型链的查找机制把父类原型上的属性和方法进行添加、修改、删除,如果这样操作完成后,我们父类的其他实例都会受到影响-&gt;子类重父类的方法-&gt;类的重写,例如:<strong>c.<strong>proto</strong>.<strong>proto</strong>.getX=function(){}</strong> 相当于子类重写了父类原型上的公有的方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function Parent()&#123;this.x = 100;&#125;</span><br><span class="line">Parent.prototype.getX =function () &#123;console.log(this.x);&#125;;</span><br><span class="line">function Children()&#123;this.x = 200;&#125;</span><br><span class="line">Children.prototype = newParent;</span><br><span class="line">var c = newChildren;</span><br></pre></td></tr></table></figure></p>
-<p>####2)call继承（借用构造函数继承）<br>A、在子类的函数体中,把父类当做一个普通的函数执行,让父类执行的时候里面的this变为子类的一个实例,这样就相当于直接的给子类的实例增加私有的属性和方法<br>B、call继承只能继承父类私有的属性和方法,而且继承过来后也是子类实例自己私有的<br>C、call继承是直接的把父类中的私有属性和方法相当于克隆一份直接的给子类<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function Parent()&#123;this.x = 100;this.writeX = function () &#123;&#125;&#125;</span><br><span class="line">Parent.prototype.getX =function () &#123;console.log(this.x);&#125;;</span><br><span class="line">function Children()&#123;</span><br><span class="line">   //this-&gt;Children的实例c</span><br><span class="line">   Parent.call(this);//把Parent当做普通的函数执行,让里面的this变为c-&gt;在执行的时候相当于c.x=100、             c.writeX=function...</span><br><span class="line">&#125;</span><br><span class="line">var c = newChildren;</span><br><span class="line">var d = newChildren;</span><br><span class="line">console.log(c.writeX ===d.writeX);//--&gt;false</span><br></pre></td></tr></table></figure></p>
-<h4 id="3-冒充对象继承"><a href="#3-冒充对象继承" class="headerlink" title="3)冒充对象继承"></a>3)冒充对象继承</h4><p>A、在子类的函数体中,我们创建一个父类的实例,然后把这个实例当做一个普通的对象进行遍历,在每一次遍历的时候,把父类中私有/公有的属性和方法,都当做子类实例的私有属性和方法进行存储(使用 for in 循环可以遍历出类私有属性和自定义的属性方法)<br>B、父类的私有和公有都可以继承,而是是相当于复制了一份继承过来的<br>C、继承过来的都是子类实例私有的属性和方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">function Parent()&#123;this.x = 100;this.writeX = function () &#123;&#125;&#125;</span><br><span class="line">Parent.prototype.getX =function () &#123;console.log(this.x);&#125;;</span><br><span class="line">function Children()&#123;</span><br><span class="line">   var temp=new Parent();</span><br><span class="line">        //temp就是Parent的一个实例:x、writeX、getX</span><br><span class="line">   for(var key in temp)&#123;</span><br><span class="line">      this[key]=temp[key];</span><br><span class="line">   &#125;</span><br><span class="line">   temp=null;</span><br><span class="line">&#125;</span><br><span class="line">var c = newChildren;</span><br><span class="line">var d = newChildren;</span><br><span class="line">console.log(c.getX ===d.getX);</span><br></pre></td></tr></table></figure></p>
-<h4 id="4-组合式继承（call继承和原型链继承）"><a href="#4-组合式继承（call继承和原型链继承）" class="headerlink" title="4)组合式继承（call继承和原型链继承）"></a>4)组合式继承（call继承和原型链继承）</h4><ul>
-<li>原型继承和call继承/冒充对象继承,任意一个组合到一起来实现的,一般来说都是和call继承组合</li>
-<li>缺点：<ul>
-<li>组合式继承 1.子类会把父类的实例属性（私有属性），继承过来两份</li>
-<li>一份存储在子类实例对象本身，另一份存储在原型链上</li>
-<li>b insaceof A =&gt;TRUE  只要能在原型链上查找到，那么返回的就是ture</li>
-<li>调用了两次父类，产生两个作用域，消耗浏览器内存<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">function Parent() &#123;</span><br><span class="line">  this.x = 100;</span><br><span class="line">  this.writeX = function () &#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line">Parent.prototype.getX =function () &#123;</span><br><span class="line">  console.log(this.x);</span><br><span class="line">&#125;;</span><br><span class="line">function Children()&#123;</span><br><span class="line">  Parent.call(this);</span><br><span class="line">&#125;</span><br><span class="line">Children.prototype = newParent;</span><br><span class="line">var c = newChildren;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ul>
-<h4 id="5-原型式继承"><a href="#5-原型式继承" class="headerlink" title="5)原型式继承"></a>5)原型式继承</h4><ul>
-<li>只能继承父类的公有方法,通过Object.create()方法</li>
-<li>create : 首先创建一个新对象，并且把第一个参数 作为 这个新对象的原型</li>
-<li>IE低版本浏览器不支持这种ES5方法<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">function A ()&#123;&#125;</span><br><span class="line">B.prototype = Object.create(A.prototype)//=&gt; B.prototype.__proto__ === A.prototype</span><br><span class="line">B.prototype = Object.create(null) //=&gt; &#123;&#125;</span><br><span class="line">function B ()&#123;&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h4 id="6-寄生组合式继承-最理想的继承方法"><a href="#6-寄生组合式继承-最理想的继承方法" class="headerlink" title="6)寄生组合式继承(最理想的继承方法)"></a>6)寄生组合式继承(<strong>最理想的继承方法</strong>)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function A ()&#123;</span><br><span class="line">       this.title = &apos;xxx&apos;</span><br><span class="line">   &#125;</span><br><span class="line">   B.prototype = Object.create(A.prototype)//=&gt;原型式继承 只负责继承父类的公有属性</span><br><span class="line">   function B ()&#123;</span><br><span class="line">       if(this instanceof B)&#123;</span><br><span class="line">           A.call(this)//=&gt;call继承 只负责继承父类的私有属性</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-<h4 id="7-ES6中的继承"><a href="#7-ES6中的继承" class="headerlink" title="7)ES6中的继承"></a>7)ES6中的继承</h4><ul>
-<li><p>1.ES6中创建类是由自己标准语法的，这种语法创建出来的类，只能new执行，不能当做普通函数执行</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">class Fn &#123; //=&gt;Fn是类名，没有小括号</span><br><span class="line">	constructor (n,m) &#123;</span><br><span class="line">		//=&gt;等价于传统ES5类的构造体</span><br><span class="line">		this.x = n</span><br><span class="line">		this.y = m</span><br><span class="line">		&#125;</span><br><span class="line">	getX () &#123;...&#125;//=&gt;给Fn的原型上设置方法（只能设置方法，不能设置属性）</span><br><span class="line">	static AA（）｛...｝//=&gt;把Fn当做一个普通对象，添加私有属性（和实例没有关系，同样也只能设置方法）</span><br><span class="line">&#125;</span><br><span class="line">let f = new Fn (10,20)</span><br><span class="line">console.log(f.x,f.y)//=&gt; (10,20)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>2.ES6中类的继承 这种方法保留了子类B的constructor属性</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">class A &#123;</span><br><span class="line">	constructor(n)&#123;</span><br><span class="line">		console.log(n)//=&gt;100</span><br><span class="line">		this.x = 100</span><br><span class="line">	&#125;console.log(n)//=&gt;100console.log(n)//</span><br><span class="line">	getX()&#123;console.log(this.x)&#125;</span><br><span class="line">&#125;</span><br><span class="line">class B extends A&#123;//=&gt;extends类似于实现了原型继承</span><br><span class="line">	constructor()&#123;</span><br><span class="line">		super(100)//=&gt;类似于call继承，在这里super相当于把A的constructor给执行了，并且让方法中的this是B的实例</span><br><span class="line">		this.y = 200</span><br><span class="line">	&#125;</span><br><span class="line">	getY()&#123;console.log(this.y)&#125;</span><br><span class="line">&#125;</span><br><span class="line">let f = new B()</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-
-          
+          类的继承和多态
+封装:
+把实现一个功能的代码放在一个函数中封装起来，以后再想实现这个功能的时候，我们不需要重新的编写代码了，只需要执行对应的函数即可，我们把这种机制就称之为”函数的封装”–&gt;低耦合高内聚:减少页面中的冗余代码,提高代码的重复使用率12345function fn()&#123;
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/05/12/JS类的继承和多态/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1764,222 +1542,24 @@
       
         
           
-            <h3 id="事件-–DOM0-–DOM2–发布订阅–拖拽"><a href="#事件-–DOM0-–DOM2–发布订阅–拖拽" class="headerlink" title="事件 –DOM0 –DOM2–发布订阅–拖拽"></a>事件 –DOM0 –DOM2–发布订阅–拖拽</h3><blockquote>
-<p>什么是事件?  指的是是一件事或一个行为</p>
-</blockquote>
-<h4 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h4><ul>
-<li>鼠标事件   <ul>
-<li><code>click</code>  单击</li>
-<li><code>dblclick</code>双击 大约300ms内连续点击两次</li>
-<li><code>mouseover</code> 鼠标滑进 冒泡阶段 先自己触发 后父辈触发</li>
-<li><code>mouseout</code>   鼠标滑出</li>
-<li><code>mouseenter</code> 鼠标移入  捕获阶段 先父辈触发 后自己</li>
-<li><code>mouseleave</code>鼠标移出</li>
-<li><code>mousemove</code>  鼠标滑动（过程）</li>
-<li><code>mousedown</code> 鼠标按下（不动）</li>
-<li><code>mouseup</code>鼠标抬起</li>
-<li><code>mousewheel</code>鼠标滚轮移动</li>
-</ul>
-</li>
-<li>键盘事件  <ul>
-<li>应用元素：<code>textarea input window html body等都可绑定键盘事件</code></li>
-<li><code>keydown</code> (键盘按下时触发) </li>
-<li><code>keyup</code>（键盘抬起来时触发） </li>
-<li><code>keypress</code>（按下时并抬起来时触发，系统键是监听不到的）</li>
-</ul>
-</li>
-<li>系统事件 <ul>
-<li><code>onload</code> 加载页面资源后</li>
-<li><code>onresize</code>（浏览器窗口发生改变时触发）</li>
-<li><code>onscroll</code>（滚动条发生改变时触发）</li>
-<li><code>DOMContentLoaded</code> (dom元素加载完了后再触发)</li>
-</ul>
-</li>
-<li>表单元素   <ul>
-<li><code>onfoucs</code> 获取焦点（光标）时触发</li>
-<li><code>onchange</code>（表单元素发生改变,并且失去焦点后时，才能触发） </li>
-<li><code>oninput</code>（移动端，表单输入时触发，只要内容发生改变就会触发） </li>
-<li><code>onblur</code>（失去焦点，表示光标离开表单元素时触发）</li>
-<li><code>onpropertychange</code> 只要内容发生改变，就会触发</li>
-</ul>
-</li>
-<li>移动端事件<ul>
-<li><code>ontouchstart</code>触碰到元素触发</li>
-<li><code>ontouchend</code>离开元素触发</li>
-<li><code>ontouchmove</code>必须在点击的情况，来回移动，才能触发函数</li>
-<li><code>onclick</code> 有大约300ms的延迟</li>
-</ul>
-</li>
-</ul>
-<h5 id="事件绑定：事件行为发生时去做的具体的事情-行为和具体事情要绑定起来这就是事件绑定呀"><a href="#事件绑定：事件行为发生时去做的具体的事情-行为和具体事情要绑定起来这就是事件绑定呀" class="headerlink" title="事件绑定：事件行为发生时去做的具体的事情  行为和具体事情要绑定起来这就是事件绑定呀"></a>事件绑定：事件行为发生时去做的具体的事情  行为和具体事情要绑定起来这就是事件绑定呀</h5><h4 id="事件对象"><a href="#事件对象" class="headerlink" title="事件对象"></a>事件对象</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">box.onclick = function(e)&#123;</span><br><span class="line">e:事件对象 当执行事件绑定的方法时，浏览器会将事件对象作为实参传递到方法中</span><br><span class="line">e.target:事件源 元素对象</span><br><span class="line">e.clientX:鼠标点击的位置距离 可视窗口的 左偏移</span><br><span class="line">e.clientY:鼠标点击的位置距离 可视窗口的 上偏移</span><br><span class="line">e.pageX:鼠标点击的位置距离 BODY的 左偏移</span><br><span class="line">e.pageY:鼠标点击的位置距离 BODY的 上偏移</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>兼容IE低版本浏览器的写法</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">box.onclick = function ()&#123;</span><br><span class="line">	e = e || window.event</span><br><span class="line">	var tar = e.target || e.srcElement</span><br><span class="line">	e.preventDefault ? e.preventDefault():e.returnValue = false 阻止默认行为</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><strong>操作这个box上下左右移动 键盘事件</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">enter回车键 ： 13</span><br><span class="line">window.onkeydown = function (e)&#123;</span><br><span class="line">   switch(e.keyCode)&#123;//键盘码</span><br><span class="line">        case 37 :</span><br><span class="line">        box.style.left = parseFloat(box.style.left) - 10 + &apos;px&apos;</span><br><span class="line">        break</span><br><span class="line">        case 38 :</span><br><span class="line">        box.style.top = parseFloat(box.style.top) - 15 + &apos;px&apos;</span><br><span class="line">        break</span><br><span class="line">        case 39 :</span><br><span class="line">        box.style.left = parseFloat(box.style.left) + 25 + &apos;px&apos;</span><br><span class="line">        break</span><br><span class="line">        case 40 :</span><br><span class="line">        box.style.top = parseFloat(box.style.top) + 15 + &apos;px&apos;</span><br><span class="line">        break</span><br><span class="line">       &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li>给一个元素（如：div，ul，li）绑定一个行为（如：onclick、onmouseover）等于一个方法 方法里写要执行的东东</li>
-</ul>
-<h4 id="默认事件"><a href="#默认事件" class="headerlink" title="默认事件"></a>默认事件</h4><ul>
-<li>先执行绑定的事件，再执行默认事件</li>
-<li>注：天生自带默认事件的 <ul>
-<li><code>keydown和input和keyup</code>input事件是在down之后，up之前触发，阻止默认后，不在触发input；</li>
-<li><code>a标签</code>默认进行跳转 锚点定位功能</li>
-<li>img绑定鼠标事件后，会触发原生鼠标拖拽事件</li>
-<li>移动端默认事件:<strong>touchmove</strong><ul>
-<li>阻止默认事件：<strong>document.addEventListener(‘touchmove’,function(){},{passive:false})</strong> （在PC端时需注意，用此方式让绑定的touchmove默认事件 - 即滚动事件 先执行） </li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;</span><br><span class="line">	 &lt;img id = &apos;img&apos; src = &apos;www.baidu.com&apos;/&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">img.onmousemove = function(e)&#123;</span><br><span class="line">		e.preventDefault()</span><br><span class="line">	&#125;</span><br><span class="line">&lt;a href=&quot;https://baidu.com&quot; id=&quot;oa&quot;&gt;百度一下&lt;/a&gt;</span><br><span class="line">    &lt;!-- 正常跳转 --&gt;</span><br><span class="line">&lt;a href=&quot;javascript:;&quot; id=&quot;&quot;&gt;百度两下&lt;/a&gt;</span><br><span class="line">    &lt;!-- 禁止页面跳转 --&gt;</span><br><span class="line">&lt;a href=&quot;&quot; id=&quot;&quot;&gt;百度三下&lt;/a&gt; </span><br><span class="line">    &lt;!-- 刷新页面 --&gt;</span><br><span class="line">&lt;a href=&quot;Javascript :void(0);&quot; id=&quot;&quot;&gt;百度四下&lt;/a&gt; </span><br><span class="line">    &lt;!-- 禁止页面跳转 --&gt;</span><br><span class="line">oa.onclick = function (e)&#123;e.preventDefault();alert(111)&#125;</span><br><span class="line">    阻止a标签这种默认行为</span><br></pre></td></tr></table></figure>
-<h4 id="事件传播"><a href="#事件传播" class="headerlink" title="事件传播"></a>事件传播</h4><ul>
-<li>事件冒泡 <ul>
-<li>0级事件是在冒泡阶段触发的</li>
-</ul>
-</li>
-<li>阻止冒泡：<strong>e.stopPropagation||e.cancelBubble = true</strong></li>
-<li><h4 id="事件绑定"><a href="#事件绑定" class="headerlink" title="事件绑定"></a>事件绑定</h4></li>
-<li>绑定分为DOM0级事件绑定 和 DOM2级事件绑定<ul>
-<li>是按照绑定的顺序执行方法</li>
-<li>低版本IE浏览器会乱序</li>
-</ul>
-</li>
-<li>DOM0级事件绑定<blockquote>
-<p>传统的事件绑定<br>odiv.onclick=function<br>问题 ： DOM0级事件绑定  对同一元素，同一事件绑定多个行为时，后面的行为会覆盖前面的行为，最终只执行最后一次绑定的行为</p>
-</blockquote>
-</li>
-<li>DOM2级事件绑定<blockquote>
-<p>较于0级事件绑定，优点是可以绑定多个方法<br>第一个参数 事件类型<br>第二个参数  事件绑定行为<br>第三个参数  事件传播的方式<br>oiv.addEventListener(“click”,function ( ) {alert(1)},false);<br>true捕获阶段触发 false在冒泡阶段触发</p>
-</blockquote>
-</li>
-<li>DOM0 和 DOM2 在事件绑定上的区别<ul>
-<li>1.机制不一样<ul>
-<li>dom0采用的是给私有属性赋值，所以只能绑定一个方法</li>
-<li>dom2采用的是事件池机制，所以能绑定多个不同的方法 </li>
-</ul>
-</li>
-<li>2.移除的操作<ul>
-<li>box.onclick = null dom0移除</li>
-<li>dom2 在移除的时候，必须清楚要移除哪一个方法，才能在事件池中移除，所以基于DOM2做事件绑定，我们呢要有“瞻前顾后”的思路，也就是绑定的时候考虑一下如何移除（技巧：不要绑定匿名函数，都绑定实名函数）</li>
-</ul>
-</li>
-<li>3.DOM2事件绑定增加了一些DOM0无法操作的事件行为，例如：<code>DOMContentLoaded</code>事件，（当页面中的HTML结构加载完后才能就会触发执行）</li>
-</ul>
-</li>
-</ul>
-<h4 id="IE低版本单独拿出来"><a href="#IE低版本单独拿出来" class="headerlink" title="IE低版本单独拿出来"></a>IE低版本单独拿出来</h4><blockquote>
-<p>IE低版本浏览器<code>绑定</code>方式  IE  6 ~ 8  DOM2级事件绑定<br>odiv.attachEvent(“onclick”,function () {alert(666)})<br>IE 低版本浏览器<code>移除绑定</code><br>odiv.detachEvent(“onclick”,function () {alert(666)})</p>
-</blockquote>
-<h4 id="DOM事件绑定移除"><a href="#DOM事件绑定移除" class="headerlink" title="DOM事件绑定移除"></a>DOM事件绑定移除</h4><ul>
-<li>DOM0级事件移除：odiv.onclick=null</li>
-<li>DOM2级事件移除  odiv.removeEventListener(“click”,function () {alert(1)},false);移除<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">/*var odiv=document.getElementById(&apos;div1&apos;)</span><br><span class="line">odiv.onclick=function (e) &#123;</span><br><span class="line">&#125;*/</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h4 id="事件对象-e-浏览器天生存在的"><a href="#事件对象-e-浏览器天生存在的" class="headerlink" title="事件对象 (e)浏览器天生存在的"></a>事件对象 (e)浏览器天生存在的</h4><blockquote>
-<p>浏览器记录了事件相关的信息</p>
-<ul>
-<li><code>clientX</code>    到窗口左边的距离  clientY   到窗口上边的距离</li>
-<li><code>pageX</code>      到文档左边的距离  pageY     到文档上边的距离</li>
-<li><code>pageY</code>相当于clientY+(document.documentElement.scrollTop||document.body.scrollTop)</li>
-<li><code>type</code>   事件类型</li>
-<li><code>target</code>  事件源  也就是事件绑定的元素</li>
-<li><code>preventDefault</code> 阻止默认行为  IE低版本浏览器  <code>retuenValue=true</code></li>
-<li><code>stopPropagation</code> 阻止冒泡     IE低版本浏览器  <code>cancelBubble=true</code></li>
-<li>IE6~8用<code>Window.event</code> 接收事件对象                  <code>e = e || Window.event</code></li>
-</ul>
-</blockquote>
-<h4 id="事件委托"><a href="#事件委托" class="headerlink" title="事件委托"></a>事件委托</h4><blockquote>
-<p>一个容器中，有很多后代元素的点击行为都要处理一些事情，之前的思路是把需要操作的元素一一获取，然后再一一做事件绑定，在不同的方法中完成不同的需求，现在不用了，基于事件的冒泡传播机制，我们可以只给容器的Click绑定一个方法，这样不管以后点击的容器中的哪一个后代元素，都会通过事件的冒泡传播机制，把容器的Click行为触发，把绑定的方法执行，我们在方法执行的时候，根据事件对象中的事件源（e.target）来做不同的业务处理即可，这种机制既是事件委托机制<br>1）容器中很多后代元素的某个行为要进行操作，委托给容器处理是不错的选择<br>2）元素是动态绑定的<br>3）需求是除了xxx，剩下的操作都是干同样的事情业务(此时把点击行为的操作委托给BODY，事件源是xxx做什么，不是同一做什么)<br>………..</p>
-</blockquote>
-<hr>
-<h4 id="原生拖拽"><a href="#原生拖拽" class="headerlink" title="原生拖拽"></a>原生拖拽</h4><p><strong>拖放的流程：选中  == &gt;  拖动  == &gt; 释放</strong></p>
-<h5 id="选中过程"><a href="#选中过程" class="headerlink" title="选中过程:"></a>选中过程:</h5><blockquote>
-<p>在HTML5标准中，为了使元素可拖动，把draggable属性设置为true。文本、图片和链接是默认可以拖放的，它们的draggable属性自动被设置成了true。<br>图片和链接按住鼠标左键选中，就可以拖放。<br>文本只有在被选中的情况下才能拖放。如果显示设置文本的draggable属性为true，按住鼠标左键也可以直接拖放。<br>draggable属性：设置元素是否可拖动。</p>
-</blockquote>
-<ul>
-<li>语法：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;element draggable=&quot;true | false | auto&quot; &gt;</span><br><span class="line">true: 可以拖动</span><br><span class="line">false: 禁止拖动</span><br><span class="line">auto: 跟随浏览器定义是否可以拖动</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h5 id="拖动过程"><a href="#拖动过程" class="headerlink" title="拖动过程:"></a>拖动过程:</h5><ul>
-<li>每一个可拖动的元素，在拖动过程中，都会经历三个过程，拖动开始 ==&gt;拖动过程中 ==&gt; 拖动结束</li>
-<li>dragenter和dragover事件的默认行为是拒绝接受任何被拖放的元素。因此，我们必须阻止浏览器这种默认行为。e.preventDefault()</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">针对对象</th>
-<th style="text-align:center">事件名称</th>
-<th style="text-align:center">说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">被拖动的元素</td>
-<td style="text-align:center">dragstart</td>
-<td style="text-align:center">在元素开始被拖动时候触发</td>
-</tr>
-<tr>
-<td style="text-align:left"></td>
-<td style="text-align:center">drag</td>
-<td style="text-align:center">在元素被拖动时反复触发</td>
-</tr>
-<tr>
-<td style="text-align:left"></td>
-<td style="text-align:center">dragend</td>
-<td style="text-align:center">在拖动操作完成是触发</td>
-</tr>
-<tr>
-<td style="text-align:left"></td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:left">目的地对象</td>
-<td style="text-align:center">dragenter</td>
-<td style="text-align:center">当被拖动元素进入目的地元素所占据的屏幕空间时触发</td>
-</tr>
-<tr>
-<td style="text-align:left"></td>
-<td style="text-align:center">dragover</td>
-<td style="text-align:center">当被拖动元素在目的地元素内时触发</td>
-</tr>
-<tr>
-<td style="text-align:left"></td>
-<td style="text-align:center">dragleave</td>
-<td style="text-align:center">当被拖动元素没有放下就离开目的地元素时触发</td>
-</tr>
-</tbody>
-</table>
-<h5 id="释放过程"><a href="#释放过程" class="headerlink" title="释放过程:"></a>释放过程:</h5><ul>
-<li>到达目的地之后，释放元素事件</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">针对对象</th>
-<th style="text-align:center">事件名称</th>
-<th style="text-align:center">说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">目的地对象</td>
-<td style="text-align:center">drop</td>
-<td style="text-align:center">当被拖动元素在目的地元素里放下是触发，一般需要取消浏览器的默认行为</td>
-</tr>
-</tbody>
-</table>
-<h4 id="发布订阅模式（观察者模式）"><a href="#发布订阅模式（观察者模式）" class="headerlink" title="发布订阅模式（观察者模式）"></a>发布订阅模式（观察者模式）</h4><ul>
-<li>思想：准备一个容器，把达到指定时间点要处理的事情，事先一一的增加到容器中（发布计划，并且向计划表中订阅方法），当到达指定时间点，通知容器中的方法依次执行即可<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">let $plan = $.Callbacks()// 创建一个空的计划表 空容器 =&gt; $plan</span><br><span class="line">setTimeout(function ()&#123;</span><br><span class="line">	$plan.fire(10,20)//=&gt;fire 就是通知容器中的方法按照顺序依次执行的:</span><br><span class="line">	10和20是执行容器中每一个方法的时候，都会给他们出阿迪两个参数值</span><br><span class="line">&#125;，1000)</span><br><span class="line">$plan.add((x,y)=&gt;&#123;...&#125;)//=&gt;add是向容器中增加方法，remove是从容器中移除方法</span><br><span class="line">$plan.add((x,y)=&gt;&#123;...&#125;)</span><br><span class="line">$plan.add((x,y)=&gt;&#123;...&#125;)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h4 id="bind源码"><a href="#bind源码" class="headerlink" title="bind源码"></a>bind源码</h4><ul>
-<li>利用形成的不销毁的栈内存，用来存值及保护变量不受全局的污染</li>
-<li>外层套个函数用来存储我们以后需要的值，return一个匿名函数，编程思想这种编程思想我们称作柯理化函数bianc<br><code>`</code><br>Function.prototype.mybind = function mybind (context,…arg){<br>  let _this = this<br>  return function anonymous(…innerArg){<pre><code>      _this.apply(obj,arg.concat(innerArg))
-}
-</code></pre>}<br>document.body.onclick = fn.mybind(obj,10,20)</li>
-</ul>
+          事件 –DOM0 –DOM2–发布订阅–拖拽
+什么是事件?  指的是是一件事或一个行为
 
-          
+事件
+鼠标事件   
+click  单击
+dblclick双击 大约300ms内连续点击两次
+mouseover 鼠标滑进 冒泡阶段 先自己触发 后父辈触发
+mouseout   鼠标滑出
+mouseenter
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/05/12/JS事件 –DOM0 –DOM2–发布订阅–拖拽/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -2130,28 +1710,18 @@
       
         
           
-            <h3 id="函数节流和防抖"><a href="#函数节流和防抖" class="headerlink" title="函数节流和防抖"></a>函数节流和防抖</h3><hr>
-<h4 id="函数节流的原理"><a href="#函数节流的原理" class="headerlink" title="函数节流的原理"></a>函数节流的原理</h4><ul>
-<li>函数节流的原理挺简单的，估计大家都想到了，那就是定时器。当我触发一个时间时，先setTimout让这个事件延迟一会再执行，如果在这个时间间隔内又触发了事件，那我们就clear掉原来的定时器，再setTimeout一个新的定时器延迟一会执行，就这样。</li>
-<li>代码实现<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;高程设函数节流函数封装&gt;</span><br><span class="line">function throttle(method, context) &#123;</span><br><span class="line">     clearTimeout(methor.tId);</span><br><span class="line">     method.tId = setTimeout(function()&#123;</span><br><span class="line">         method.call(context);</span><br><span class="line">     &#125;， 100);</span><br><span class="line"> &#125;</span><br><span class="line"> 调用：window.onresize = function()&#123;</span><br><span class="line">		    throttle(myFunc);</span><br><span class="line">		&#125;</span><br><span class="line">这样两次函数调用之间至少间隔100ms</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<hr>
-<p><strong>impress下的节流函数封装</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">var throttle = function(fn, delay)&#123;</span><br><span class="line">     var timer = null;</span><br><span class="line">     return function()&#123;</span><br><span class="line">         var context = this, args = arguments;</span><br><span class="line">         clearTimeout(timer);</span><br><span class="line">         timer = setTimeout(function()&#123;</span><br><span class="line">             fn.apply(context, args);</span><br><span class="line">         &#125;, delay);</span><br><span class="line">     &#125;;</span><br><span class="line"> &#125;;</span><br><span class="line"> 使用闭包的方法形成一个不销毁的栈内存，存放定时器变量timer</span><br><span class="line"> 调用：window.onresize = throttle(myFunction,100)</span><br></pre></td></tr></table></figure>
-<h4 id="深化函数节流"><a href="#深化函数节流" class="headerlink" title="深化函数节流"></a>深化函数节流</h4><blockquote>
-<p>函数节流让一个函数只有在你不断触发后停下来歇会才开始执行，中间你操作得太快它直接无视你。这样做就有点太绝了。resize一般还好，但假如你写一个拖拽元素位置的程序，然后直接使用函数节流，那恭喜你，你会发现你拖动时元素是不动的，你拖完了，它直接闪到终点去。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">var throttleV2 = function(fn, delay, mustRunDelay)&#123;</span><br><span class="line">     var timer = null;</span><br><span class="line">     var t_start;</span><br><span class="line">     return function()&#123;</span><br><span class="line">         var context = this, args = arguments, t_curr = +new Date();</span><br><span class="line">         clearTimeout(timer);</span><br><span class="line">         if(!t_start)&#123;</span><br><span class="line">             t_start = t_curr;</span><br><span class="line">         &#125;</span><br><span class="line">         if(t_curr - t_start &gt;= mustRunDelay)&#123;</span><br><span class="line">             fn.apply(context, args);</span><br><span class="line">             t_start = t_curr;</span><br><span class="line">         &#125;</span><br><span class="line">         else &#123;</span><br><span class="line">             timer = setTimeout(function()&#123;</span><br><span class="line">                 fn.apply(context, args);</span><br><span class="line">             &#125;, delay);</span><br><span class="line">         &#125;</span><br><span class="line">     &#125;;</span><br><span class="line"> &#125;;</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<blockquote>
-<p>简单来说，函数的节流就是通过闭包保存一个标记（canRun = true），在函数的开头判断这个标记是否为 true，如果为 true 的话就继续执行函数，否则则 return 掉，判断完标记后立即把这个标记设为 false，然后把外部传入的函数的执行包在一个 setTimeout 中，最后在 setTimeout 执行完毕后再把标记设置为 true（这里很关键），表示可以执行下一次的循环了。当 setTimeout 还未执行的时候，canRun 这个标记始终为 false，在开头的判断中被 return 掉。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function throttle(fn, interval = 300) &#123;</span><br><span class="line">    let canRun = true;</span><br><span class="line">    return function () &#123;</span><br><span class="line">        if (!canRun) return;</span><br><span class="line">        canRun = false;</span><br><span class="line">        setTimeout(() =&gt; &#123;</span><br><span class="line">            fn.apply(this, arguments);</span><br><span class="line">            canRun = true;</span><br><span class="line">        &#125;, interval);</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<h4 id="函数防抖"><a href="#函数防抖" class="headerlink" title="函数防抖"></a>函数防抖</h4><blockquote>
-<p>其实函数防抖的原理也非常地简单，通过闭包保存一个标记来保存 setTimeout 返回的值，每当用户输入的时候把前一个 setTimeout clear 掉，然后又创建一个新的 setTimeout，这样就能保证输入字符后的 interval 间隔内如果还有字符输入的话，就不会执行 fn 函数了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function debounce(fn, interval = 300) &#123;</span><br><span class="line">    let timeout = null;</span><br><span class="line">    return function () &#123;</span><br><span class="line">        clearTimeout(timeout);</span><br><span class="line">        timeout = setTimeout(() =&gt; &#123;</span><br><span class="line">            fn.apply(this, arguments);</span><br><span class="line">        &#125;, interval);</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>其实函数节流与函数防抖的原理非常简单，巧妙地使用 setTimeout 来存放待执行的函数，这样可以很方便的利用 clearTimeout 在合适的时机来清除待执行的函数。</p>
-<p>使用函数节流与函数防抖的目的，在开头的栗子中应该也能看得出来，就是为了节约计算机资源。</p>
-
-          
+          函数节流和防抖
+函数节流的原理
+函数节流的原理挺简单的，估计大家都想到了，那就是定时器。当我触发一个时间时，先setTimout让这个事件延迟一会再执行，如果在这个时间间隔内又触发了事件，那我们就clear掉原来的定时器，再setTimeout一个新的定时器延迟一会执行，就这样。
+代码实现12345
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/03/12/JS函数节流和防抖/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -2302,44 +1872,20 @@
       
         
           
-            <h4 id="JS盒子模型"><a href="#JS盒子模型" class="headerlink" title="JS盒子模型"></a>JS盒子模型</h4><ul>
-<li>css 盒子模型 : <strong>width height border padding margin</strong></li>
-<li>js  盒子模型 : <strong>client offset scroll</strong></li>
-</ul>
-<h5 id="client"><a href="#client" class="headerlink" title="client"></a>client</h5><ul>
-<li><strong>clientWidth</strong>: 盒子的文本宽度<strong>width</strong>，+ <strong>左右padding</strong> （正常的盒子模型，当在<strong>怪异盒模型</strong>中clientWidth不能使用这个公式，我们可以理解为盒子的可视区域的宽度）</li>
-<li><strong>clientHeight</strong>: 盒子的文本高度<strong>height</strong>，+ <strong>上下padding</strong></li>
-<li><strong>clientLeft</strong>: 盒子的<strong>左border</strong></li>
-<li><strong>clientTop</strong>: 盒子的<strong>上border</strong></li>
-<li>内容溢出对client没有任何影响</li>
-</ul>
-<h5 id="offset"><a href="#offset" class="headerlink" title="offset"></a>offset</h5><ul>
-<li><strong>offsetParent</strong>: 上级参照物 有定位的父级盒子</li>
-<li><strong>offsetWidth</strong>: 盒子文本<strong>width</strong> + <strong>左右padding</strong> + <strong>左右border</strong> === <strong>clientWidth </strong>+ <strong>左右border</strong>  ，<strong>跟内容溢出没有关系</strong></li>
-<li><strong>offsetLeft</strong> : 盒子的<strong>外边框</strong> 到 上级参照物 <strong>内边框</strong>  的距离</li>
-</ul>
-<h5 id="scroll"><a href="#scroll" class="headerlink" title="scroll"></a>scroll</h5><ul>
-<li><strong>scrollHeight</strong><ul>
-<li>若内容没有溢出时，跟<strong>clientHeight</strong>一样 </li>
-<li>若内容溢出时，当元素增加 <code>overflow-hidden</code> 属性的话，那么<code>scrollHeight</code>的值：内容  + <code>上下padding</code>；没有<code>overflow-hidden</code>的属性的话，内容 + <code>上padding</code><br>-<code>scrollTop</code> 滚动条卷去的内容的高度<br>-<code>scrollLeft</code> 滚动条卷去的内容的宽度</li>
-</ul>
-</li>
-</ul>
-<blockquote>
-<p>1）以上13个属性中，只有<code>scrollTop</code>和<code>scrollLeft</code> 可以设置的属性，其他都是只读属性<br>2）获取一屏幕的高度： document.documentElement.<code>clientHeight</code> || document.body.<code>clientHeight</code>   对其他浏览器的兼容问题<br>3）获取整个文档的高度：document.documentElement.<code>scrollHeight</code> || document.body.<code>scrollHeight</code><br>4）监听浏览器窗口发生的事件： window.<code>onresize</code> = function (){…}<br>5）当遇到<code>&lt;table&gt;&lt;/table&gt;</code>标签时，td 和 th 父级盒子都是table，不再是body<br>6）改变盒子的css中样式<code>left、transform等</code>属性改变盒子的位置，不会改变<code>offsetLeft</code>的值；只有改变盒子的width margin padding 值的时候，盒子的offsetLeft值才会发生改变</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">function offset (ele)&#123;</span><br><span class="line">   let  left = ele.offsetLeft,</span><br><span class="line">        top = ele.offsetTop,</span><br><span class="line">        parent = ele.offsetParent</span><br><span class="line">  while(parent &amp;&amp; parent.nodeName.toUpperCase() != &apos;BODY&apos;)&#123;</span><br><span class="line">      //代码从左向右读取，先判断parent存不存在，在判断parent是否为body</span><br><span class="line">        left += parent.clientleft + parent.offsetLeft</span><br><span class="line">        top += parent.clientTop + parent.offsetTop</span><br><span class="line">        parent = parent.offsetParent</span><br><span class="line">  &#125;</span><br><span class="line">   return &#123;</span><br><span class="line">        left,</span><br><span class="line">        top&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    console.log(offset(inner))</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>简单的文字循环上下移动,利用setTimeout实现<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var timer = null,</span><br><span class="line">    maxH = box.scrollHeight - box.clientHeight</span><br><span class="line">    function run ()&#123;</span><br><span class="line">        clearTimeout(timer)//清除定时器</span><br><span class="line">        box.scrollTop++</span><br><span class="line">        (box.scrollTop + 20) &gt;= maxH ? box.scrollTop = 0 : null</span><br><span class="line">        timer = setTimeout(run,10)</span><br><span class="line">    &#125;</span><br><span class="line">    run()</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<blockquote>
-<p>简单的文字循环上下移动,利用setInterval实现<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var timer = setInterval(()=&gt;&#123;</span><br><span class="line">     box.scrollTop++ </span><br><span class="line">    (box.scrollTop + 20) &gt;= (box.scrollHeight - box.clientHeight) ? box.scrollTop = 0 : null </span><br><span class="line">     &#125;,10)</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<blockquote>
-<p>跑马灯案例，通过改变scrollLeft值改变<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">let ul = document.querySelector(&apos;ul&apos;),</span><br><span class="line">    box = document.querySelector(&apos;.box&apos;)</span><br><span class="line">    //maxL = box.scrollWidth - box.clientWidth //=&gt;理论上是800</span><br><span class="line">    // console.log(maxL)  但是这里输出的是0 </span><br><span class="line">	//这是因为加载img图片是异步事件，是等页面的代码执行完成后</span><br><span class="line">	//再通过图片路径，，加载图片，所以输出为0</span><br><span class="line">    ul.innerHTML += ul.innerHTML</span><br><span class="line">    ul.style.width = &apos;1600px&apos;</span><br><span class="line">    var timer = setInterval(()=&gt;&#123; </span><br><span class="line">        box.scrollLeft++</span><br><span class="line">        box.scrollLeft &gt;= 800 ? box.scrollLeft = 0 :null</span><br><span class="line">    &#125;,10)</span><br><span class="line">    //另外一种跑马灯思路：通过改变ul的C3的left值，使图片移动</span><br><span class="line">	//能够实现一样的效果，但是这样做会引发多次的DOM回流，降低浏览器性能</span><br></pre></td></tr></table></figure></p>
-</blockquote>
+          JS盒子模型
+css 盒子模型 : width height border padding margin
+js  盒子模型 : client offset scroll
 
-          
+client
+clientWidth: 盒子的文本宽度width，+ 左右padding （正常的盒子模型，当在怪异盒模型中cl
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/01/12/JS盒子模型/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
