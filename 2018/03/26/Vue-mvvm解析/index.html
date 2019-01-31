@@ -76,7 +76,7 @@
 
 
 
-  <meta name="keywords" content="Yan·Peng">
+  <meta name="keywords" content="mvvm,">
 
 
 
@@ -87,18 +87,20 @@
 
 
 
-<meta name="description" content="言念君子-温其如玉">
-<meta name="keywords" content="Yan·Peng">
-<meta property="og:type" content="website">
-<meta property="og:title" content="All categories">
-<meta property="og:url" content="http://github.com/categories/index.html">
+<meta name="description" content="Vue.js 的细节 Vue.js 可以说是MVVM 架构的最佳实践，专注于 MVVM 中的 ViewModel，不仅做到了数据双向绑定，而且也是一款相对来比较轻量级的JS 库，API 简洁，很容易上手。Vue的基础知识网上有现成的教程，此处不再赘述， 下面简单了解一下 Vue.js 关于双向绑定的一些实现细节： Vue.js 是采用 Object.defineProperty 的 getter">
+<meta name="keywords" content="mvvm">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue-mvvm解析">
+<meta property="og:url" content="http://github.com/2018/03/26/Vue-mvvm解析/index.html">
 <meta property="og:site_name" content="颜朋">
-<meta property="og:description" content="言念君子-温其如玉">
+<meta property="og:description" content="Vue.js 的细节 Vue.js 可以说是MVVM 架构的最佳实践，专注于 MVVM 中的 ViewModel，不仅做到了数据双向绑定，而且也是一款相对来比较轻量级的JS 库，API 简洁，很容易上手。Vue的基础知识网上有现成的教程，此处不再赘述， 下面简单了解一下 Vue.js 关于双向绑定的一些实现细节： Vue.js 是采用 Object.defineProperty 的 getter">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-31T00:21:26.970Z">
+<meta property="og:image" content="http://github.com/2018/03/26/Vue-mvvm解析/MVVM底层原理解析.png">
+<meta property="og:updated_time" content="2019-01-31T02:30:30.267Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="All categories">
-<meta name="twitter:description" content="言念君子-温其如玉">
+<meta name="twitter:title" content="Vue-mvvm解析">
+<meta name="twitter:description" content="Vue.js 的细节 Vue.js 可以说是MVVM 架构的最佳实践，专注于 MVVM 中的 ViewModel，不仅做到了数据双向绑定，而且也是一款相对来比较轻量级的JS 库，API 简洁，很容易上手。Vue的基础知识网上有现成的教程，此处不再赘述， 下面简单了解一下 Vue.js 关于双向绑定的一些实现细节： Vue.js 是采用 Object.defineProperty 的 getter">
+<meta name="twitter:image" content="http://github.com/2018/03/26/Vue-mvvm解析/MVVM底层原理解析.png">
 
 
 
@@ -128,14 +130,14 @@
 
 
 
-  <link rel="canonical" href="http://github.com/categories/">
+  <link rel="canonical" href="http://github.com/2018/03/26/Vue-mvvm解析/">
 
 
 
 
 
 
-  <title>All categories | 颜朋</title>
+  <title>Vue-mvvm解析 | 颜朋</title>
   
 
 
@@ -292,40 +294,188 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://github.com/2018/03/26/Vue-mvvm解析/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yan·Peng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/IMG_1203.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="颜朋">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">All categories</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <div class="category-all-page">
-            <div class="category-all-title">
-                目前共计 3 个分类
-            </div>
-            <div class="category-all">
-              <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JS/">JS</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TypeScript/">TypeScript</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Vue/">Vue</a><span class="category-list-count">5</span></li></ul>
-            </div>
-          </div>
+          <h1 class="post-title" itemprop="name headline">Vue-mvvm解析</h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-26T14:04:48+08:00">
+                2018-03-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Vue/" itemprop="url" rel="index">
+                    <span itemprop="name">Vue</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/03/26/Vue-mvvm解析/" class="leancloud_visitors" data-flag-title="Vue-mvvm解析">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <h2 id="Vue-js-的细节"><a href="#Vue-js-的细节" class="headerlink" title="Vue.js 的细节"></a>Vue.js 的细节</h2><ul>
+<li>Vue.js 可以说是MVVM 架构的最佳实践，专注于 MVVM 中的 ViewModel，不仅做到了数据双向绑定，而且也是一款相对来比较轻量级的JS 库，API 简洁，很容易上手。Vue的基础知识网上有现成的教程，此处不再赘述， 下面简单了解一下 Vue.js 关于双向绑定的一些实现细节：</li>
+<li>Vue.js 是采用 Object.defineProperty 的 getter 和 setter，并结合观察者模式来实现数据绑定的。当把一个普通 Javascript 对象传给 Vue 实例来作为它的 data 选项时，Vue 将遍历它的属性，用 Object.defineProperty 将它们转为 getter/setter。用户看不到 getter/setter，但是在内部它们让 Vue 追踪依赖，在属性被访问和修改时通知变化。<br><img src="/2018/03/26/Vue-mvvm解析/MVVM底层原理解析.png" alt="数据双向绑定底层原理图"></li>
+<li><code>Observer</code> 数据监听器，能够对数据对象的所有属性进行监听，如有变动可拿到最新值并通知订阅者，内部采用Object.defineProperty的getter和setter来实现。</li>
+<li><code>Compile</code> 指令解析器，它的作用对每个元素节点的指令进行扫描和解析，根据指令模板替换数据，以及绑定相应的更新函数。</li>
+<li><code>Watcher</code> 订阅者， 作为连接 Observer 和 Compile 的桥梁，能够订阅并收到每个属性变动的通知，执行指令绑定的相应回调函数。</li>
+<li><code>Dep</code> 消息订阅器，内部维护了一个数组，用来收集订阅者（Watcher），数据变动触发notify 函数，再调用订阅者的 update 方法。<br><em>从图中可以看出，当执行 new Vue() 时，Vue 就进入了初始化阶段，一方面Vue 会遍历 data 选项中的属性，并用 Object.defineProperty 将它们转为 getter/setter，实现数据变化监听功能；另一方面，Vue 的指令编译器Compile 对元素节点的指令进行扫描和解析，初始化视图，并订阅Watcher 来更新视图， 此时Wather 会将自己添加到消息订阅器中(Dep),初始化完毕。</em><br><em>当数据发生变化时，Observer 中的 setter 方法被触发，setter 会立即调用Dep.notify()，Dep 开始遍历所有的订阅者，并调用订阅者的 update 方法，订阅者收到通知后对视图进行相应的更新。</em></li>
+</ul>
+
       
     </div>
     
     
     
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/mvvm/" rel="tag"># mvvm</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/26/vue指令及基础知识/" rel="next" title="vue指令及基础知识">
+                <i class="fa fa-chevron-left"></i> vue指令及基础知识
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/03/29/Vue-transition/" rel="prev" title="Vue-transition">
+                Vue-transition <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -358,8 +508,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -437,6 +596,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Vue-js-的细节"><span class="nav-number">1.</span> <span class="nav-text">Vue.js 的细节</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
