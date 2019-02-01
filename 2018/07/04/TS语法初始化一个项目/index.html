@@ -13,6 +13,21 @@
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<style>
+ .pace .pace-progress {
+ background: #1E92FB; /*进度条颜色*/
+ height: 3px;
+ }
+ .pace .pace-progress-inner {
+ box-shadow: 0 0 10px #1E92FB, 0 0 5px #1E92FB; /*阴影颜色*/
+ }
+ .pace .pace-activity {
+ border-top-color: #1E92FB; /*上边框颜色*/
+ border-left-color: #1E92FB; /*左边框颜色*/
+ }
+</style>
 <meta name="theme-color" content="#222">
 
 
@@ -392,9 +407,10 @@
                  <i class="fa fa-eye"></i>
                </span>
                
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
+                 <span class="post-meta-item-text">热度&#58;</span>
                
                  <span class="leancloud-visitors-count"></span>
+								 <span>℃</span>
              </span>
           
 
@@ -433,10 +449,10 @@
 <p>3.安装@types/node,使用npm install @types/node –dev-save进行安装。这个主要是解决模块的声明文件问题。</p>
 </blockquote>
 <blockquote>
-<p>4.编写HelloWorld.ts文件，然后进行保存，代码如下。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var a:string = &quot;HelloWorld&quot;</span><br><span class="line">console.log(a)</span><br></pre></td></tr></table></figure></p>
+<p>4.编写HelloWorld.ts文件，然后进行保存，代码如下。<br><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var <span class="keyword">a</span>:<span class="keyword">string</span> = <span class="string">"HelloWorld"</span></span><br><span class="line">console.<span class="built_in">log</span>(<span class="keyword">a</span>)</span><br></pre></td></tr></table></figure></p>
 </blockquote>
 <blockquote>
-<p>5.在Vscode的任务菜单下，打开Terminal下的Run Build Task，然后选择tsc：build-tsconfig.json，这时候就会生成一个helloWorld.js文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&quot;use strict&quot;;</span><br><span class="line">var a = &apos;helloworld&apos;;</span><br><span class="line">console.log(a);</span><br></pre></td></tr></table></figure></p>
+<p>5.在Vscode的任务菜单下，打开Terminal下的Run Build Task，然后选择tsc：build-tsconfig.json，这时候就会生成一个helloWorld.js文件<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">"use strict"</span>;</span><br><span class="line"><span class="keyword">var</span> a = <span class="string">'helloworld'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a);</span><br></pre></td></tr></table></figure></p>
 </blockquote>
 <blockquote>
 <p>6.在终端中输入node helloWorld.js就可以看到结果了。</p>

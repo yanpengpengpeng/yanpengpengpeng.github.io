@@ -13,6 +13,21 @@
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<style>
+ .pace .pace-progress {
+ background: #1E92FB; /*进度条颜色*/
+ height: 3px;
+ }
+ .pace .pace-progress-inner {
+ box-shadow: 0 0 10px #1E92FB, 0 0 5px #1E92FB; /*阴影颜色*/
+ }
+ .pace .pace-activity {
+ border-top-color: #1E92FB; /*上边框颜色*/
+ border-left-color: #1E92FB; /*左边框颜色*/
+ }
+</style>
 <meta name="theme-color" content="#222">
 
 
@@ -395,9 +410,10 @@
                  <i class="fa fa-eye"></i>
                </span>
                
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
+                 <span class="post-meta-item-text">热度&#58;</span>
                
                  <span class="leancloud-visitors-count"></span>
+								 <span>℃</span>
              </span>
           
 
@@ -505,15 +521,15 @@
 
 </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;label for=&quot;checkbox&quot;&gt;&#123;&#123; checked &#125;&#125;&lt;/label&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight django"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"checkbox"</span>&gt;</span></span><span class="template-variable">&#123;&#123; checked &#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">label</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>CheckBox 多个复选框,绑定到同一个数组：<code>check = []</code><br>  <input type="checkbox" value="CSS" v-model="check"> CSS<br>  <input type="checkbox" value="HTML" v-model="check">HTML<br>  <input type="checkbox" value="JS" v-model="check">JS</li>
 <li>check 若为 [] <code>一个数组</code>  则3个input框能联系在一起,选择input框，则会在数组中push表单框中的value值</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">radio 单选框</span><br><span class="line">	&lt;!-- 多个input绑定同一个变量即可 --&gt;</span><br><span class="line">	&lt;input type=&quot;radio&quot; v-model=&quot;fruit&quot; value=&quot;1&quot;/&gt;🍎</span><br><span class="line">	&lt;input type=&quot;radio&quot; v-model=&quot;fruit&quot; value=&quot;2&quot;/&gt;🍌</span><br><span class="line">	&lt;input type=&quot;radio&quot; v-model=&quot;fruit&quot; value=&quot;3&quot;/&gt;🍊</span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">radio 单选框</span><br><span class="line">	<span class="comment">&lt;!-- 多个input绑定同一个变量即可 --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">v-model</span>=<span class="string">"fruit"</span> <span class="attr">value</span>=<span class="string">"1"</span>/&gt;</span>🍎</span><br><span class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">v-model</span>=<span class="string">"fruit"</span> <span class="attr">value</span>=<span class="string">"2"</span>/&gt;</span>🍌</span><br><span class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">v-model</span>=<span class="string">"fruit"</span> <span class="attr">value</span>=<span class="string">"3"</span>/&gt;</span>🍊</span><br></pre></td></tr></table></figure>
 <h2 id="v-model实现数据双向绑定的原理"><a href="#v-model实现数据双向绑定的原理" class="headerlink" title="v-model实现数据双向绑定的原理"></a>v-model实现数据双向绑定的原理</h2><h4 id="get方法"><a href="#get方法" class="headerlink" title="get方法"></a>get方法</h4><ul>
 <li>获取数据，当属性依赖于其他data中属性时，其他数据改变，才会触发这个方法，但必不会触发set方法</li>
-<li>最终值是由get方法决定的<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;&#125;;</span><br><span class="line">Object.defineProperty(obj,&apos;name&apos;,&#123;</span><br><span class="line">	get()&#123;return 123&#125;,</span><br><span class="line">    set(val)&#123;</span><br><span class="line">        console.log(val)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line">obj.name = 333;</span><br><span class="line">console.log(obj.name)</span><br></pre></td></tr></table></figure>
+<li>最终值是由get方法决定的<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;&#125;;</span><br><span class="line">Object.defineProperty(obj,'<span class="built_in">name</span>',&#123;</span><br><span class="line">	<span class="keyword">get</span>()&#123;<span class="literal">return</span> <span class="number">123</span>&#125;,</span><br><span class="line">    <span class="keyword">set</span>(val)&#123;</span><br><span class="line">        console.<span class="built_in">log</span>(val)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line">obj.<span class="built_in">name</span> = <span class="number">333</span>;</span><br><span class="line">console.<span class="built_in">log</span>(obj.<span class="built_in">name</span>)</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h4 id="set方法"><a href="#set方法" class="headerlink" title="set方法"></a>set方法</h4><ul>
@@ -531,12 +547,12 @@
 <li>trim : 自动去除首尾空格</li>
 </ul>
 <h2 id="自定义全局键码"><a href="#自定义全局键码" class="headerlink" title="自定义全局键码"></a>自定义全局键码</h2><p><code>Vue.config.keyCodes.f2 = 113</code> =&gt; 在模板中可以这样使用 <a href="mailto:`@keyup.f2" target="_blank" rel="noopener">`@keyup.f2</a> = fn’’`·</p>
-<h2 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123;money | changeM&#125;&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h2><figure class="highlight clojure"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123;money | changeM&#125;&#125;</span><br></pre></td></tr></table></figure>
 <ul>
 <li>管道符前边是要处理的数据，后边是处理的参数，最终展示的是函数的返回值</li>
 <li>过滤器是可以连续使用的，下一个过滤器的返回值，是上一个过滤器的返回值</li>
 <li>全局过滤器和私有过滤器，全局过滤器任何组件都可以调用，私有过滤器只有定义过滤器的组件可以调用</li>
-<li>filter 中的方法 可以重名，不会被冲掉，但尽可能不要重名<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Vue.filter(&apos;过滤器名称&apos;，function()&#123;&#125;) 全局过滤器</span><br><span class="line">	console.log(this) //=&gt; this 指向window</span><br><span class="line">在vm实例中定义</span><br><span class="line">filters:&#123;</span><br><span class="line">	&apos;过滤器名称&apos;:functon()&#123;&#125;</span><br><span class="line">&#125; 私有过滤器</span><br></pre></td></tr></table></figure>
+<li>filter 中的方法 可以重名，不会被冲掉，但尽可能不要重名<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Vue.<span class="built_in">filter</span>(<span class="string">'过滤器名称'</span>，<span class="function"><span class="keyword">function</span><span class="params">()</span>&#123;&#125;) 全局过滤器</span></span><br><span class="line">	console.<span class="built_in">log</span>(this) //=&gt; this 指向window</span><br><span class="line">在<span class="keyword">vm</span>实例中定义</span><br><span class="line"><span class="built_in">filter</span><span class="variable">s:</span>&#123;</span><br><span class="line">	<span class="string">'过滤器名称'</span>:functon()&#123;&#125;</span><br><span class="line">&#125; 私有过滤器</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h2 id="侦听器-Watch"><a href="#侦听器-Watch" class="headerlink" title="侦听器 Watch"></a>侦听器 Watch</h2><ul>
@@ -547,7 +563,7 @@
 <li>同步用计算属性，但依赖性太强，用到get/set方法</li>
 <li>定义的方法，挂载在vm的实例，不能跟methods和data重名，但是现在不报错，但是不能用，因为methods中的方法会把computed中的方法冲掉</li>
 <li>只要name不发生改变，name2就不发生改变</li>
-<li>name2用到谁，就依赖谁<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">computed:&#123;</span><br><span class="line">	name2()&#123;</span><br><span class="line">		return this.name.split(&apos;&apos;).rerverse().join(&apos;&apos;)</span><br><span class="line">	&#125;,</span><br><span class="line">	name3()&#123;</span><br><span class="line">		get()&#123;</span><br><span class="line">			console.log(this.name)</span><br><span class="line">			return 123</span><br><span class="line">		&#125;,</span><br><span class="line">		set(val)&#123;</span><br><span class="line">			// 给name3赋值的时候会触发, set函数</span><br><span class="line">			// val 是外界</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<li>name2用到谁，就依赖谁<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">computed:&#123;</span><br><span class="line">	name2()&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">this</span>.name.split(<span class="string">''</span>).rerverse().join(<span class="string">''</span>)</span><br><span class="line">	&#125;,</span><br><span class="line">	name3()&#123;</span><br><span class="line">		<span class="keyword">get</span>()&#123;</span><br><span class="line">			console.log(<span class="keyword">this</span>.name)</span><br><span class="line">			<span class="keyword">return</span> <span class="number">123</span></span><br><span class="line">		&#125;,</span><br><span class="line">		<span class="keyword">set</span>(<span class="keyword">val</span>)&#123;</span><br><span class="line">			<span class="comment">// 给name3赋值的时候会触发, set函数</span></span><br><span class="line">			<span class="comment">// val 是外界</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h2 id="自定义全局指令"><a href="#自定义全局指令" class="headerlink" title="自定义全局指令"></a>自定义全局指令</h2><ul>
