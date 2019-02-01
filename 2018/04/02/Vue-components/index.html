@@ -159,8 +159,6 @@
 
 
 	
-	<script type="text/javascript" color="0,0,255" opacity="0.7" zindex="-2" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canv	 as-nest.min.js"></script>
-	
 </head>
 
 <body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -465,7 +463,7 @@
 <h2 id="Vue提供的4个标签属性"><a href="#Vue提供的4个标签属性" class="headerlink" title="Vue提供的4个标签属性"></a>Vue提供的4个标签属性</h2><blockquote>
 <p>transition<br>transition-group<br>template<br>component </p>
 </blockquote>
-<h2 id="子父组件-如何相互传值"><a href="#子父组件-如何相互传值" class="headerlink" title="子父组件 如何相互传值"></a>子父组件 如何相互传值</h2><p> <com1 :parentmsg="msg" @parentfuc123="fn"></com1></p>
+<h2 id="子父组件-如何相互传值"><a href="#子父组件-如何相互传值" class="headerlink" title="子父组件 如何相互传值"></a>子父组件 如何相互传值</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">com1</span> <span class="attr">:parentmsg</span> = <span class="string">"msg"</span> @<span class="attr">parentfuc123</span> = <span class="string">"fn"</span>&gt;</span><span class="tag">&lt;/<span class="name">com1</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>父组件通过绑定自定义属性，向子组件内传入data数据<br>父组件通过绑定自定义事件，向子组件内传入methods方法<br><strong>props:[‘parentmsg’]    this.$emit(fn,this.msg)</strong><br>子组件通过props:[‘自定义属性名-parentmsg’]，接收父组件传进的data数据<br>子组件通过调用$emit(‘自定义方法名-parentfuc123’，第一参数,第二参数…)方法，接收父组件方法，并通过第一参数，第二参数…，同时向父组件内传值</p>
 </blockquote>
@@ -672,7 +670,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#组件-components"><span class="nav-number">1.</span> <span class="nav-text">组件 - components</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建组件的方式"><span class="nav-number">2.</span> <span class="nav-text">创建组件的方式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#第一种"><span class="nav-number">2.0.1.</span> <span class="nav-text">第一种</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第二种"><span class="nav-number">2.0.2.</span> <span class="nav-text">第二种</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第三种"><span class="nav-number">2.0.3.</span> <span class="nav-text">第三种</span></a></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#Vue提供的4个标签属性"><span class="nav-number">3.</span> <span class="nav-text">Vue提供的4个标签属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#子父组件-如何相互传值"><span class="nav-number">4.</span> <span class="nav-text">子父组件 如何相互传值</span></a></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#组件-components"><span class="nav-text">组件 - components</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建组件的方式"><span class="nav-text">创建组件的方式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#第一种"><span class="nav-text">第一种</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第二种"><span class="nav-text">第二种</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第三种"><span class="nav-text">第三种</span></a></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#Vue提供的4个标签属性"><span class="nav-text">Vue提供的4个标签属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#子父组件-如何相互传值"><span class="nav-text">子父组件 如何相互传值</span></a></li></div>
             
 
           </div>
@@ -780,8 +778,6 @@
   
 
 
-  
-
 
 
 
@@ -820,11 +816,6 @@
   
   
     <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
   
 
 

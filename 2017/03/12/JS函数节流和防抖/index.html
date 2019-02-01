@@ -100,18 +100,18 @@
 
 
 
-<meta name="description" content="函数节流和防抖 函数节流的原理 函数节流的原理挺简单的，估计大家都想到了，那就是定时器。当我触发一个时间时，先setTimout让这个事件延迟一会再执行，如果在这个时间间隔内又触发了事件，那我们就clear掉原来的定时器，再setTimeout一个新的定时器延迟一会执行，就这样。 代码实现1234567891011&amp;lt;高程设函数节流函数封装&amp;gt;function throttle(metho">
+<meta name="description" content="函数节流和防抖 函数节流的原理 函数节流的原理挺简单的，估计大家都想到了，那就是定时器。当我触发一个时间时，先setTimout让这个事件延迟一会再执行，如果在这个时间间隔内又触发了事件，那我们就clear掉原来的定时器，再setTimeout一个新的定时器延迟一会执行，就这样。 代码实现12345678910function throttle(method, context) &amp;#123;">
 <meta name="keywords" content="函数防抖">
 <meta property="og:type" content="article">
 <meta property="og:title" content="函数节流和防抖">
 <meta property="og:url" content="http://github.com/2017/03/12/JS函数节流和防抖/index.html">
 <meta property="og:site_name" content="颜朋">
-<meta property="og:description" content="函数节流和防抖 函数节流的原理 函数节流的原理挺简单的，估计大家都想到了，那就是定时器。当我触发一个时间时，先setTimout让这个事件延迟一会再执行，如果在这个时间间隔内又触发了事件，那我们就clear掉原来的定时器，再setTimeout一个新的定时器延迟一会执行，就这样。 代码实现1234567891011&amp;lt;高程设函数节流函数封装&amp;gt;function throttle(metho">
+<meta property="og:description" content="函数节流和防抖 函数节流的原理 函数节流的原理挺简单的，估计大家都想到了，那就是定时器。当我触发一个时间时，先setTimout让这个事件延迟一会再执行，如果在这个时间间隔内又触发了事件，那我们就clear掉原来的定时器，再setTimeout一个新的定时器延迟一会执行，就这样。 代码实现12345678910function throttle(method, context) &amp;#123;">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2017-09-12T05:23:10.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="函数节流和防抖">
-<meta name="twitter:description" content="函数节流和防抖 函数节流的原理 函数节流的原理挺简单的，估计大家都想到了，那就是定时器。当我触发一个时间时，先setTimout让这个事件延迟一会再执行，如果在这个时间间隔内又触发了事件，那我们就clear掉原来的定时器，再setTimeout一个新的定时器延迟一会执行，就这样。 代码实现1234567891011&amp;lt;高程设函数节流函数封装&amp;gt;function throttle(metho">
+<meta name="twitter:description" content="函数节流和防抖 函数节流的原理 函数节流的原理挺简单的，估计大家都想到了，那就是定时器。当我触发一个时间时，先setTimout让这个事件延迟一会再执行，如果在这个时间间隔内又触发了事件，那我们就clear掉原来的定时器，再setTimeout一个新的定时器延迟一会执行，就这样。 代码实现12345678910function throttle(method, context) &amp;#123;">
 
 
 
@@ -158,8 +158,6 @@
 
 
 
-	
-	<script type="text/javascript" color="0,0,255" opacity="0.7" zindex="-2" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canv	 as-nest.min.js"></script>
 	
 </head>
 
@@ -442,7 +440,7 @@
         <h3 id="函数节流和防抖"><a href="#函数节流和防抖" class="headerlink" title="函数节流和防抖"></a>函数节流和防抖</h3><hr>
 <h4 id="函数节流的原理"><a href="#函数节流的原理" class="headerlink" title="函数节流的原理"></a>函数节流的原理</h4><ul>
 <li>函数节流的原理挺简单的，估计大家都想到了，那就是定时器。当我触发一个时间时，先setTimout让这个事件延迟一会再执行，如果在这个时间间隔内又触发了事件，那我们就clear掉原来的定时器，再setTimeout一个新的定时器延迟一会执行，就这样。</li>
-<li>代码实现<figure class="highlight monkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;高程设函数节流函数封装&gt;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">throttle</span>(</span><span class="function"><span class="keyword">method</span>, <span class="title">context</span>) &#123;</span></span><br><span class="line">     clearTimeout(methor.tId);</span><br><span class="line">     <span class="function"><span class="keyword">method</span>.<span class="title">tId</span> =</span> setTimeout(<span class="function"><span class="keyword">function</span>(</span>)&#123;</span><br><span class="line">         <span class="function"><span class="keyword">method</span>.<span class="title">call</span>(</span>context);</span><br><span class="line">     &#125;， <span class="number">100</span>);</span><br><span class="line"> &#125;</span><br><span class="line"> 调用：window.onresize = <span class="function"><span class="keyword">function</span>(</span>)&#123;</span><br><span class="line">		    throttle(myFunc);</span><br><span class="line">		&#125;</span><br><span class="line">这样两次函数调用之间至少间隔<span class="number">100</span>ms</span><br></pre></td></tr></table></figure>
+<li>代码实现<figure class="highlight monkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">throttle</span>(</span><span class="function"><span class="keyword">method</span>, <span class="title">context</span>) &#123;</span></span><br><span class="line">     clearTimeout(methor.tId);</span><br><span class="line">     <span class="function"><span class="keyword">method</span>.<span class="title">tId</span> =</span> setTimeout(<span class="function"><span class="keyword">function</span>(</span>)&#123;</span><br><span class="line">         <span class="function"><span class="keyword">method</span>.<span class="title">call</span>(</span>context);</span><br><span class="line">     &#125;， <span class="number">100</span>);</span><br><span class="line"> &#125;</span><br><span class="line"> 调用：window.onresize = <span class="function"><span class="keyword">function</span>(</span>)&#123;</span><br><span class="line">		    throttle(myFunc);</span><br><span class="line">		&#125;</span><br><span class="line">这样两次函数调用之间至少间隔<span class="number">100</span>ms</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <hr>
@@ -662,7 +660,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#函数节流和防抖"><span class="nav-number">1.</span> <span class="nav-text">函数节流和防抖</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#函数节流的原理"><span class="nav-number">1.1.</span> <span class="nav-text">函数节流的原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#深化函数节流"><span class="nav-number">1.2.</span> <span class="nav-text">深化函数节流</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#函数防抖"><span class="nav-number">1.3.</span> <span class="nav-text">函数防抖</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#总结"><span class="nav-number">1.4.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#函数节流和防抖"><span class="nav-text">函数节流和防抖</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#函数节流的原理"><span class="nav-text">函数节流的原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#深化函数节流"><span class="nav-text">深化函数节流</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#函数防抖"><span class="nav-text">函数防抖</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#总结"><span class="nav-text">总结</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -770,8 +768,6 @@
   
 
 
-  
-
 
 
 
@@ -810,11 +806,6 @@
   
   
     <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
   
 
 
