@@ -89,7 +89,7 @@
 
 
 
-  <meta name="keywords" content="组件,">
+  <meta name="keywords" content="vue数据管理,">
 
 
 
@@ -100,18 +100,18 @@
 
 
 
-<meta name="description" content="组件 - components 定义: 组件的出现，就是为了拆分vue实例的代码量的，能够让我们以不同的组件，来划分不同的功能模块，将来我们需要什么样的功能，就可以去调用对应的组件即可; 组件化和模块化的区别 模块化:是从代码逻辑的角度进行划分的,方便代码分层开发,保证每个功能模块的只能单一。 组件化:是从UI界面的角度进行划分的，前端的组件化，方便UI组件的重用。        创建组件的方式第">
-<meta name="keywords" content="组件">
+<meta name="description" content="Vuex定义: 和vue-router同为vue的核心工具 Vuex 是一个专为Vue.js 应用程序开发的状态管理模式。它采用集中式存储管理应用的所有组件的状态，并以相应的规则保证状态以一种可预测的方式发生变化注意:1.vuex 必须依赖vue文件，在工程化项目开发中，使用Vue.use(vuex)   创建:1.创建一个Vuex的实例2.将vuex的实例挂载到vm的根实例中1234567891">
+<meta name="keywords" content="vue数据管理">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Vue-components">
-<meta property="og:url" content="http://github.com/2018/04/02/Vue-components/index.html">
+<meta property="og:title" content="Vue-Vuex">
+<meta property="og:url" content="http://github.com/2018/05/03/Vuex/index.html">
 <meta property="og:site_name" content="颜朋">
-<meta property="og:description" content="组件 - components 定义: 组件的出现，就是为了拆分vue实例的代码量的，能够让我们以不同的组件，来划分不同的功能模块，将来我们需要什么样的功能，就可以去调用对应的组件即可; 组件化和模块化的区别 模块化:是从代码逻辑的角度进行划分的,方便代码分层开发,保证每个功能模块的只能单一。 组件化:是从UI界面的角度进行划分的，前端的组件化，方便UI组件的重用。        创建组件的方式第">
+<meta property="og:description" content="Vuex定义: 和vue-router同为vue的核心工具 Vuex 是一个专为Vue.js 应用程序开发的状态管理模式。它采用集中式存储管理应用的所有组件的状态，并以相应的规则保证状态以一种可预测的方式发生变化注意:1.vuex 必须依赖vue文件，在工程化项目开发中，使用Vue.use(vuex)   创建:1.创建一个Vuex的实例2.将vuex的实例挂载到vm的根实例中1234567891">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-07T01:20:19.000Z">
+<meta property="og:updated_time" content="2018-05-03T01:29:19.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Vue-components">
-<meta name="twitter:description" content="组件 - components 定义: 组件的出现，就是为了拆分vue实例的代码量的，能够让我们以不同的组件，来划分不同的功能模块，将来我们需要什么样的功能，就可以去调用对应的组件即可; 组件化和模块化的区别 模块化:是从代码逻辑的角度进行划分的,方便代码分层开发,保证每个功能模块的只能单一。 组件化:是从UI界面的角度进行划分的，前端的组件化，方便UI组件的重用。        创建组件的方式第">
+<meta name="twitter:title" content="Vue-Vuex">
+<meta name="twitter:description" content="Vuex定义: 和vue-router同为vue的核心工具 Vuex 是一个专为Vue.js 应用程序开发的状态管理模式。它采用集中式存储管理应用的所有组件的状态，并以相应的规则保证状态以一种可预测的方式发生变化注意:1.vuex 必须依赖vue文件，在工程化项目开发中，使用Vue.use(vuex)   创建:1.创建一个Vuex的实例2.将vuex的实例挂载到vm的根实例中1234567891">
 
 
 
@@ -141,14 +141,14 @@
 
 
 
-  <link rel="canonical" href="http://github.com/2018/04/02/Vue-components/">
+  <link rel="canonical" href="http://github.com/2018/05/03/Vuex/">
 
 
 
 
 
 
-  <title>Vue-components | 颜朋</title>
+  <title>Vue-Vuex | 颜朋</title>
   
 
 
@@ -320,7 +320,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://github.com/2018/04/02/Vue-components/">
+    <link itemprop="mainEntityOfPage" href="http://github.com/2018/05/03/Vuex/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yan·Peng">
@@ -337,7 +337,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Vue-components</h1>
+          <h1 class="post-title" itemprop="name headline">Vue-Vuex</h1>
         
 
         <div class="post-meta">
@@ -349,8 +349,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-02T00:07:05+08:00">
-                2018-04-02
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T00:13:12+08:00">
+                2018-05-03
               </time>
             
 
@@ -365,8 +365,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-04-07T09:20:19+08:00">
-                2018-04-07
+              <time title="更新于" itemprop="dateModified" datetime="2018-05-03T09:29:19+08:00">
+                2018-05-03
               </time>
             
           </span>
@@ -401,7 +401,7 @@
 
           
           
-             <span id="/2018/04/02/Vue-components/" class="leancloud_visitors" data-flag-title="Vue-components">
+             <span id="/2018/05/03/Vuex/" class="leancloud_visitors" data-flag-title="Vue-Vuex">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -434,59 +434,35 @@
       
 
       
-        <h2 id="组件-components"><a href="#组件-components" class="headerlink" title="组件 - components"></a>组件 - components</h2><ul>
-<li>定义: 组件的出现，就是为了拆分vue实例的代码量的，能够让我们以不同的组件，来划分不同的功能模块，将来我们需要什么样的功能，就可以去调用对应的组件即可;</li>
-<li>组件化和模块化的区别<ul>
-<li>模块化:是从代码逻辑的角度进行划分的,方便代码分层开发,保证每个功能模块的只能单一。</li>
-<li>组件化:是从UI界面的角度进行划分的，前端的组件化，方便UI组件的重用。    </li>
-</ul>
-</li>
-</ul>
-<h2 id="创建组件的方式"><a href="#创建组件的方式" class="headerlink" title="创建组件的方式"></a>创建组件的方式</h2><h4 id="第一种"><a href="#第一种" class="headerlink" title="第一种"></a>第一种</h4><ul>
-<li><p>1.1 </p>
-<figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> com1 = <span class="type">Vue</span>.extend(&#123;</span><br><span class="line">	<span class="keyword">template</span>:<span class="string">"&lt;h3&gt;这是使用Vue.extend创建出来的组件&lt;/h3&gt;"</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>1.2<br>Vue.component(“mycom1”,com1)  引入的时候,使用<mycom1></mycom1>标签进行渲染<br>可以合并成一步:</p>
-<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">Vue</span><span class="selector-class">.component</span>(<span class="string">'mycom1'</span>,Vue.extend(&#123;</span><br><span class="line">		<span class="attribute">template</span>:<span class="string">"&lt;h3&gt;这是使用Vue.extend创建出来的组件&lt;/h3&gt;"</span></span><br><span class="line">&#125;))</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h4 id="第二种"><a href="#第二种" class="headerlink" title="第二种"></a>第二种</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">注意:无论是哪种方式创建出来的组件，组件的template属性指向的内容，</span><br><span class="line">	必须有且只有唯一的一个根元素</span><br><span class="line">	Vue.component('mycom2',&#123;</span><br><span class="line">		template:'<span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;<span class="name">h3</span>&gt;</span>这是使用Vue.extend创建出来的组件<span class="tag">&lt;/<span class="name">h3</span>&gt;</span><span class="tag">&lt;<span class="name">span</span>&gt;</span>123<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span>'</span><br><span class="line">	&#125;)</span><br></pre></td></tr></table></figure>
-<h4 id="第三种"><a href="#第三种" class="headerlink" title="第三种"></a>第三种</h4><p><code>Vue.component(&#39;mycom2&#39;,{template:&#39;#temp1&#39;})</code></p>
-<ul>
-<li>在APP控制的区域外，定义一个ID为temp1的template标签，在标签元素节点可以写你想要的代码</li>
-<li>组件中的data<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">注意：data必须是一个函数，而且函数必须返回一个对象，</span><br><span class="line">	模板中的元素行内指令可以调用，这里返回对象的意义，</span><br><span class="line">	当调用多次同一个组件的时候，虽然返回对象内容相同，</span><br><span class="line">	但是是引用数据类型，空间地址不一样，</span><br><span class="line">	组件之间的数据完全独立，不会因为其他组件数据的变化而变化</span><br><span class="line"><span class="keyword">let</span> vm2 = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">		<span class="keyword">e</span><span class="variable">l:</span><span class="string">'#app2'</span>,</span><br><span class="line">		dat<span class="variable">a:</span>&#123;</span><br><span class="line">			</span><br><span class="line">		&#125;,</span><br><span class="line">		component<span class="variable">s:</span>&#123;</span><br><span class="line">			login:&#123;</span><br><span class="line">				template:<span class="string">'#temp1'</span>,</span><br><span class="line">				dat<span class="variable">a:function</span>()&#123;</span><br><span class="line">					<span class="keyword">return</span>&#123;</span><br><span class="line">						ms<span class="variable">g:</span><span class="string">''</span></span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;)</span><br></pre></td></tr></table></figure>
-</li>
+        <h2 id="Vuex"><a href="#Vuex" class="headerlink" title="Vuex"></a>Vuex</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义:"></a>定义:</h3><ul>
+<li>和<code>vue-router</code>同为vue的核心工具</li>
+<li><code>Vuex</code> 是一个专为<code>Vue.js</code> 应用程序开发的状态管理模式。它采用集中式存储管理应用的所有组件的状态，并以相应的规则保证状态以一种可预测的方式发生变化<br><strong>注意:</strong><br><strong>1.vuex 必须依赖vue文件，在工程化项目开发中，使用Vue.use(vuex)</strong></li>
 </ul>
 <hr>
-<h2 id="Vue提供的4个标签属性"><a href="#Vue提供的4个标签属性" class="headerlink" title="Vue提供的4个标签属性"></a>Vue提供的4个标签属性</h2><blockquote>
-<p>transition<br>transition-group<br>template<br>component </p>
-</blockquote>
-<h2 id="子父组件-如何相互传值"><a href="#子父组件-如何相互传值" class="headerlink" title="子父组件 如何相互传值"></a>子父组件 如何相互传值</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">son</span> <span class="attr">:parentmsg</span> = <span class="string">"msg"</span> @<span class="attr">parentfuc123</span> = <span class="string">"fn"</span>&gt;</span><span class="tag">&lt;/<span class="name">son</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="父传子"><a href="#父传子" class="headerlink" title="父传子"></a>父传子</h3><p><strong>父组件通过绑定自定义属性，向子组件内传入数据</strong><br><strong>子组件通过props:[‘自定义属性名’]，接收父组件传进的数据</strong></p>
-<blockquote>
-<p>具体实现方式 =&gt; <code>:parentmsg = &quot;msg&quot;</code> (<code>parentmsg</code>为自定义属性名，<code>msg</code>为父组件内的数据)<br><strong>使用过程中注意:</strong><br><code>1.传入的数据可以是基本数据类型，也可以是引用数据类型;</code><br><code>2.可以是父组件中的data数据，也可以是methods中的方法(但是我们需记住:VUE不希望我们以自定义属性的方式，传入methods中的方法);</code><br><code>3.不能直接修改props中父组件传进来的数据,虽然子组件可以渲染出修改后的数据，但是只要父组件视图发生变化，就会重新覆盖子组件的内容;</code><br><code>4.但是，当我们传入一个引用数据类型，在原地址修改数据时不会引起报错,能成功修改父组件的数据;</code><br><code>5.子组件使用父组件的数据是一个单向的数据流;</code><br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"app"</span>&gt;</span><br><span class="line">	&lt;son :parentname = <span class="string">'val'</span> :myname =<span class="string">"name"</span> :arr = ary v-<span class="keyword">for</span> = <span class="string">"val in ary"</span> </span><br><span class="line">	:key = <span class="string">"val"</span>&gt;</span><br><span class="line">	&lt;/son&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;template id=<span class="string">"son"</span>&gt;</span><br><span class="line">	<span class="symbol">&lt;div&gt;</span></span><br><span class="line">		<span class="symbol">&lt;h2&gt;</span>&#123;&#123;parentname&#125;&#125;&lt;/h2&gt;</span><br><span class="line">		&lt;h3 v-<span class="keyword">for</span> = <span class="string">"i in arr"</span>&gt;&lt;/h3&gt;</span><br><span class="line">		&lt;button @click=<span class="string">"fn"</span>&gt;这个按钮点击&#123;&#123;n&#125;&#125;次&lt;/button&gt;</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"><span class="keyword">let</span> son =&#123;</span><br><span class="line">	template:<span class="string">'#son'</span>,</span><br><span class="line">	prop<span class="variable">s:</span>[<span class="string">'parentname'</span>,<span class="string">'myname'</span>,<span class="string">'arr'</span>],</span><br><span class="line">	data()&#123;<span class="keyword">return</span>&#123;n:<span class="number">0</span>&#125;&#125;,</span><br><span class="line">	method<span class="variable">s:</span>&#123;</span><br><span class="line">		fn()&#123;</span><br><span class="line">		this.n++</span><br><span class="line">		this.arr.push(<span class="string">'node'</span>)</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"><span class="keyword">let</span> <span class="keyword">vm</span> = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">	<span class="keyword">e</span><span class="variable">l:</span><span class="string">'#app'</span>,</span><br><span class="line">	dat<span class="variable">a:</span>&#123;</span><br><span class="line">		name:<span class="string">'hello'</span>,</span><br><span class="line">		ary:[<span class="string">'css'</span>,<span class="string">'js'</span>,<span class="string">'vue'</span>]</span><br><span class="line">	&#125;,</span><br><span class="line">	component<span class="variable">s:</span>&#123;</span><br><span class="line">		son</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure></p>
-</blockquote>
+<h3 id="创建"><a href="#创建" class="headerlink" title="创建:"></a>创建:</h3><p><code>1.创建一个Vuex的实例</code><br><code>2.将vuex的实例挂载到vm的根实例中</code><br><figure class="highlight pf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">const store = new Vuex.Store(&#123;</span><br><span class="line"><span class="keyword">state</span>:&#123;count:<span class="number">0</span>&#125;,</span><br><span class="line">getters:&#123;</span><br><span class="line">	//理解成store的计算属性</span><br><span class="line">	str()&#123;console.<span class="keyword">log</span>(arguments)&#125;</span><br><span class="line">&#125;,</span><br><span class="line">mutations:&#123;</span><br><span class="line">// 存储一些公共方法，以便其他组件重复调用</span><br><span class="line">// 它是vuex提供的一种用于修改<span class="keyword">state</span>中数据的方式</span><br><span class="line">// 必须使用mutations的方法去修改<span class="keyword">state</span>中的数据</span><br><span class="line">mu_add(<span class="keyword">state</span>,n)&#123;</span><br><span class="line">	// 第一个实参是默认的<span class="keyword">state</span></span><br><span class="line">	// 第二个实参，是我们调用时，自己传的实参,只能写一个参数</span><br><span class="line">	// 若有多个参数，则放在一个对象和数组里面</span><br><span class="line">	// 通过 this.<span class="variable">$store</span>.commit('函数名','我们传递的参数')</span><br><span class="line">	n = n || <span class="number">1</span></span><br><span class="line">	<span class="keyword">state</span>.count += n</span><br><span class="line">	&#125;,</span><br><span class="line">&#125;,</span><br><span class="line">actions:&#123;</span><br><span class="line">	// 可以提供异步方法，比如数据的axios的请求</span><br><span class="line">	ac_add(obj,n)&#123;</span><br><span class="line">		// obj 是vuex封装好的对象，里面提供了commit方法</span><br><span class="line">		obj.commit('mu_add',n)</span><br><span class="line">		<span class="built_in">set</span>Timeout(()=&gt;&#123;</span><br><span class="line">			obj.commit('mu_add',n)</span><br><span class="line">		&#125;,<span class="number">1000</span>)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
 <hr>
-<h3 id="子传父"><a href="#子传父" class="headerlink" title="子传父"></a>子传父</h3><p><strong>父组件通过绑定自定义事件，向子组件内传入methods方法</strong><br><strong>子组件通过调用this.$emit(‘自定义事件名’，第一参数,第二参数…)方法，接收父组件方法，并通过第一参数，第二参数…，同时向父组件内传值</strong></p>
-<blockquote>
-<p>具体实现方式 =&gt; <code>@parentfuc123 = &quot;fn&quot;</code> (<code>parentfuc123</code>为自定义属性名，<code>fn</code>为父组件内的<code>methods</code>方法)<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"app"</span>&gt;</span><br><span class="line">	<span class="symbol">&lt;h2&gt;</span>&#123;&#123;name&#125;&#125;&lt;/h2&gt;</span><br><span class="line">	&lt;son @qqq = <span class="string">"change"</span>&gt;&lt;/son&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;template id=<span class="string">"son"</span>&gt;</span><br><span class="line">	<span class="symbol">&lt;div&gt;</span></span><br><span class="line">		&lt;<span class="built_in">input</span> <span class="built_in">type</span>=<span class="string">"text"</span> v-model=<span class="string">"n"</span>&gt;</span><br><span class="line">		&lt;button @click = <span class="string">"fn"</span>&gt;通过自定义事件改变父组件的name&lt;/button&gt;</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"><span class="keyword">let</span> son = &#123;</span><br><span class="line">	template:<span class="string">'#son'</span>,</span><br><span class="line">	data()&#123;<span class="keyword">return</span>&#123;n:<span class="string">''</span>&#125;&#125;,</span><br><span class="line">	prop<span class="variable">s:</span>[<span class="string">'aaa'</span>],</span><br><span class="line">	method<span class="variable">s:</span>&#123;</span><br><span class="line">		fn()&#123;this.$emit(<span class="string">'qqq'</span>,this.n)&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> <span class="keyword">vm</span> = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">	<span class="keyword">e</span><span class="variable">l:</span><span class="string">'#app'</span>,</span><br><span class="line">	dat<span class="variable">a:</span>&#123;name:<span class="string">'hello'</span>&#125;,</span><br><span class="line">	component<span class="variable">s:</span>&#123;</span><br><span class="line">		son</span><br><span class="line">	&#125;,</span><br><span class="line">	method<span class="variable">s:</span>&#123;</span><br><span class="line">		<span class="keyword">change</span>(val)&#123;</span><br><span class="line">			this.name = val</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<h3 id="其它传值方式"><a href="#其它传值方式" class="headerlink" title="其它传值方式"></a>其它传值方式</h3><ul>
-<li>父组件可使用<ul>
-<li><code>this.$children[0]</code></li>
-<li><code>this.$refs.son</code></li>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用:"></a>使用:</h3><p><strong>1.使用vuex中的数据,通过调用<code>this.$store.state.count</code>，使用vuex数据</strong><br><strong>2.vuex中的数据全放在state中,当state中的某个数据发生改变时,所有用到该数据的地方全都会跟着改变,触发视图的更新</strong><br><strong>3.通过<code>this.$store.commit(&#39;函数名&#39;,options)</code>，调用mutations中的方法，并默认传参state</strong><br><strong>4.通过<code>this.$store.dispatch(&#39;函数名&#39;,options)</code>，调用actions中的方法，并默认传参obj对象,对象内置commit方法，再通过调用commit方法，触发mutations中方法执行，达到异步修改数据的目的</strong><br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">const son =&#123;</span><br><span class="line">template:<span class="string">'#son'</span>,</span><br><span class="line"><span class="function"><span class="title">data</span><span class="params">()</span></span>&#123;</span><br><span class="line">	return&#123;</span><br><span class="line">		myCount:this.<span class="variable">$store</span><span class="selector-class">.state</span><span class="selector-class">.count</span></span><br><span class="line">	<span class="comment">// 不建议将vuex里面的数据放在组件的data中储存</span></span><br><span class="line">	<span class="comment">// 只会给myCount一个初始值，count的变化，并不会再引起view的变化</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;,</span><br><span class="line">computed:&#123;</span><br><span class="line">	myCount()&#123;</span><br><span class="line">		<span class="comment">// 通常将数据放在组件的计算属性中，将属性名依赖于vuex中的数据</span></span><br><span class="line">		return this.<span class="variable">$store</span><span class="selector-class">.state</span><span class="selector-class">.count</span></span><br><span class="line">	&#125;,</span><br><span class="line">	..<span class="selector-class">.Vuex</span><span class="selector-class">.mapState</span>([<span class="string">'count'</span>,<span class="string">'qqq'</span>])</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h3 id="Vuex中的辅助函数-工程化项目中，推荐使用"><a href="#Vuex中的辅助函数-工程化项目中，推荐使用" class="headerlink" title="Vuex中的辅助函数(工程化项目中，推荐使用)"></a>Vuex中的辅助函数(工程化项目中，推荐使用)</h3><ul>
+<li>…mapState([‘count’,’qqq’])<ul>
+<li>在组件内部挂载’count’和’qqq’属性</li>
+<li>再将’count’映射为:<code>this.$store.state.count</code></li>
 </ul>
 </li>
-<li>子组件可使用<ul>
-<li><code>this.$parent</code><h3 id="注意"><a href="#注意" class="headerlink" title="注意:"></a>注意:</h3><strong>1.当组件为全局注册时，其他组件使用时，不必再，在自己内部注册一遍</strong><br><strong>2.父组件最早可以在<code>mounted()</code>这个生命周期函数内，调用<code>$children</code>这个方法</strong><br><strong>3.先执行<code>父组件</code>的created(),再执行<code>子组件</code>的created(),然后执行<code>子组件</code>的created(),最后执行<code>父组件</code>的created()</strong></li>
+<li>…mapGetters([‘arr’])<ul>
+<li>在组件内部挂载’arr’的计算属性</li>
+<li>再将’arr’映射为: <code>this.$store.getters.arr</code></li>
+</ul>
+</li>
+<li>…mapMutations([‘mu_add’])<ul>
+<li>在组件内部挂载’mu_add’方法</li>
+<li>组件直接调用: <code>this.mu_add(10)</code>,并传入我们需要的参数</li>
+<li>等价于 : <code>this.$store.commit(&#39;mu_add&#39;,10)</code></li>
 </ul>
 </li>
 </ul>
 <hr>
-<h2 id="自定义组件"><a href="#自定义组件" class="headerlink" title="自定义组件"></a>自定义组件</h2><p><strong>为什么要使用自定义组件:</strong>有时候，当我们对原生提供的样式不满意时，可以使用自定义组件，组件的样式我们可以自行设置<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span> = <span class="string">"app"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">my-input</span> <span class="attr">v-model</span> = <span class="string">'name'</span>&gt;</span><span class="tag">&lt;/<span class="name">my-input</span>&gt;</span></span><br><span class="line">	<span class="comment">&lt;!-- 等价于 </span></span><br><span class="line"><span class="comment">		&lt;my-input :value = 'name' @input&gt;&lt;/my-input&gt;</span></span><br><span class="line"><span class="comment">	 --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span> <span class="attr">id</span> = <span class="string">"son"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">:value</span> = <span class="string">'value'</span> @<span class="attr">input</span> = <span class="string">'$emit('</span><span class="attr">input</span>')'&gt;</span><span class="tag">&lt;/<span class="name">input</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript"><span class="keyword">let</span> son = &#123;</span></span><br><span class="line"><span class="actionscript">	template:<span class="string">'#son'</span>,</span></span><br><span class="line"><span class="actionscript">	props:[<span class="string">'value'</span>]<span class="comment">//value 是规定死的，不能改写</span></span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<h2 id="插槽"><a href="#插槽" class="headerlink" title="插槽"></a>插槽</h2><p><strong>用法:</strong> 将<code>slot</code>标签放置在组件的模板中，那么在以组件名生成标签内部的所有内容，会替换<code>slot</code>标签的位置<br><strong>注意:</strong><br><code>1.slot 的name属性是控制 要去显示哪一部分的一个功能,写时默认default;</code><br><code>2.name 对应的是 模板中slot=xxx 的 xxx;</code><br><code>3.模板中若有与name值对应的元素；则 slot标签包含的代码不会显示出来;</code><br><code>4.否则，可以显示slot标签包含的内容</code><br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span> = <span class="string">"app"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">son</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">slot</span>=<span class="string">'qqq'</span>&gt;</span>hahaha<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">h2</span>&gt;</span>hehehe<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span>&gt;</span>24324<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">slot</span>=<span class="string">'www'</span>&gt;</span>111<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">slot</span>=<span class="string">'www'</span>&gt;</span>222<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">son</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span> <span class="attr">id</span> = <span class="string">"son"</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- slot 相当于把组件标签包含的所有内容 放到slot标签的位置 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">slot</span> <span class="attr">name</span> = <span class="string">"qqq"</span>&gt;</span><span class="tag">&lt;/<span class="name">slot</span>&gt;</span></span><br><span class="line"> //显示:hahaha</span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>这是个子组件<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">slot</span>&gt;</span><span class="tag">&lt;/<span class="name">slot</span>&gt;</span></span><br><span class="line">//显示：hehehe 只能显示没有slot属性的标签元素</span><br><span class="line">//     24324</span><br><span class="line"><span class="tag">&lt;<span class="name">slot</span> <span class="attr">name</span>=<span class="string">'www'</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">name</span>=<span class="string">'2342342'</span>&gt;</span>777<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">slot</span>&gt;</span></span><br><span class="line">//显示: 111 222</span><br><span class="line"><span class="tag">&lt;<span class="name">slot</span> <span class="attr">name</span>=<span class="string">'eee'</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">name</span>=<span class="string">'2342342'</span>&gt;</span>666<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">slot</span> <span class="attr">name</span>=<span class="string">'www'</span>&gt;</span><span class="tag">&lt;/<span class="name">slot</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">slot</span>&gt;</span></span><br><span class="line">//显示:666 111 222 </span><br><span class="line">//原因:上面标签内部中，并没有slot = "eee"属性的元素，所以会显示<span class="tag">&lt;<span class="name">slot</span>&gt;</span><span class="tag">&lt;/<span class="name">slot</span>&gt;</span>标签内部的默认值</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<hr>
-<h2 id="component-动态组件"><a href="#component-动态组件" class="headerlink" title="component 动态组件"></a>component 动态组件</h2><p><strong><code>component</code> 是一个内置动态组件; <code>is</code>属性用控制显示哪个子组件</strong><br><strong><code>keep-alive</code>包裹动态组件时，会缓存不活动的组件实例，而不是销毁它们。和<code>transition</code>相似,<code>keep-alive</code>是一个抽象组件：它自身不会渲染一个 DOM 元素，也不会出现在父组件链中。主要用于保留组件状态或避免重新渲染</strong><br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">'son="son1"'</span>&gt;</span>son1<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">'son="son2"'</span>&gt;</span>son2<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">keep-alive</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">component</span> <span class="attr">:is</span>=<span class="string">'son'</span>&gt;</span><span class="tag">&lt;/<span class="name">component</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">keep-alive</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="模块化"><a href="#模块化" class="headerlink" title="模块化"></a>模块化</h3><p><strong>定义:由于使用单一状态树，应用的所有状态会集中到一个比较大的对象。当应用变得非常复杂时，store 对象就有可能变得相当臃肿。为了解决以上问题，Vuex 允许我们将 store 分割成模块（module）。每个模块拥有自己的 state、mutation、action、getter、甚至是嵌套子模块——从上至下进行同样方式的分割：</strong><br><figure class="highlight pf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">const moduleA = &#123;</span><br><span class="line">  <span class="keyword">state</span>: &#123; ... &#125;,</span><br><span class="line">  mutations: &#123; ... &#125;,</span><br><span class="line">  actions: &#123; ... &#125;,</span><br><span class="line">  getters: &#123; ... &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const moduleB = &#123;</span><br><span class="line">  <span class="keyword">state</span>: &#123; ... &#125;,</span><br><span class="line">  mutations: &#123; ... &#125;,</span><br><span class="line">  actions: &#123; ... &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const store = new Vuex.Store(&#123;</span><br><span class="line">  modules: &#123;</span><br><span class="line">    a: moduleA,</span><br><span class="line">    b: moduleB</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">store.<span class="keyword">state</span>.a // -&gt; moduleA 的状态</span><br><span class="line">store.<span class="keyword">state</span>.b // -&gt; moduleB 的状态</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -515,7 +491,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/组件/" rel="tag"><i class="fa fa-tag"></i> 组件</a>
+            <a href="/tags/vue数据管理/" rel="tag"><i class="fa fa-tag"></i> vue数据管理</a>
           
         </div>
       
@@ -528,8 +504,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/29/Vue-router/" rel="next" title="Vue-router">
-                <i class="fa fa-chevron-left"></i> Vue-router
+              <a href="/2018/04/06/webpack/" rel="next" title="Webpack">
+                <i class="fa fa-chevron-left"></i> Webpack
               </a>
             
           </div>
@@ -538,8 +514,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/04/06/webpack/" rel="prev" title="Webpack">
-                Webpack <i class="fa fa-chevron-right"></i>
+              <a href="/2018/07/04/TS语法初始化一个项目/" rel="prev" title="TS初始化语法">
+                TS初始化语法 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -690,7 +666,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#组件-components"><span class="nav-text">组件 - components</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建组件的方式"><span class="nav-text">创建组件的方式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#第一种"><span class="nav-text">第一种</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第二种"><span class="nav-text">第二种</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第三种"><span class="nav-text">第三种</span></a></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#Vue提供的4个标签属性"><span class="nav-text">Vue提供的4个标签属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#子父组件-如何相互传值"><span class="nav-text">子父组件 如何相互传值</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#父传子"><span class="nav-text">父传子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#子传父"><span class="nav-text">子传父</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其它传值方式"><span class="nav-text">其它传值方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注意"><span class="nav-text">注意:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义组件"><span class="nav-text">自定义组件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插槽"><span class="nav-text">插槽</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#component-动态组件"><span class="nav-text">component 动态组件</span></a></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Vuex"><span class="nav-text">Vuex</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义"><span class="nav-text">定义:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建"><span class="nav-text">创建:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用"><span class="nav-text">使用:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Vuex中的辅助函数-工程化项目中，推荐使用"><span class="nav-text">Vuex中的辅助函数(工程化项目中，推荐使用)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模块化"><span class="nav-text">模块化</span></a></li></ol></li></ol></div>
             
 
           </div>

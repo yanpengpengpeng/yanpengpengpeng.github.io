@@ -23,11 +23,22 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[Vue-Vuex]]></title>
+    <url>%2F2018%2F05%2F03%2FVuex%2F</url>
+    <content type="text"><![CDATA[Vuex定义: 和vue-router同为vue的核心工具 Vuex 是一个专为Vue.js 应用程序开发的状态管理模式。它采用集中式存储管理应用的所有组件的状态，并以相应的规则保证状态以一种可预测的方式发生变化注意:1.vuex 必须依赖vue文件，在工程化项目开发中，使用Vue.use(vuex) 创建:1.创建一个Vuex的实例2.将vuex的实例挂载到vm的根实例中123456789101112131415161718192021222324252627282930const store = new Vuex.Store(&#123;state:&#123;count:0&#125;,getters:&#123; //理解成store的计算属性 str()&#123;console.log(arguments)&#125;&#125;,mutations:&#123;// 存储一些公共方法，以便其他组件重复调用// 它是vuex提供的一种用于修改state中数据的方式// 必须使用mutations的方法去修改state中的数据mu_add(state,n)&#123; // 第一个实参是默认的state // 第二个实参，是我们调用时，自己传的实参,只能写一个参数 // 若有多个参数，则放在一个对象和数组里面 // 通过 this.$store.commit('函数名','我们传递的参数') n = n || 1 state.count += n &#125;,&#125;,actions:&#123; // 可以提供异步方法，比如数据的axios的请求 ac_add(obj,n)&#123; // obj 是vuex封装好的对象，里面提供了commit方法 obj.commit('mu_add',n) setTimeout(()=&gt;&#123; obj.commit('mu_add',n) &#125;,1000) &#125;&#125;&#125;) 使用:1.使用vuex中的数据,通过调用this.$store.state.count，使用vuex数据2.vuex中的数据全放在state中,当state中的某个数据发生改变时,所有用到该数据的地方全都会跟着改变,触发视图的更新3.通过this.$store.commit(&#39;函数名&#39;,options)，调用mutations中的方法，并默认传参state4.通过this.$store.dispatch(&#39;函数名&#39;,options)，调用actions中的方法，并默认传参obj对象,对象内置commit方法，再通过调用commit方法，触发mutations中方法执行，达到异步修改数据的目的1234567891011121314151617const son =&#123;template:'#son',data()&#123; return&#123; myCount:this.$store.state.count // 不建议将vuex里面的数据放在组件的data中储存 // 只会给myCount一个初始值，count的变化，并不会再引起view的变化 &#125;&#125;,computed:&#123; myCount()&#123; // 通常将数据放在组件的计算属性中，将属性名依赖于vuex中的数据 return this.$store.state.count &#125;, ...Vuex.mapState(['count','qqq'])&#125;&#125; Vuex中的辅助函数(工程化项目中，推荐使用) …mapState([‘count’,’qqq’]) 在组件内部挂载’count’和’qqq’属性 再将’count’映射为:this.$store.state.count …mapGetters([‘arr’]) 在组件内部挂载’arr’的计算属性 再将’arr’映射为: this.$store.getters.arr …mapMutations([‘mu_add’]) 在组件内部挂载’mu_add’方法 组件直接调用: this.mu_add(10),并传入我们需要的参数 等价于 : this.$store.commit(&#39;mu_add&#39;,10) 模块化定义:由于使用单一状态树，应用的所有状态会集中到一个比较大的对象。当应用变得非常复杂时，store 对象就有可能变得相当臃肿。为了解决以上问题，Vuex 允许我们将 store 分割成模块（module）。每个模块拥有自己的 state、mutation、action、getter、甚至是嵌套子模块——从上至下进行同样方式的分割：12345678910111213141516171819202122const moduleA = &#123; state: &#123; ... &#125;, mutations: &#123; ... &#125;, actions: &#123; ... &#125;, getters: &#123; ... &#125;&#125;const moduleB = &#123; state: &#123; ... &#125;, mutations: &#123; ... &#125;, actions: &#123; ... &#125;&#125;const store = new Vuex.Store(&#123; modules: &#123; a: moduleA, b: moduleB &#125;&#125;)store.state.a // -&gt; moduleA 的状态store.state.b // -&gt; moduleB 的状态]]></content>
+      <categories>
+        <category>Vue</category>
+      </categories>
+      <tags>
+        <tag>vue数据管理</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Webpack]]></title>
     <url>%2F2018%2F04%2F06%2Fwebpack%2F</url>
     <content type="text"><![CDATA[网页中有哪些静态资源 JS .js .jsx .coffee .ts CSS .css .less .scss Images .jpg .png .gif .bmp .svg 字体文件 .svg .ttf .eot .woff .woff2 模板文件 .ejs .vue(这是在webpack中定义组件的方式) 网页中引入静态资源过多，会有什么问题 网页加载速度慢，因为我们要发起很多的二次请求 要处理错综复杂的依赖关系处理静态资源加载的问题 合并、压缩js.css文件 处理图片请求的时候，可以将图片设置成base64编码，这样会随着html结构一起加载 处理依赖关系，使用Gulp webpack什么是webpackwebpack 是前端的一个项目构建工具，它是基于node.js开发出来的一个前端工具]]></content>
       <categories>
-        <category>Vue</category>
+        <category>webpack</category>
       </categories>
       <tags>
         <tag>打包</tag>
@@ -80,7 +91,7 @@
   <entry>
     <title><![CDATA[Vue-mvvm解析]]></title>
     <url>%2F2018%2F03%2F26%2FVue-mvvm%E8%A7%A3%E6%9E%90%2F</url>
-    <content type="text"><![CDATA[Vue.js 的细节 Vue.js 可以说是MVVM 架构的最佳实践，专注于 MVVM 中的 ViewModel，不仅做到了数据双向绑定，而且也是一款相对来比较轻量级的JS 库，API 简洁，很容易上手。Vue的基础知识网上有现成的教程，此处不再赘述， 下面简单了解一下 Vue.js 关于双向绑定的一些实现细节： Vue.js 是采用 Object.defineProperty 的 getter 和 setter，并结合观察者模式来实现数据绑定的。当把一个普通 Javascript 对象传给 Vue 实例来作为它的 data 选项时，Vue 将遍历它的属性，用 Object.defineProperty 将它们转为 getter/setter。用户看不到 getter/setter，但是在内部它们让 Vue 追踪依赖，在属性被访问和修改时通知变化。 Observer 数据监听器，能够对数据对象的所有属性进行监听，如有变动可拿到最新值并通知订阅者，内部采用Object.defineProperty的getter和setter来实现。 Compile 指令解析器，它的作用对每个元素节点的指令进行扫描和解析，根据指令模板替换数据，以及绑定相应的更新函数。 Watcher 订阅者， 作为连接 Observer 和 Compile 的桥梁，能够订阅并收到每个属性变动的通知，执行指令绑定的相应回调函数。 Dep 消息订阅器，内部维护了一个数组，用来收集订阅者（Watcher），数据变动触发notify 函数，再调用订阅者的 update 方法。从图中可以看出，当执行 new Vue() 时，Vue 就进入了初始化阶段，一方面Vue 会遍历 data 选项中的属性，并用 Object.defineProperty 将它们转为 getter/setter，实现数据变化监听功能；另一方面，Vue 的指令编译器Compile 对元素节点的指令进行扫描和解析，初始化视图，并订阅Watcher 来更新视图， 此时Wather 会将自己添加到消息订阅器中(Dep),初始化完毕。当数据发生变化时，Observer 中的 setter 方法被触发，setter 会立即调用Dep.notify()，Dep 开始遍历所有的订阅者，并调用订阅者的 update 方法，订阅者收到通知后对视图进行相应的更新。]]></content>
+    <content type="text"><![CDATA[Vue.js 的细节 Vue.js 可以说是MVVM 架构的最佳实践，专注于 MVVM 中的 ViewModel，不仅做到了数据双向绑定，而且也是一款相对来比较轻量级的JS 库，API 简洁，很容易上手。Vue的基础知识网上有现成的教程，此处不再赘述， 下面简单了解一下 Vue.js 关于双向绑定的一些实现细节： Vue.js 是采用 Object.defineProperty 的 getter 和 setter，并结合观察者模式来实现数据绑定的。当把一个普通 Javascript 对象传给 Vue 实例来作为它的 data 选项时，Vue 将遍历它的属性，用 Object.defineProperty 将它们转为 getter/setter。用户看不到 getter/setter，但是在内部它们让 Vue 追踪依赖，在属性被访问和修改时通知变化。12345678910111213141516171819202122232425 let person = &#123; 'sex':'girl', 'name':'晓甜甜', 'address':'XXX公寓' &#125; function observe(obj,prop,val)&#123; Object.defineProperty(obj,prop,&#123; enumerable: true, configurable: true, get:function()&#123; return '此人住在'+val &#125;, set:function(newVal)&#123; val = newVal console.log('此人换新家了，现在在' + newVal) &#125; &#125;) &#125; observe(person,'address',person['address']) console.log(person.address) person.address = 'YYY小区'//控制台打印 会触发两次31行代码//此人住在XXX公寓//此人换新家了，现在在YYY小区 Observer 数据监听器，能够对数据对象的所有属性进行监听，如有变动可拿到最新值并通知订阅者，内部采用Object.defineProperty的getter和setter来实现。 Compile 指令解析器，它的作用对每个元素节点的指令进行扫描和解析，根据指令模板替换数据，以及绑定相应的更新函数。 Watcher 订阅者， 作为连接 Observer 和 Compile 的桥梁，能够订阅并收到每个属性变动的通知，执行指令绑定的相应回调函数。 Dep 消息订阅器，内部维护了一个数组，用来收集订阅者（Watcher），数据变动触发notify 函数，再调用订阅者的 update 方法。从图中可以看出，当执行 new Vue() 时，Vue 就进入了初始化阶段，一方面Vue 会遍历 data 选项中的属性，并用 Object.defineProperty 将它们转为 getter/setter，实现数据变化监听功能；另一方面，Vue 的指令编译器Compile 对元素节点的指令进行扫描和解析，初始化视图，并订阅Watcher 来更新视图， 此时Wather 会将自己添加到消息订阅器中(Dep),初始化完毕。当数据发生变化时，Observer 中的 setter 方法被触发，setter 会立即调用Dep.notify()，Dep 开始遍历所有的订阅者，并调用订阅者的 update 方法，订阅者收到通知后对视图进行相应的更新。]]></content>
       <categories>
         <category>Vue</category>
       </categories>

@@ -438,7 +438,11 @@
       
         <h2 id="Vue-js-的细节"><a href="#Vue-js-的细节" class="headerlink" title="Vue.js 的细节"></a>Vue.js 的细节</h2><ul>
 <li>Vue.js 可以说是MVVM 架构的最佳实践，专注于 MVVM 中的 ViewModel，不仅做到了数据双向绑定，而且也是一款相对来比较轻量级的JS 库，API 简洁，很容易上手。Vue的基础知识网上有现成的教程，此处不再赘述， 下面简单了解一下 Vue.js 关于双向绑定的一些实现细节：</li>
-<li>Vue.js 是采用 Object.defineProperty 的 getter 和 setter，并结合观察者模式来实现数据绑定的。当把一个普通 Javascript 对象传给 Vue 实例来作为它的 data 选项时，Vue 将遍历它的属性，用 Object.defineProperty 将它们转为 getter/setter。用户看不到 getter/setter，但是在内部它们让 Vue 追踪依赖，在属性被访问和修改时通知变化。<br><img src="/2018/03/26/Vue-mvvm解析/MVVM底层原理解析.png" alt="数据双向绑定底层原理图"></li>
+<li>Vue.js 是采用 Object.defineProperty 的 getter 和 setter，并结合观察者模式来实现数据绑定的。当把一个普通 Javascript 对象传给 Vue 实例来作为它的 data 选项时，Vue 将遍历它的属性，用 Object.defineProperty 将它们转为 getter/setter。用户看不到 getter/setter，但是在内部它们让 Vue 追踪依赖，在属性被访问和修改时通知变化。<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">let</span> person = &#123;</span><br><span class="line">   <span class="string">'sex'</span>:<span class="string">'girl'</span>,</span><br><span class="line">   <span class="string">'name'</span>:<span class="string">'晓甜甜'</span>,</span><br><span class="line">   <span class="string">'address'</span>:<span class="string">'XXX公寓'</span></span><br><span class="line"> &#125;</span><br><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">observe</span>(<span class="params">obj,prop,val</span>)</span>&#123;</span><br><span class="line">   <span class="built_in">Object</span>.defineProperty(obj,prop,&#123;</span><br><span class="line">     enumerable: <span class="literal">true</span>,</span><br><span class="line">     configurable: <span class="literal">true</span>,</span><br><span class="line">     get:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">       <span class="keyword">return</span> <span class="string">'此人住在'</span>+val</span><br><span class="line">     &#125;,</span><br><span class="line">     set:<span class="function"><span class="keyword">function</span>(<span class="params">newVal</span>)</span>&#123;</span><br><span class="line">       val = newVal</span><br><span class="line">       <span class="built_in">console</span>.log(<span class="string">'此人换新家了，现在在'</span> + newVal)</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;)</span><br><span class="line"> &#125;</span><br><span class="line"> observe(person,<span class="string">'address'</span>,person[<span class="string">'address'</span>])</span><br><span class="line"> <span class="built_in">console</span>.log(person.address)</span><br><span class="line"> person.address = <span class="string">'YYY小区'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//控制台打印 会触发两次31行代码</span></span><br><span class="line"><span class="comment">//此人住在XXX公寓</span></span><br><span class="line"><span class="comment">//此人换新家了，现在在YYY小区</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><img src="/2018/03/26/Vue-mvvm解析/MVVM底层原理解析.png" alt="数据双向绑定底层原理图"></p>
+<ul>
 <li><code>Observer</code> 数据监听器，能够对数据对象的所有属性进行监听，如有变动可拿到最新值并通知订阅者，内部采用Object.defineProperty的getter和setter来实现。</li>
 <li><code>Compile</code> 指令解析器，它的作用对每个元素节点的指令进行扫描和解析，根据指令模板替换数据，以及绑定相应的更新函数。</li>
 <li><code>Watcher</code> 订阅者， 作为连接 Observer 和 Compile 的桥梁，能够订阅并收到每个属性变动的通知，执行指令绑定的相应回调函数。</li>
@@ -576,7 +580,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -587,7 +591,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -598,7 +602,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
