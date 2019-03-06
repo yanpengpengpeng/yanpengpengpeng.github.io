@@ -89,7 +89,7 @@
 
 
 
-  <meta name="keywords" content="Yan·Peng">
+  <meta name="keywords" content="虚拟DOM Diff算法,">
 
 
 
@@ -100,18 +100,18 @@
 
 
 
-<meta name="description" content="言念君子-温其如玉">
-<meta name="keywords" content="Yan·Peng">
-<meta property="og:type" content="website">
-<meta property="og:title" content="All categories">
-<meta property="og:url" content="http://github.com/categories/index.html">
+<meta name="description" content="React框架性能优化的几个点 子组件shouldComponentUpdate 判断后才返回false/ture 避免组件的重复无用的渲染; 把改变this指向的函数作用域绑定,放到constructor中定义,避免重复绑定; setState方法,将连续多次的数据更新,放到一次执行,降低比对频率,来更新视图; 使用虚拟DOM,极大的提升性能;1.虚拟DOM如何提升性能 原生思路实现视图更新 定">
+<meta name="keywords" content="虚拟DOM Diff算法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React基础入门">
+<meta property="og:url" content="http://github.com/2016/03/29/React进阶/index.html">
 <meta property="og:site_name" content="颜朋">
-<meta property="og:description" content="言念君子-温其如玉">
+<meta property="og:description" content="React框架性能优化的几个点 子组件shouldComponentUpdate 判断后才返回false/ture 避免组件的重复无用的渲染; 把改变this指向的函数作用域绑定,放到constructor中定义,避免重复绑定; setState方法,将连续多次的数据更新,放到一次执行,降低比对频率,来更新视图; 使用虚拟DOM,极大的提升性能;1.虚拟DOM如何提升性能 原生思路实现视图更新 定">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-31T00:21:26.970Z">
+<meta property="og:updated_time" content="2017-05-06T01:52:07.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="All categories">
-<meta name="twitter:description" content="言念君子-温其如玉">
+<meta name="twitter:title" content="React基础入门">
+<meta name="twitter:description" content="React框架性能优化的几个点 子组件shouldComponentUpdate 判断后才返回false/ture 避免组件的重复无用的渲染; 把改变this指向的函数作用域绑定,放到constructor中定义,避免重复绑定; setState方法,将连续多次的数据更新,放到一次执行,降低比对频率,来更新视图; 使用虚拟DOM,极大的提升性能;1.虚拟DOM如何提升性能 原生思路实现视图更新 定">
 
 
 
@@ -141,14 +141,14 @@
 
 
 
-  <link rel="canonical" href="http://github.com/categories/">
+  <link rel="canonical" href="http://github.com/2016/03/29/React进阶/">
 
 
 
 
 
 
-  <title>All categories | 颜朋</title>
+  <title>React基础入门 | 颜朋</title>
   
 
 
@@ -308,40 +308,272 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://github.com/2016/03/29/React进阶/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yan·Peng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="颜朋">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">All categories</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <div class="category-all-page">
-            <div class="category-all-title">
-                目前共计 7 个分类
-            </div>
-            <div class="category-all">
-              <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JS/">JS</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/React/">React</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TypeScript/">TypeScript</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Vue/">Vue</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/webpack/">webpack</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/文章/">文章</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件/">软件</a><span class="category-list-count">1</span></li></ul>
-            </div>
-          </div>
+          <h1 class="post-title" itemprop="name headline">React基础入门</h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-03-29T11:27:29+08:00">
+                2016-03-29
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2017-05-06T09:52:07+08:00">
+                2017-05-06
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/React/" itemprop="url" rel="index">
+                    <span itemprop="name">React</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2016/03/29/React进阶/" class="leancloud_visitors" data-flag-title="React基础入门">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+								 <span>℃</span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+		
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <h3 id="React框架性能优化的几个点"><a href="#React框架性能优化的几个点" class="headerlink" title="React框架性能优化的几个点"></a>React框架性能优化的几个点</h3><ul>
+<li>子组件shouldComponentUpdate 判断后才返回false/ture 避免组件的重复无用的渲染;</li>
+<li>把改变this指向的函数作用域绑定,放到constructor中定义,避免重复绑定;</li>
+<li>setState方法,将连续多次的数据更新,放到一次执行,降低比对频率,来更新视图;</li>
+<li>使用虚拟DOM,极大的提升性能;<h3 id="1-虚拟DOM如何提升性能"><a href="#1-虚拟DOM如何提升性能" class="headerlink" title="1.虚拟DOM如何提升性能"></a>1.虚拟DOM如何提升性能</h3></li>
+<li>原生思路实现视图更新<ul>
+<li>定义state数据;</li>
+<li>JSX模板;</li>
+<li>数据 + 模板 结合,生成真实的DOM,来显示;</li>
+<li>state发生变化;</li>
+<li>数据 + 模板 结合, 生成真实的DOM,替换原来的DOM;</li>
+<li>缺陷: 两次生成了真实的DOM,并用新DOM替换旧DOM,非常的耗性能;</li>
+</ul>
+</li>
+<li>JQuery实现视图更新<ul>
+<li>定义state数据;</li>
+<li>JSX模板;</li>
+<li>数据 + 模板 结合,生成真实的DOM,来显示;</li>
+<li>state数据发生改变;</li>
+<li>数据 + 模板 结合,生成真实的DOM,并不直接替换原始的DOM;</li>
+<li>新的DOM(DocumentFragment 文档碎片)和原始的DOM 作比对, 找差异</li>
+<li>找出input框发生了变化;</li>
+<li>只用新的DOM中新的input框元素,替换掉老的DOM中的input元素;</li>
+<li>缺陷 : 性能的提升并不明显</li>
+</ul>
+</li>
+<li>React虚拟DOM实现视图更新<ul>
+<li>定义state数据;</li>
+<li>JSX模板;</li>
+<li>生成虚拟DOM(虚拟DOM就是一个JS对象,用它来描述真实的DOM),<strong>极大的提升性能</strong>;<br><code>[&#39;div&#39;,{id:&#39;abc&#39;},{&#39;span&#39;,{},&#39;hello world&#39;}]</code></li>
+<li>数据 + 模板 结合,生成真实的DOM,来显示;<br> <code>&lt;div id = &#39;abc&#39;&gt;&lt;span&gt;hello world&lt;/span&gt;&lt;/div&gt;</code></li>
+<li>state数据发生变化;</li>
+<li>生成新的虚拟DOM;<br><code>[&#39;div&#39;,{id:&#39;abc&#39;},{&#39;span&#39;,{},&#39;bye bye&#39;}]</code></li>
+<li>比较原始虚拟DOM和新的虚拟DOM,找到区别是span中内容,<strong>极大的提升性能</strong>;</li>
+<li>直接操作DOM,改变span中内容;<br><strong>注意:</strong> </li>
+</ul>
+</li>
+</ul>
+<ol>
+<li>JS生成一个真实的DOM节点比生成一个虚拟DOM,性能要消耗特别多,<br> 因为生成真实DOM需要调用高级<strong>API</strong>;</li>
+<li>JSX语法,经过babel转译成React识别的语言,<br> 经过React中的<strong>createElement</strong>生成虚拟DOM(JS对象),并做比较<br> 实现<strong>API</strong>:<strong>createElement</strong> 和 <strong>createTextNode</strong><br> 最后通过React中的方法,将虚拟DOM节点插入到<strong>root</strong>容器的根节点中,渲染在页面上;<br>3.虚拟DOM使得跨端应用得以实现,<strong>React Native</strong>,不仅能开发网页应用,也能开发原生应用</li>
+</ol>
+<h3 id="React中的DOM-Diff算法"><a href="#React中的DOM-Diff算法" class="headerlink" title="React中的DOM Diff算法"></a>React中的DOM Diff算法</h3><p>同层比对:同一层级有difference,那么这个层级下面的所有dom结构都要替换<br>这种比较方法比较快<br>虚拟DOM的key值,作比较</p>
+<h3 id="生命周期函数"><a href="#生命周期函数" class="headerlink" title="生命周期函数"></a>生命周期函数</h3><p><strong>定义:</strong>在某一个函数组件会自动执行的函数</p>
+<h4 id="initialization阶段"><a href="#initialization阶段" class="headerlink" title="initialization阶段"></a>initialization阶段</h4><ul>
+<li>constructor : 初始化 props and states</li>
+</ul>
+<h4 id="Mounting-除render函数外-其他3个只执行一次"><a href="#Mounting-除render函数外-其他3个只执行一次" class="headerlink" title="Mounting(除render函数外,其他3个只执行一次)"></a>Mounting(除render函数外,其他3个只执行一次)</h4><ul>
+<li>componentWillMount : 组件被挂载之前,自动执行</li>
+<li>render </li>
+<li>componentDidMount : 组件被挂载页面后,自动执行</li>
+</ul>
+<h4 id="Updation-只要数据发生改变-函数就会重复执行"><a href="#Updation-只要数据发生改变-函数就会重复执行" class="headerlink" title="Updation(只要数据发生改变,函数就会重复执行)"></a>Updation(只要数据发生改变,函数就会重复执行)</h4><ul>
+<li>shouldComponentUpdate : 返回值 false / true 根据返回值的不同,react会选择性的更新视图</li>
+<li>componentWillUpdate</li>
+<li>render</li>
+<li>componentDidUpdate</li>
+</ul>
+<hr>
+<p><strong>当存在子组件的情况下</strong></p>
+<ul>
+<li>componentShouldReciveProps(nextProps,nextState)<br>一个组件从父组件接收参数<br>如果这个组件第一次出现在父组件中,这个周期函数将不会执行<br>如果这个组件已经出现在父组件中,只要父组件的render函数重新执行,那么子组件的这个函数会再次执行;</li>
+</ul>
+<h4 id="Unmounting"><a href="#Unmounting" class="headerlink" title="Unmounting"></a>Unmounting</h4><ul>
+<li>componentWillUnmount : 组件被移除之前执行;</li>
+<li>在react中,我们通常使用三元运算,进行子组件的加载和隐藏;</li>
+</ul>
+
       
     </div>
     
     
     
+		
+		<div>
+		
+		<div>
+
+    <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+
+</div>
+
+		
+		</div>
+		
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/虚拟DOM-Diff算法/" rel="tag"><i class="fa fa-tag"></i> 虚拟DOM Diff算法</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/03/27/React基础入门/" rel="next" title="React基础入门">
+                <i class="fa fa-chevron-left"></i> React基础入门
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/01/12/JS盒子模型/" rel="prev" title="JS盒子模型">
+                JS盒子模型 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -374,8 +606,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -453,6 +694,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#React框架性能优化的几个点"><span class="nav-text">React框架性能优化的几个点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-虚拟DOM如何提升性能"><span class="nav-text">1.虚拟DOM如何提升性能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#React中的DOM-Diff算法"><span class="nav-text">React中的DOM Diff算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生命周期函数"><span class="nav-text">生命周期函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#initialization阶段"><span class="nav-text">initialization阶段</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Mounting-除render函数外-其他3个只执行一次"><span class="nav-text">Mounting(除render函数外,其他3个只执行一次)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Updation-只要数据发生改变-函数就会重复执行"><span class="nav-text">Updation(只要数据发生改变,函数就会重复执行)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Unmounting"><span class="nav-text">Unmounting</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
