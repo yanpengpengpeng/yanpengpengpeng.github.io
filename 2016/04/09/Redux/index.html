@@ -89,7 +89,7 @@
 
 
 
-  <meta name="keywords" content="打包,">
+  <meta name="keywords" content="store 纯函数,">
 
 
 
@@ -100,18 +100,18 @@
 
 
 
-<meta name="description" content="网页中有哪些静态资源 JS .js .jsx .coffee .ts    CSS .css .less .scss   Images .jpg .png .gif .bmp .svg   字体文件 .svg .ttf .eot .woff .woff2   模板文件 .ejs .vue(这是在webpack中定义组件的方式) 网页中引入静态资源过多，会有什么问题     网页加载速度慢，因为我们">
-<meta name="keywords" content="打包">
+<meta name="description" content="Redux介绍及核心API是由: reducer + flux 两个辅助框架结合而成;  createStore : 创建一个store数据管理库; store.dispatch : 通知store,根据指令,改变数据; store.getState : 获取store中的数据; store.subscribe : 函数订阅store中的数据,当数据发生改变时,触发函数执行,更新数据;  如何在R">
+<meta name="keywords" content="store 纯函数">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Webpack">
-<meta property="og:url" content="http://github.com/2018/04/06/webpack/index.html">
+<meta property="og:title" content="Redux">
+<meta property="og:url" content="http://github.com/2016/04/09/Redux/index.html">
 <meta property="og:site_name" content="颜朋">
-<meta property="og:description" content="网页中有哪些静态资源 JS .js .jsx .coffee .ts    CSS .css .less .scss   Images .jpg .png .gif .bmp .svg   字体文件 .svg .ttf .eot .woff .woff2   模板文件 .ejs .vue(这是在webpack中定义组件的方式) 网页中引入静态资源过多，会有什么问题     网页加载速度慢，因为我们">
+<meta property="og:description" content="Redux介绍及核心API是由: reducer + flux 两个辅助框架结合而成;  createStore : 创建一个store数据管理库; store.dispatch : 通知store,根据指令,改变数据; store.getState : 获取store中的数据; store.subscribe : 函数订阅store中的数据,当数据发生改变时,触发函数执行,更新数据;  如何在R">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-13T02:12:09.000Z">
+<meta property="og:updated_time" content="2017-05-06T01:52:07.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Webpack">
-<meta name="twitter:description" content="网页中有哪些静态资源 JS .js .jsx .coffee .ts    CSS .css .less .scss   Images .jpg .png .gif .bmp .svg   字体文件 .svg .ttf .eot .woff .woff2   模板文件 .ejs .vue(这是在webpack中定义组件的方式) 网页中引入静态资源过多，会有什么问题     网页加载速度慢，因为我们">
+<meta name="twitter:title" content="Redux">
+<meta name="twitter:description" content="Redux介绍及核心API是由: reducer + flux 两个辅助框架结合而成;  createStore : 创建一个store数据管理库; store.dispatch : 通知store,根据指令,改变数据; store.getState : 获取store中的数据; store.subscribe : 函数订阅store中的数据,当数据发生改变时,触发函数执行,更新数据;  如何在R">
 
 
 
@@ -141,14 +141,14 @@
 
 
 
-  <link rel="canonical" href="http://github.com/2018/04/06/webpack/">
+  <link rel="canonical" href="http://github.com/2016/04/09/Redux/">
 
 
 
 
 
 
-  <title>Webpack | 颜朋</title>
+  <title>Redux | 颜朋</title>
   
 
 
@@ -320,7 +320,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://github.com/2018/04/06/webpack/">
+    <link itemprop="mainEntityOfPage" href="http://github.com/2016/04/09/Redux/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yan·Peng">
@@ -337,7 +337,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Webpack</h1>
+          <h1 class="post-title" itemprop="name headline">Redux</h1>
         
 
         <div class="post-meta">
@@ -349,8 +349,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-06T11:48:49+08:00">
-                2018-04-06
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-04-09T11:27:29+08:00">
+                2016-04-09
               </time>
             
 
@@ -365,8 +365,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-04-13T10:12:09+08:00">
-                2018-04-13
+              <time title="更新于" itemprop="dateModified" datetime="2017-05-06T09:52:07+08:00">
+                2017-05-06
               </time>
             
           </span>
@@ -384,8 +384,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/webpack/" itemprop="url" rel="index">
-                    <span itemprop="name">webpack</span>
+                  <a href="/categories/Redux/" itemprop="url" rel="index">
+                    <span itemprop="name">Redux</span>
                   </a>
                 </span>
 
@@ -401,7 +401,7 @@
 
           
           
-             <span id="/2018/04/06/webpack/" class="leancloud_visitors" data-flag-title="Webpack">
+             <span id="/2016/04/09/Redux/" class="leancloud_visitors" data-flag-title="Redux">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -434,44 +434,42 @@
       
 
       
-        <h3 id="网页中有哪些静态资源"><a href="#网页中有哪些静态资源" class="headerlink" title="网页中有哪些静态资源"></a>网页中有哪些静态资源</h3><ul>
-<li>JS<ul>
-<li>.js .jsx .coffee .ts </li>
-</ul>
-</li>
-<li>CSS<ul>
-<li>.css .less .scss</li>
-</ul>
-</li>
-<li>Images<ul>
-<li>.jpg .png .gif .bmp .svg</li>
-</ul>
-</li>
-<li>字体文件<ul>
-<li>.svg .ttf .eot .woff .woff2</li>
-</ul>
-</li>
-<li>模板文件<ul>
-<li>.ejs .vue(这是在webpack中定义组件的方式)</li>
-<li><h3 id="网页中引入静态资源过多，会有什么问题"><a href="#网页中引入静态资源过多，会有什么问题" class="headerlink" title="网页中引入静态资源过多，会有什么问题"></a>网页中引入静态资源过多，会有什么问题</h3></li>
-</ul>
-</li>
-</ul>
+        <h3 id="Redux介绍及核心API"><a href="#Redux介绍及核心API" class="headerlink" title="Redux介绍及核心API"></a>Redux介绍及核心API</h3><p><strong>是由: reducer + flux 两个辅助框架结合而成;</strong></p>
 <ul>
-<li>网页加载速度慢，因为我们要发起很多的二次请求</li>
-<li>要处理错综复杂的依赖关系<h3 id="处理静态资源加载的问题"><a href="#处理静态资源加载的问题" class="headerlink" title="处理静态资源加载的问题"></a>处理静态资源加载的问题</h3></li>
-<li>合并、压缩js.css文件</li>
-<li>处理图片请求的时候，可以将图片设置成base64编码，这样会随着html结构一起加载</li>
-<li>处理依赖关系，使用Gulp webpack<h3 id="什么是webpack"><a href="#什么是webpack" class="headerlink" title="什么是webpack"></a>什么是webpack</h3><strong>webpack 是前端的一个项目构建工具，它是基于node.js开发出来的一个前端工具</strong></li>
+<li>createStore : 创建一个store数据管理库;</li>
+<li>store.dispatch : 通知store,根据指令,改变数据;</li>
+<li>store.getState : 获取store中的数据;</li>
+<li>store.subscribe : 函数订阅store中的数据,当数据发生改变时,触发函数执行,更新数据;</li>
 </ul>
-<h3 id="导入导出方式"><a href="#导入导出方式" class="headerlink" title="导入导出方式"></a>导入导出方式</h3><p><strong>1.node:</strong></p>
-<ul>
-<li>exports:导出 <code>exports.obj = obj</code></li>
-<li>require:导入 <code>let www = require(&#39;./a.js&#39;)</code><figure class="highlight openscad"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//a.js 文件</span></span><br><span class="line"><span class="built_in">let</span> <span class="built_in">str</span> = '哈哈哈'</span><br><span class="line"><span class="built_in">let</span> obj = &#123;</span><br><span class="line">	qqq:<span class="number">12</span></span><br><span class="line">&#125;</span><br><span class="line">exports.<span class="built_in">str</span> = <span class="built_in">str</span></span><br><span class="line">exports.obj = obj</span><br><span class="line"></span><br><span class="line"><span class="comment">// index.js 文件</span></span><br><span class="line"><span class="built_in">let</span> www = require('./a.js')</span><br><span class="line">console.<span class="built_in">log</span>(www)</span><br><span class="line">输出: <span class="built_in">str</span> obj</span><br></pre></td></tr></table></figure>
+<h3 id="如何在React工程项目中使用Redux"><a href="#如何在React工程项目中使用Redux" class="headerlink" title="如何在React工程项目中使用Redux"></a>如何在React工程项目中使用Redux</h3><ol>
+<li>在<strong>src</strong>目录下,创建一个新的目录<strong>store</strong>;</li>
+<li>,在<strong>store</strong>下创建<strong>index.js</strong>文件,执行以下代码:<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;createStore&#125; <span class="keyword">from</span> <span class="string">'redux'</span>;</span><br><span class="line"><span class="keyword">import</span> reducer <span class="keyword">from</span> <span class="string">'./reducer.js'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> store = createStore(</span><br><span class="line">	reducer,</span><br><span class="line">	<span class="comment">// 设置本地redux调试工具</span></span><br><span class="line">	<span class="built_in">window</span>.__REDUX_DEVTOOLS_EXTENSION__ &amp;&amp; <span class="built_in">window</span>.__REDUX_DEVTOOLS_EXTENSION__()</span><br><span class="line">	)</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> store ;</span><br></pre></td></tr></table></figure>
 </li>
+</ol>
+<p>3.在<strong>store</strong>目录下,新建一个文件<strong>reducer.js</strong>,执行以下代码:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;</span><br><span class="line">	CHANGE_INPUT_VALUE,</span><br><span class="line">	ADD_TODO_ITEM,</span><br><span class="line">	DELETE_TODO_ITEM</span><br><span class="line">&#125; <span class="keyword">from</span> <span class="string">'./actionType.js'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> defaultState = &#123;</span><br><span class="line">	inputValue:<span class="string">'123'</span>,</span><br><span class="line">	list:[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 可以接受state,但是绝不能改变state数据</span></span><br><span class="line"><span class="comment">// 定义一个常量赋值state,然后对这个常量进行改变;</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> (state = defaultState,action) =&gt; &#123;</span><br><span class="line">	<span class="comment">// console.log(state,action)</span></span><br><span class="line">	<span class="keyword">if</span>(action.type === CHANGE_INPUT_VALUE)&#123;</span><br><span class="line">		<span class="comment">// 深层拷贝state</span></span><br><span class="line">		<span class="keyword">const</span> newState = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(state))</span><br><span class="line">		newState.inputValue = action.value</span><br><span class="line">		<span class="keyword">return</span> newState</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(action.type === ADD_TODO_ITEM)&#123;</span><br><span class="line">		<span class="keyword">const</span> newState = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(state))</span><br><span class="line">		newState.list.push(newState.inputValue)</span><br><span class="line">		newState.inputValue = <span class="string">''</span></span><br><span class="line">		<span class="keyword">return</span> newState</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(action.type === DELETE_TODO_ITEM)&#123;</span><br><span class="line">		<span class="keyword">const</span> newState = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(state))</span><br><span class="line">		newState.list.splice(action.index,<span class="number">1</span>)</span><br><span class="line">		<span class="keyword">return</span> newState</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> state</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<ol start="4">
+<li>在<strong>store</strong>文件目录下,新建<strong>actionCreator.js</strong>文件,写入代码:<br><strong>为方便代码测试,以及代码的可读性和维护性</strong><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;</span><br><span class="line">	CHANGE_INPUT_VALUE,</span><br><span class="line">	ADD_TODO_ITEM,</span><br><span class="line">	DELETE_TODO_ITEM</span><br><span class="line">&#125; <span class="keyword">from</span> <span class="string">'./actionType.js'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> getInputChangeAction = <span class="function">(<span class="params">value</span>)=&gt;</span>(&#123;</span><br><span class="line">	type:CHANGE_INPUT_VALUE,</span><br><span class="line">	value</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> getAddItemAction = <span class="function"><span class="params">()</span>=&gt;</span>(&#123;</span><br><span class="line">	type:ADD_TODO_ITEM</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> getDeleteItemAction = <span class="function">(<span class="params">index</span>)=&gt;</span>(&#123;</span><br><span class="line">	type:DELETE_TODO_ITEM,</span><br><span class="line">	index</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="Redux需注意的问题点"><a href="#Redux需注意的问题点" class="headerlink" title="Redux需注意的问题点"></a>Redux需注意的问题点</h3><ol>
+<li>store只有唯一一个;</li>
+<li>只有store才能改变自己的数据,<strong>reducer</strong>只是定义常量接收,待数据改变后,返回store一个新数据;</li>
+<li>reducer模块返回一个纯函数;</li>
+<li>纯函数:给定固定的输入,就一定会有固定的输出,且没有其他副作用;</li>
+</ol>
+<h3 id="中间件redux-thunk-及设置redux本地数据调试工具"><a href="#中间件redux-thunk-及设置redux本地数据调试工具" class="headerlink" title="中间件redux-thunk 及设置redux本地数据调试工具"></a>中间件redux-thunk 及设置redux本地数据调试工具</h3><p><strong>定义:</strong>中间件可以理解为对<strong>store</strong>中的<strong>dispatch</strong>方法重新封装升级,<br>没引用中间件,<strong>dispacth</strong>只能将<strong>action</strong>对象传递给<strong>store</strong><br>引用中间件后,<strong>action</strong>可以定义为函数,<strong>dispatch</strong>会将<strong>action</strong>的函数执行,并将自己作为实参传入;</p>
+<ol>
+<li>安装: <code>npm install redux-thunk --save</code></li>
+<li>在store目录下配置<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;createStore,applyMiddleware,compose&#125; <span class="keyword">from</span> <span class="string">'redux'</span>;</span><br><span class="line"><span class="keyword">import</span> reducer <span class="keyword">from</span> <span class="string">'./reducer.js'</span>;</span><br><span class="line"><span class="keyword">import</span> thunk <span class="keyword">from</span> <span class="string">'redux-thunk'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 设置本地redux调试工具</span></span><br><span class="line"><span class="keyword">const</span> composeEnhancers =</span><br><span class="line">  <span class="built_in">window</span>.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ?   </span><br><span class="line">    <span class="built_in">window</span>.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__(&#123;</span><br><span class="line">    &#125;) : compose;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> enhancer = composeEnhancers(</span><br><span class="line">  applyMiddleware(thunk)</span><br><span class="line">  <span class="comment">// other store enhancers if any</span></span><br><span class="line">);</span><br><span class="line"><span class="keyword">const</span> store = createStore(</span><br><span class="line">	reducer,</span><br><span class="line">	enhancer</span><br><span class="line">)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> store ;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="中间件-saga-的使用方法"><a href="#中间件-saga-的使用方法" class="headerlink" title="中间件 saga 的使用方法"></a>中间件 saga 的使用方法</h3><ul>
+<li><p>在store数据库中使用saga中间件</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 导入saga包</span></span><br><span class="line"><span class="keyword">import</span> createSagaMiddleware <span class="keyword">from</span> <span class="string">'redux-saga'</span>;</span><br><span class="line"><span class="comment">// 导入本地的saga函数模块,异步操作主要发生这个自定义的模块内</span></span><br><span class="line"><span class="keyword">import</span> todoSaga <span class="keyword">from</span> <span class="string">'./sagas.js'</span>;</span><br><span class="line"><span class="comment">// 定义一个使用saga中间件的函数</span></span><br><span class="line"><span class="keyword">const</span> sagaMiddleware = createSagaMiddleware();</span><br><span class="line"><span class="comment">// run API 导入这个自定义的函数（异步请求数据）</span></span><br><span class="line">sagaMiddleware.run(todoSaga);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>demo : todoSaga.js文件</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">getInitList</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">try</span> &#123;</span><br><span class="line">		<span class="keyword">const</span> res = <span class="keyword">yield</span> axios.get(<span class="string">'pathname'</span>)</span><br><span class="line">		<span class="keyword">const</span> action = getListAction(res.data);</span><br><span class="line">		<span class="keyword">yield</span> put(action)</span><br><span class="line">	&#125;<span class="keyword">catch</span>(e)&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="string">'数据请求失败'</span>)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// async function getInitList()&#123;</span></span><br><span class="line"><span class="comment">// 	try&#123;</span></span><br><span class="line"><span class="comment">// 		const res = await axios.get('pathname')</span></span><br><span class="line"><span class="comment">// 		const action = getListAction(res.data)</span></span><br><span class="line"><span class="comment">// 		await put(action)</span></span><br><span class="line"><span class="comment">// 	&#125;catch(e)&#123;</span></span><br><span class="line"><span class="comment">// 		console.log('数据请求失败')</span></span><br><span class="line"><span class="comment">// 	&#125;</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br><span class="line">generator函数 配合<span class="keyword">yield</span>指令,执行</span><br><span class="line">takeEvery会捕捉到dispatch派发的action,并执行后面对应的函数</span><br><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">todoSaga</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">yield</span> takeEvery(GET_INIT_LIST, getInitList);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> todoSaga;</span><br></pre></td></tr></table></figure></li>
 </ul>
-<p><strong>2.es6(ECMAscript2015):</strong><br>1).export + import<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">这种导出方式,在引入时,变量名需要跟导出的名字保持一致</span><br><span class="line"><span class="comment">//a.js</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">let</span> str = <span class="string">'哈哈哈'</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">let</span> obj = &#123;</span><br><span class="line">	qqq:<span class="number">12</span></span><br><span class="line">&#125;</span><br><span class="line">or:</span><br><span class="line"><span class="keyword">export</span> &#123;str,obj&#125; </span><br><span class="line"><span class="keyword">import</span> &#123;str,obj&#125; <span class="keyword">from</span> <span class="string">'./a.js'</span> </span><br><span class="line">es6解构语法</span><br><span class="line">--------------------------------------------------</span><br><span class="line"><span class="comment">// index.js</span></span><br><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> aaa <span class="keyword">from</span> <span class="string">'./a.js'</span> </span><br><span class="line"><span class="built_in">console</span>.log(aaa)</span><br><span class="line">输出: str obj</span><br><span class="line">这种导入方式，我们可以自定义导入接口的名字</span><br></pre></td></tr></table></figure></p>
-<p>2).export default + import<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//a.js</span></span><br><span class="line"><span class="keyword">let</span> str = <span class="string">'哈哈哈'</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> str;</span><br><span class="line"><span class="comment">//默认导出 str</span></span><br><span class="line"><span class="keyword">import</span> www <span class="keyword">from</span> <span class="string">'./a.js'</span></span><br><span class="line">这种导入方式也可以自定义接口名字</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -500,7 +498,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/打包/" rel="tag"><i class="fa fa-tag"></i> 打包</a>
+            <a href="/tags/store-纯函数/" rel="tag"><i class="fa fa-tag"></i> store 纯函数</a>
           
         </div>
       
@@ -513,8 +511,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/02/Vue-components/" rel="next" title="Vue-components">
-                <i class="fa fa-chevron-left"></i> Vue-components
+              <a href="/2016/03/29/React进阶/" rel="next" title="React进阶">
+                <i class="fa fa-chevron-left"></i> React进阶
               </a>
             
           </div>
@@ -523,8 +521,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/04/07/SublimeText3 /" rel="prev" title="sublime 安装走过的坑">
-                sublime 安装走过的坑 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/01/12/JS盒子模型/" rel="prev" title="JS盒子模型">
+                JS盒子模型 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -675,7 +673,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#网页中有哪些静态资源"><span class="nav-text">网页中有哪些静态资源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网页中引入静态资源过多，会有什么问题"><span class="nav-text">网页中引入静态资源过多，会有什么问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#处理静态资源加载的问题"><span class="nav-text">处理静态资源加载的问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是webpack"><span class="nav-text">什么是webpack</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#导入导出方式"><span class="nav-text">导入导出方式</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Redux介绍及核心API"><span class="nav-text">Redux介绍及核心API</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何在React工程项目中使用Redux"><span class="nav-text">如何在React工程项目中使用Redux</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Redux需注意的问题点"><span class="nav-text">Redux需注意的问题点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#中间件redux-thunk-及设置redux本地数据调试工具"><span class="nav-text">中间件redux-thunk 及设置redux本地数据调试工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#中间件-saga-的使用方法"><span class="nav-text">中间件 saga 的使用方法</span></a></li></ol></div>
             
 
           </div>
