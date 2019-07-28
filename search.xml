@@ -1,9 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[常用Lodash函数库的函数]]></title>
+    <url>%2F2019%2F07%2F28%2Flodash%E5%87%BD%E6%95%B0%E5%BA%93%2F</url>
+    <content type="text"><![CDATA[下周再写]]></content>
+      <categories>
+        <category>Lodash</category>
+      </categories>
+      <tags>
+        <tag>Lodash</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[最好用的时间工具库--moment.js]]></title>
+    <url>%2F2019%2F07%2F28%2Fmoment.js%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[下周再写吧]]></content>
+      <categories>
+        <category>moment</category>
+      </categories>
+      <tags>
+        <tag>moment</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Antd For React 爬坑记录]]></title>
+    <url>%2F2019%2F07%2F28%2FAntd%20React%20%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93%2F</url>
+    <content type="text"><![CDATA[Form表单 经过Form.create()包裹的组件可以通过wrappedComponentRef拿到; 123456class CustomizedForm extends React.Component &#123; ... &#125;// use wrappedComponentRefconst EnhancedForm = Form.create()(CustomizedForm);&lt;EnhancedForm wrappedComponentRef=&#123;(form) =&gt; this.form = form&#125; /&gt;this.form // =&gt; The instance of CustomizedForm 经过getFieldDecorator包裹的表单，再使用mapPropsToFields映射父组件、redux、dva中的数据时，表单的值会被完全可控，无法单独设置初始值； Form表单的动态校验方法（两个表单相互校验） 12345678910111213141516171819202122232425262728293031323334353637383940414243compareToFirstPassword = (rule, value, callback) =&gt; &#123; const &#123; form &#125; = this.props; if (value &amp;&amp; value !== form.getFieldValue('password')) &#123; callback('Two passwords that you enter is inconsistent!'); &#125; else &#123; callback(); &#125; &#125;; validateToNextPassword = (rule, value, callback) =&gt; &#123; const &#123; form &#125; = this.props; if (value &amp;&amp; this.state.confirmDirty) &#123; form.validateFields(['confirm'], &#123; force: true &#125;); &#125; callback(); &#125;; &lt;Form.Item label="Password" hasFeedback&gt; &#123;getFieldDecorator('password', &#123; rules: [ &#123; required: true, message: 'Please input your password!', &#125;, &#123; validator: this.validateToNextPassword, &#125;, ], &#125;)(&lt;Input.Password /&gt;)&#125; &lt;/Form.Item&gt; &lt;Form.Item label="Confirm Password" hasFeedback&gt; &#123;getFieldDecorator('confirm', &#123; rules: [ &#123; required: true, message: 'Please confirm your password!', &#125;, &#123; validator: this.compareToFirstPassword, &#125;, ], &#125;)(&lt;Input.Password onBlur=&#123;this.handleConfirmBlur&#125; /&gt;)&#125; &lt;/Form.Item&gt; 经过getFieldDecorator包裹的表单 onChange 事件，我们还是可以进行操作的，可以拿到我们需要的值, 例如重新封装后的TreeSelect组件123456onChange(value, label, extra )&#123; console.log(value, label, extra) // value 是当前表单的value值 // lable 是Tree的二级标题 // extra 则是选中的node节点，你可以拿到你想要的任何值&#125; Tabs TabPane的key值很重要，增删改查的时候key值不要用index; 持续更新中]]></content>
+      <categories>
+        <category>antd</category>
+      </categories>
+      <tags>
+        <tag>antd</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[正则使用总结]]></title>
+    <url>%2F2019%2F07%2F28%2F%E6%AD%A3%E5%88%99%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93%2F</url>
+    <content type="text"><![CDATA[在正则中如何插入变量 需求: 去掉英文字母后面的数字，数字是变化的，可能是字母，也可能是不确定的变量; 1234567891011121314151617181920212223const data = ['region', 'zone', 'buff_cnt'];const obj = &#123; region23: 'hangzhou1', regionnewTab: 'hangzhou2', regionhahah: 'hangzhou3', region78: 'hangzhou4', zone23: 'shandong1', zonenewTab: 'shandong2', zonehahah: 'shandong3', zone78:'shandong4', buff_cnt23: 'beijing1', buff_cntnewTab: 'beijing2', buff_cnthahah: 'beijing3', buff_cnt78: 'beijing4',&#125;;// 将上面这个对象转成数组如下：=&gt; arr = [ &#123;region: 'hangzhou1', zone: 'shandong1', buff_cnt: 'beijing1'&#125;, &#123;region: 'hangzhou2', zone: 'shandong2', buff_cnt: 'beijing2'&#125;, &#123;region: 'hangzhou3', zone: 'shandong3', buff_cnt: 'beijing3'&#125;,]; 第一种写法: 不能插入变量，变量会被解析成字符串 123const str = 'region + 变量 ';const reg = /([a-z]+)(变量)/;const newStr = str.replace(reg, (...arg) =&gt; arg[1]); 第二种写法: 可以在正则中写入变量，利用es6模板字符串将变量拼入正则中 12const reg = new RegExp(`([a-z]+)($&#123;变量&#125;)`)const newStr = str.replace(reg, (...arg) =&gt; arg[1]); 上面obj转成所需arr的解法 123456789101112[...Array(data.length).keys()].map(i =&gt; &#123; const judgeStr = data[i];~~~~ const reg = new RegExp(`([a-z]+)$&#123;judgeStr&#125;`); const params = &#123;&#125;; for (const n in obj) &#123; if(n.indexOf(judgeStr)) &#123; const newStr = n.replace(reg, (...arg) =&gt; arg[1]); params[newStr] = obj[n]; &#125; &#125; return params;&#125;)]]></content>
+      <categories>
+        <category>RegExp</category>
+      </categories>
+      <tags>
+        <tag>正则</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Git深入]]></title>
     <url>%2F2019%2F06%2F05%2FGit%E6%B7%B1%E5%85%A5%E7%89%88%2F</url>
-    <content type="text"><![CDATA[Git基础指令总结 git init: 本地初始化项目,一般不太用到; git clone + 远程仓库地址: 将远程代码库克隆到本地; git branch: 查看项目分支; git checkout 分支名 / git checkout -b 分支 :, 大家都懂的; git add : 将代码提交到暂存区 git commit -m ‘chore: fix_bugs’: 将代码提交到历史区; git push: 将代码提交到远程代码库; git log: 查看分支提交历史; git reset : 回退项目版本; Git指令深入 git clone -b + (远程仓库对应的分支名) + 远程仓库的地址: 实现将远程代码库指定分支克隆到本地; git commit -m ‘chore: ui_change’ –no-verify : 可以实现忽略代码commit钩子规范，直接提交; git stash / git stash pop : 这个命令细说: 主要实现分支修改内容的冻结和解冻 工作中,我们需要在A分支写业务,但是线上出现bug,我们要切回到develop分支解决bug问题 切回develop需要将A分支的工作区清干净，但是又不想多出commit信息 这时候我们就用到git stash命令，将代码冻结，这样切回到develop分支，就没有什么影响了; 解决完bug,切回到A分支,使用git stash pop命令，解冻代码，就可以继续开心得开发业务了; git cherry-pick : 实现分支合并指定的commit 12345分支提交commit信息dd2e86 - 946992 -9143a9 - a6fd86 - 5a6057 [master]76cada - 62ecb3 - b886a0 [feature]git checkout mastergit cherry-pick 62ecb3 git rebase : 这个命令功能强大 上文我们提到避免产生多次commit,但是本地有多个commit的时候,怎么办,那么使用这个命令可以合并多个commit,最后只提交一个commit到远程代码库; 最为重要的功能,可以将多个commit推送到指定的分支 举个例子: 假设你需要合并feature分支的commit 76cada ~ 62ecb3 到develop分支123451. 基于feature创建一个新的分支，并指明新分支的最新的commitgit checkout -b 62ecb3 2. rebase这个新分支的commit到master（--ontomaster）。76cada^ 指明你想从哪个特定的commit开始git rebase --onto master 76cada^3.最后feature分支的commit 76cada ~62ecb3 都被合并到了master分支 git cherry-pick : 如何用commit起死回生一个分支(即如何利用commit信息) 当一个项目过大,merge代码后，会删除对应的分支，但是commit信息会完整的保留下来 当项目需要单独维护以前的一个分支作为依赖此项目的独立分支时 git checkout -b 62ecb3(commit的前6位ID),就会从此commit切出分支维护]]></content>
+    <content type="text"><![CDATA[Git基础指令总结 git init: 本地初始化项目,一般不太用到; git clone + 远程仓库地址: 将远程代码库克隆到本地; git branch: 查看项目分支; git checkout 分支名 / git checkout -b 分支 :, 大家都懂的; git add : 将代码提交到暂存区 git commit -m ‘chore: fix_bugs’: 将代码提交到历史区; git push: 将代码提交到远程代码库; git log: 查看分支提交历史; git reset : 回退项目版本; Git指令深入 git clone -b + (远程仓库对应的分支名) + 远程仓库的地址: 实现将远程代码库指定分支克隆到本地; git commit -m ‘chore: ui_change’ –no-verify : 可以实现忽略代码commit钩子规范，直接提交; git diff: 查看分支文件改动的地方 git stash / git stash pop : 这个命令细说: 主要实现分支修改内容的冻结和解冻 工作中,我们需要在A分支写业务,但是线上出现bug,我们要切回到develop分支解决bug问题 切回develop需要将A分支的工作区清干净，但是又不想多出commit信息 这时候我们就用到git stash命令，将代码冻结，这样切回到develop分支，就没有什么影响了; 解决完bug,切回到A分支,使用git stash pop命令，解冻代码，就可以继续开心得开发业务了; git cherry-pick : 实现分支合并指定的commit 12345分支提交commit信息dd2e86 - 946992 -9143a9 - a6fd86 - 5a6057 [master]76cada - 62ecb3 - b886a0 [feature]git checkout mastergit cherry-pick 62ecb3 git rebase : 这个命令功能强大 上文我们提到避免产生多次commit,但是本地有多个commit的时候,怎么办,那么使用这个命令可以合并多个commit,最后只提交一个commit到远程代码库; 最为重要的功能,可以将多个commit推送到指定的分支 举个例子: 假设你需要合并feature分支的commit 76cada ~ 62ecb3 到develop分支123451. 基于feature创建一个新的分支，并指明新分支的最新的commitgit checkout -b 62ecb3 2. rebase这个新分支的commit到master（--ontomaster）。76cada^ 指明你想从哪个特定的commit开始git rebase --onto master 76cada^3.最后feature分支的commit 76cada ~62ecb3 都被合并到了master分支 git cherry-pick : 如何用commit起死回生一个分支(即如何利用commit信息) 当一个项目过大,merge代码后，会删除对应的分支，但是commit信息会完整的保留下来 当项目需要单独维护以前的一个分支作为依赖此项目的独立分支时 git checkout -b 62ecb3(commit的前6位ID),就会从此commit切出分支维护]]></content>
       <categories>
         <category>JS</category>
       </categories>
