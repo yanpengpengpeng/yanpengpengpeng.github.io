@@ -100,18 +100,18 @@
 
 
 
-<meta name="description" content="下周再写吧">
+<meta name="description" content="常用方法 最常用的就是时间格式化  moment().format(‘YYYY-MM-DD HH:mm:ss’); //2019-07-28 23:36:09    时间戳 moment.unix(1318781876)   antd DatePicker组件中，规定使用memonet格式的值，所以你需要对值进行处理 moment() =&amp;gt; new Date() 也可以写成 moment(n">
 <meta name="keywords" content="moment">
 <meta property="og:type" content="article">
 <meta property="og:title" content="最好用的时间工具库--moment.js">
 <meta property="og:url" content="http://github.com/2019/07/28/moment.js常用方法/index.html">
 <meta property="og:site_name" content="颜朋">
-<meta property="og:description" content="下周再写吧">
+<meta property="og:description" content="常用方法 最常用的就是时间格式化  moment().format(‘YYYY-MM-DD HH:mm:ss’); //2019-07-28 23:36:09    时间戳 moment.unix(1318781876)   antd DatePicker组件中，规定使用memonet格式的值，所以你需要对值进行处理 moment() =&amp;gt; new Date() 也可以写成 moment(n">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-28T15:18:15.654Z">
+<meta property="og:updated_time" content="2019-08-24T06:27:05.676Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="最好用的时间工具库--moment.js">
-<meta name="twitter:description" content="下周再写吧">
+<meta name="twitter:description" content="常用方法 最常用的就是时间格式化  moment().format(‘YYYY-MM-DD HH:mm:ss’); //2019-07-28 23:36:09    时间戳 moment.unix(1318781876)   antd DatePicker组件中，规定使用memonet格式的值，所以你需要对值进行处理 moment() =&amp;gt; new Date() 也可以写成 moment(n">
 
 
 
@@ -365,8 +365,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-07-28T23:18:15+08:00">
-                2019-07-28
+              <time title="更新于" itemprop="dateModified" datetime="2019-08-24T14:27:05+08:00">
+                2019-08-24
               </time>
             
           </span>
@@ -434,7 +434,158 @@
       
 
       
-        <h3 id="下周再写吧"><a href="#下周再写吧" class="headerlink" title="下周再写吧"></a>下周再写吧</h3>
+        <h3 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h3><ul>
+<li>最常用的就是时间格式化 <ul>
+<li>moment().format(‘YYYY-MM-DD HH:mm:ss’); //2019-07-28 23:36:09 </li>
+</ul>
+</li>
+<li>时间戳<ul>
+<li>moment.unix(1318781876)</li>
+</ul>
+</li>
+<li>antd DatePicker组件中，规定使用memonet格式的值，所以你需要对值进行处理</li>
+<li>moment() =&gt; new Date() 也可以写成 moment(new Date())</li>
+<li>moment().format() =&gt; 输出符合<code>ISO 8601</code>格式的国际标准时间，带时区信息</li>
+<li>moment(‘2010-10-20’).isBefore(‘2010-12-31’, ‘year’); =&gt; 进行时间的比较</li>
+</ul>
+<h3 id="一些格式化用到的字符窜"><a href="#一些格式化用到的字符窜" class="headerlink" title="一些格式化用到的字符窜"></a>一些格式化用到的字符窜</h3><table>
+<thead>
+<tr>
+<th style="text-align:center">格式代码</th>
+<th style="text-align:center">说明</th>
+<th style="text-align:center">返回值例子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">M</td>
+<td style="text-align:center">数字表示的月份，没有前导零</td>
+<td style="text-align:center">1到12</td>
+</tr>
+<tr>
+<td style="text-align:center">MM</td>
+<td style="text-align:center">数字表示的月份，有前导零</td>
+<td style="text-align:center">01到12</td>
+</tr>
+<tr>
+<td style="text-align:center">MMM</td>
+<td style="text-align:center">三个字母缩写表示的月份</td>
+<td style="text-align:center">Jan到Dec</td>
+</tr>
+<tr>
+<td style="text-align:center">MMMM</td>
+<td style="text-align:center">月份，完整的文本格式</td>
+<td style="text-align:center">January到December</td>
+</tr>
+<tr>
+<td style="text-align:center">Q</td>
+<td style="text-align:center">季度</td>
+<td style="text-align:center">1到4</td>
+</tr>
+<tr>
+<td style="text-align:center">D</td>
+<td style="text-align:center">月份中的第几天，没有前导零</td>
+<td style="text-align:center">1到31</td>
+</tr>
+<tr>
+<td style="text-align:center">DD</td>
+<td style="text-align:center">月份中的第几天，有前导零</td>
+<td style="text-align:center">01到31</td>
+</tr>
+<tr>
+<td style="text-align:center">d</td>
+<td style="text-align:center">星期中的第几天，数字表示</td>
+<td style="text-align:center">0到6，0表示周日，6表示周六</td>
+</tr>
+<tr>
+<td style="text-align:center">ddd</td>
+<td style="text-align:center">三个字母表示星期中的第几天</td>
+<td style="text-align:center">Sun到Sat</td>
+</tr>
+<tr>
+<td style="text-align:center">dddd</td>
+<td style="text-align:center">星期几，完整的星期文本</td>
+<td style="text-align:center">从Sunday到Saturday</td>
+</tr>
+<tr>
+<td style="text-align:center">w</td>
+<td style="text-align:center">年份中的第几周</td>
+<td style="text-align:center">如42：表示第42周</td>
+</tr>
+<tr>
+<td style="text-align:center">YYYY</td>
+<td style="text-align:center">四位数字完整表示的年份</td>
+<td style="text-align:center">如：2014 或 2000</td>
+</tr>
+<tr>
+<td style="text-align:center">YY</td>
+<td style="text-align:center">两位数字表示的年份</td>
+<td style="text-align:center">如：14 或 98</td>
+</tr>
+<tr>
+<td style="text-align:center">A</td>
+<td style="text-align:center">大写的AM PM    AM PM</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center">小写的am pm    am pm</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">HH</td>
+<td style="text-align:center">小时，24小时制，有前导零</td>
+<td style="text-align:center">00到23</td>
+</tr>
+<tr>
+<td style="text-align:center">H</td>
+<td style="text-align:center">小时，24小时制，无前导零</td>
+<td style="text-align:center">0到23</td>
+</tr>
+<tr>
+<td style="text-align:center">hh</td>
+<td style="text-align:center">小时，12小时制，有前导零</td>
+<td style="text-align:center">00到12</td>
+</tr>
+<tr>
+<td style="text-align:center">h</td>
+<td style="text-align:center">小时，12小时制，无前导零</td>
+<td style="text-align:center">0到12</td>
+</tr>
+<tr>
+<td style="text-align:center">m</td>
+<td style="text-align:center">没有前导零的分钟数</td>
+<td style="text-align:center">0到59</td>
+</tr>
+<tr>
+<td style="text-align:center">mm</td>
+<td style="text-align:center">有前导零的分钟数</td>
+<td style="text-align:center">00到59</td>
+</tr>
+<tr>
+<td style="text-align:center">s</td>
+<td style="text-align:center">没有前导零的秒数</td>
+<td style="text-align:center">1到59</td>
+</tr>
+<tr>
+<td style="text-align:center">ss</td>
+<td style="text-align:center">有前导零的描述</td>
+<td style="text-align:center">01到59</td>
+</tr>
+<tr>
+<td style="text-align:center">X</td>
+<td style="text-align:center">Unix时间戳</td>
+<td style="text-align:center">1411572969</td>
+</tr>
+<tr>
+<td style="text-align:center">Z</td>
+<td style="text-align:center">时区</td>
+<td style="text-align:center">09Z</td>
+</tr>
+</tbody>
+</table>
+<h3 id="贴上文档地址"><a href="#贴上文档地址" class="headerlink" title="贴上文档地址"></a>贴上文档地址</h3><p><a href="http://momentjs.cn/docs/" target="_blank" rel="noopener">moment</a></p>
+
       
     </div>
     
@@ -566,7 +717,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-count">30</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -577,7 +728,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -588,7 +739,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">28</span>
+                  <span class="site-state-item-count">29</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -637,7 +788,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#下周再写吧"><span class="nav-text">下周再写吧</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#常用方法"><span class="nav-text">常用方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一些格式化用到的字符窜"><span class="nav-text">一些格式化用到的字符窜</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#贴上文档地址"><span class="nav-text">贴上文档地址</span></a></li></ol></div>
             
 
           </div>

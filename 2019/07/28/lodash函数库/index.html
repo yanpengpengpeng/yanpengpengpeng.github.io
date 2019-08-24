@@ -100,18 +100,18 @@
 
 
 
-<meta name="description" content="下周再写">
+<meta name="description" content="项目中常用的 _.isEmpty(value) 1234567891011121314_.isEmpty(null);// =&amp;gt; true _.isEmpty(true);// =&amp;gt; true _.isEmpty(1);// =&amp;gt; true _.isEmpty([1, 2, 3]);// =&amp;gt; false _.isEmpty(&amp;#123; &apos;a&apos;: 1 &amp;#125;);//">
 <meta name="keywords" content="Lodash">
 <meta property="og:type" content="article">
 <meta property="og:title" content="常用Lodash函数库的函数">
 <meta property="og:url" content="http://github.com/2019/07/28/lodash函数库/index.html">
 <meta property="og:site_name" content="颜朋">
-<meta property="og:description" content="下周再写">
+<meta property="og:description" content="项目中常用的 _.isEmpty(value) 1234567891011121314_.isEmpty(null);// =&amp;gt; true _.isEmpty(true);// =&amp;gt; true _.isEmpty(1);// =&amp;gt; true _.isEmpty([1, 2, 3]);// =&amp;gt; false _.isEmpty(&amp;#123; &apos;a&apos;: 1 &amp;#125;);//">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-28T15:19:54.688Z">
+<meta property="og:updated_time" content="2019-08-24T05:45:06.597Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="常用Lodash函数库的函数">
-<meta name="twitter:description" content="下周再写">
+<meta name="twitter:description" content="项目中常用的 _.isEmpty(value) 1234567891011121314_.isEmpty(null);// =&amp;gt; true _.isEmpty(true);// =&amp;gt; true _.isEmpty(1);// =&amp;gt; true _.isEmpty([1, 2, 3]);// =&amp;gt; false _.isEmpty(&amp;#123; &apos;a&apos;: 1 &amp;#125;);//">
 
 
 
@@ -365,8 +365,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-07-28T23:19:54+08:00">
-                2019-07-28
+              <time title="更新于" itemprop="dateModified" datetime="2019-08-24T13:45:06+08:00">
+                2019-08-24
               </time>
             
           </span>
@@ -434,7 +434,23 @@
       
 
       
-        <h3 id="下周再写"><a href="#下周再写" class="headerlink" title="下周再写"></a>下周再写</h3>
+        <h3 id="项目中常用的"><a href="#项目中常用的" class="headerlink" title="项目中常用的"></a>项目中常用的</h3><ul>
+<li><p>_.isEmpty(value)</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">_.isEmpty(<span class="literal">null</span>);</span><br><span class="line"><span class="comment">// =&gt; true</span></span><br><span class="line"> </span><br><span class="line">_.isEmpty(<span class="literal">true</span>);</span><br><span class="line"><span class="comment">// =&gt; true</span></span><br><span class="line"> </span><br><span class="line">_.isEmpty(<span class="number">1</span>);</span><br><span class="line"><span class="comment">// =&gt; true</span></span><br><span class="line"> </span><br><span class="line">_.isEmpty([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]);</span><br><span class="line"><span class="comment">// =&gt; false</span></span><br><span class="line"> </span><br><span class="line">_.isEmpty(&#123; <span class="string">'a'</span>: <span class="number">1</span> &#125;);</span><br><span class="line"><span class="comment">// =&gt; false</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>_.isEqual(value, other) 深层的比较</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> object = &#123; <span class="string">'a'</span>: <span class="number">1</span> &#125;;</span><br><span class="line"><span class="keyword">var</span> other = &#123; <span class="string">'a'</span>: <span class="number">1</span> &#125;;</span><br><span class="line"> </span><br><span class="line">_.isEqual(object, other);</span><br><span class="line"><span class="comment">// =&gt; true</span></span><br><span class="line"> </span><br><span class="line">object === other;</span><br><span class="line"><span class="comment">// =&gt; false</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>bind 通常在react中绑定this实例</p>
+</li>
+<li><p>做为装饰器，使用方法@Bind()</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">greet</span>(<span class="params">greeting, punctuation</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> greeting + <span class="string">' '</span> + <span class="keyword">this</span>.user + punctuation;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">var</span> object = &#123; <span class="string">'user'</span>: <span class="string">'fred'</span> &#125;;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">var</span> bound = _.bind(greet, object, <span class="string">'hi'</span>);</span><br><span class="line">bound(<span class="string">'!'</span>);</span><br><span class="line"><span class="comment">// =&gt; 'hi fred!'</span></span><br><span class="line"> </span><br><span class="line"><span class="comment">// Bound with placeholders.</span></span><br><span class="line"><span class="keyword">var</span> bound = _.bind(greet, object, _, <span class="string">'!'</span>);</span><br><span class="line">bound(<span class="string">'hi'</span>);</span><br><span class="line"><span class="comment">// =&gt; 'hi fred!'</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>cloneDeep 深克隆</p>
+<h3 id="贴一下lodash文档链接"><a href="#贴一下lodash文档链接" class="headerlink" title="贴一下lodash文档链接"></a>贴一下lodash文档链接</h3><p><a href="https://www.lodashjs.com/docs/4.17.5.html" target="_blank" rel="noopener">Lodash</a></p>
+</li>
+</ul>
+
       
     </div>
     
@@ -484,6 +500,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/08/24/getDerivedStateFromProps详解/" rel="prev" title="getDerivedStateFromProps详解">
+                getDerivedStateFromProps详解 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -562,7 +582,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-count">30</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -573,7 +593,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -584,7 +604,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">28</span>
+                  <span class="site-state-item-count">29</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -633,7 +653,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#下周再写"><span class="nav-text">下周再写</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#项目中常用的"><span class="nav-text">项目中常用的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#贴一下lodash文档链接"><span class="nav-text">贴一下lodash文档链接</span></a></li></ol></div>
             
 
           </div>
