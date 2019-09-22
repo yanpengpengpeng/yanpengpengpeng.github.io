@@ -162,8 +162,6 @@
 
 
 	
-	<script type="text/javascript" color="0,0,255" opacity="0.7" zindex="-2" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canv	 as-nest.min.js"></script>
-	
 </head>
 
 <body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -563,7 +561,7 @@
 <li>只要name不发生改变，name2就不发生改变</li>
 <li>name2用到谁，就依赖谁</li>
 <li><p>conputed计算属性，具有缓存机制，若数据发生改变，会重新计算属性，若只是重复调用，则不会触发computed方法</p>
-<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">computed:&#123;</span><br><span class="line">	name2()&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">this</span>.name.split(<span class="string">''</span>).rerverse().join(<span class="string">''</span>)</span><br><span class="line">	&#125;,</span><br><span class="line">	name3()&#123;</span><br><span class="line">		<span class="keyword">get</span>()&#123;</span><br><span class="line">			console.log(<span class="keyword">this</span>.name)</span><br><span class="line">			<span class="keyword">return</span> <span class="number">123</span></span><br><span class="line">		&#125;,</span><br><span class="line">		<span class="keyword">set</span>(<span class="keyword">val</span>)&#123;</span><br><span class="line">			<span class="comment">// 给name3赋值的时候会触发, set函数</span></span><br><span class="line">			<span class="comment">// val 是外界</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">computed:&#123;</span><br><span class="line">	name2()&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">this</span>.name.split(<span class="string">''</span>).rerverse().join(<span class="string">''</span>)</span><br><span class="line">	&#125;,</span><br><span class="line">	name3()&#123;</span><br><span class="line">		get()&#123;</span><br><span class="line">			<span class="built_in">console</span>.log(<span class="keyword">this</span>.name)</span><br><span class="line">			<span class="keyword">return</span> <span class="number">123</span></span><br><span class="line">		&#125;,</span><br><span class="line">		set(val)&#123;</span><br><span class="line">			<span class="comment">// 给name3赋值的时候会触发, set函数</span></span><br><span class="line">			<span class="comment">// val 是外界</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>computed / watch / methods 三者的区别</p>
 <ul>
@@ -575,11 +573,11 @@
 <li>使用directive定义全局的指令</li>
 <li>其中参数1：指令的名称，注意，在定义的时候，指令的名称前面，不需要加 -v 前缀</li>
 <li>但是在调用的时候，必须在指令名称前加上 v- 前缀 进行调用</li>
-<li><p>参数2：是一个对象，这个对象身上，有一些指令相关的函数，这些函数可以在特定的阶段，执行相关的操作</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">	bind:function(el)&#123;  =&gt;每当指令绑定到元素身上的时候，会立即执行这个bind函数，只执行一次</span><br><span class="line">		//1.注意：在每个函数中，第一个参数永远是el，表示被绑定的那个元素，这个el参数以一个原生JS对象</span><br><span class="line">		//2.在元素刚绑定指令的时候，还没有插入到DOM中，这时候，调用focus方法没有起作用</span><br><span class="line">		//3.因为，一个元素只有插入到DOM中，才能获取焦点</span><br><span class="line">		//el.focus()</span><br><span class="line">	&#125;,</span><br><span class="line">	inserted:function(el)&#123;  =&gt;表示元素被插入到DOM中的时候，触发这个inserted函数，触发一次</span><br><span class="line">		el.focus()</span><br><span class="line">	&#125;,</span><br><span class="line">	updated:function(el)&#123;  =&gt;每当VNode更新的时候，会执行updated函数，可能会被触发多次 </span><br><span class="line">		</span><br><span class="line">	&#125;  </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>自定义指令简写:<br><code>Vue.directive(&#39;focus&#39;,function(el,binding){}) 钩子函数</code></p>
-</li>
+<li>参数2：是一个对象，这个对象身上，有一些指令相关的函数，这些函数可以在特定的阶段，执行相关的操作</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Vue.directive(<span class="string">'focus'</span>,&#123;</span><br><span class="line">	bind:<span class="function"><span class="keyword">function</span>(<span class="params">el</span>)</span>&#123;  =&gt;每当指令绑定到元素身上的时候，会立即执行这个bind函数，只执行一次</span><br><span class="line">		<span class="comment">//1.注意：在每个函数中，第一个参数永远是el，表示被绑定的那个元素，这个el参数以一个原生JS对象</span></span><br><span class="line">		<span class="comment">//2.在元素刚绑定指令的时候，还没有插入到DOM中，这时候，调用focus方法没有起作用</span></span><br><span class="line">		<span class="comment">//3.因为，一个元素只有插入到DOM中，才能获取焦点</span></span><br><span class="line">		<span class="comment">//el.focus()</span></span><br><span class="line">	&#125;,</span><br><span class="line">	inserted:<span class="function"><span class="keyword">function</span>(<span class="params">el</span>)</span>&#123;  =&gt;表示元素被插入到DOM中的时候，触发这个inserted函数，触发一次</span><br><span class="line">		el.focus()</span><br><span class="line">	&#125;,</span><br><span class="line">	updated:<span class="function"><span class="keyword">function</span>(<span class="params">el</span>)</span>&#123;  =&gt;每当VNode更新的时候，会执行updated函数，可能会被触发多次 </span><br><span class="line">		</span><br><span class="line">	&#125;  </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>自定义指令简写:<br><code>Vue.directive(&#39;focus&#39;,function(el,binding){}) 钩子函数</code></li>
 <li>钩子函数的参数:<ul>
 <li>指令钩子函数会被传入以下实参</li>
 <li>1.el : 指令所绑定的元素，可以用来直接操作 DOM </li>
@@ -724,7 +722,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-count">31</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -735,7 +733,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -903,8 +901,6 @@
   
 
 
-  
-
 
 
 
@@ -943,11 +939,6 @@
   
   
     <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
   
 
 

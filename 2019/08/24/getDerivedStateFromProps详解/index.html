@@ -89,7 +89,7 @@
 
 
 
-  <meta name="keywords" content="react,">
+  <meta name="keywords" content="lifecycle,">
 
 
 
@@ -101,7 +101,7 @@
 
 
 <meta name="description" content="首先看一下新旧生命周期的对比  目的：为 async rendering 和 fiber 调度服务的，确保渲染完成之前不做任何引发重新渲染的操作 async rendering：react将来会采用异步渲染机制 12345678910111213function setState(state, callback) &amp;#123;    let s = this.state;    if (!this">
-<meta name="keywords" content="react">
+<meta name="keywords" content="lifecycle">
 <meta property="og:type" content="article">
 <meta property="og:title" content="getDerivedStateFromProps详解">
 <meta property="og:url" content="http://github.com/2019/08/24/getDerivedStateFromProps详解/index.html">
@@ -110,7 +110,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://github.com/2019/08/24/getDerivedStateFromProps详解/旧版本生命周期.png">
 <meta property="og:image" content="http://github.com/2019/08/24/getDerivedStateFromProps详解/新版本生命周期.png">
-<meta property="og:updated_time" content="2019-08-24T05:34:38.918Z">
+<meta property="og:updated_time" content="2019-09-22T02:32:26.696Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="getDerivedStateFromProps详解">
 <meta name="twitter:description" content="首先看一下新旧生命周期的对比  目的：为 async rendering 和 fiber 调度服务的，确保渲染完成之前不做任何引发重新渲染的操作 async rendering：react将来会采用异步渲染机制 12345678910111213function setState(state, callback) &amp;#123;    let s = this.state;    if (!this">
@@ -161,8 +161,6 @@
 
 
 
-	
-	<script type="text/javascript" color="0,0,255" opacity="0.7" zindex="-2" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canv	 as-nest.min.js"></script>
 	
 </head>
 
@@ -368,8 +366,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-08-24T13:34:38+08:00">
-                2019-08-24
+              <time title="更新于" itemprop="dateModified" datetime="2019-09-22T10:32:26+08:00">
+                2019-09-22
               </time>
             
           </span>
@@ -387,8 +385,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/react/" itemprop="url" rel="index">
-                    <span itemprop="name">react</span>
+                  <a href="/categories/React/" itemprop="url" rel="index">
+                    <span itemprop="name">React</span>
                   </a>
                 </span>
 
@@ -510,7 +508,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/react/" rel="tag"><i class="fa fa-tag"></i> react</a>
+            <a href="/tags/lifecycle/" rel="tag"><i class="fa fa-tag"></i> lifecycle</a>
           
         </div>
       
@@ -532,6 +530,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/09/22/令人费解的async和await执行顺序/" rel="prev" title="令人费解的async/await执行顺序">
+                令人费解的async/await执行顺序 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -610,7 +612,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-count">31</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -621,7 +623,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -789,8 +791,6 @@
   
 
 
-  
-
 
 
 
@@ -829,11 +829,6 @@
   
   
     <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
   
 
 
