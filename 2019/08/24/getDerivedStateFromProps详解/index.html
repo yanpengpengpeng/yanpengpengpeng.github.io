@@ -100,20 +100,20 @@
 
 
 
-<meta name="description" content="首先看一下新旧生命周期的对比  目的：为 async rendering 和 fiber 调度服务的，确保渲染完成之前不做任何引发重新渲染的操作 async rendering：react将来会采用异步渲染机制 12345678910111213function setState(state, callback) &amp;#123;    let s = this.state;    if (!this">
+<meta name="description" content="首先看一下新旧生命周期的对比  目的：为 async rendering 和 fiber 调度服务的，确保渲染完成之前不做任何引发重新渲染的操作 async rendering：react将来会采用异步渲染机制  123456789101112function setState(state, callback) &amp;#123;    let s = this.state;    if (!this.">
 <meta name="keywords" content="lifecycle">
 <meta property="og:type" content="article">
 <meta property="og:title" content="getDerivedStateFromProps详解">
 <meta property="og:url" content="http://github.com/2019/08/24/getDerivedStateFromProps详解/index.html">
 <meta property="og:site_name" content="颜朋">
-<meta property="og:description" content="首先看一下新旧生命周期的对比  目的：为 async rendering 和 fiber 调度服务的，确保渲染完成之前不做任何引发重新渲染的操作 async rendering：react将来会采用异步渲染机制 12345678910111213function setState(state, callback) &amp;#123;    let s = this.state;    if (!this">
+<meta property="og:description" content="首先看一下新旧生命周期的对比  目的：为 async rendering 和 fiber 调度服务的，确保渲染完成之前不做任何引发重新渲染的操作 async rendering：react将来会采用异步渲染机制  123456789101112function setState(state, callback) &amp;#123;    let s = this.state;    if (!this.">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://github.com/2019/08/24/getDerivedStateFromProps详解/旧版本生命周期.png">
 <meta property="og:image" content="http://github.com/2019/08/24/getDerivedStateFromProps详解/新版本生命周期.png">
-<meta property="og:updated_time" content="2019-09-22T02:32:26.696Z">
+<meta property="og:updated_time" content="2019-09-22T12:35:07.102Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="getDerivedStateFromProps详解">
-<meta name="twitter:description" content="首先看一下新旧生命周期的对比  目的：为 async rendering 和 fiber 调度服务的，确保渲染完成之前不做任何引发重新渲染的操作 async rendering：react将来会采用异步渲染机制 12345678910111213function setState(state, callback) &amp;#123;    let s = this.state;    if (!this">
+<meta name="twitter:description" content="首先看一下新旧生命周期的对比  目的：为 async rendering 和 fiber 调度服务的，确保渲染完成之前不做任何引发重新渲染的操作 async rendering：react将来会采用异步渲染机制  123456789101112function setState(state, callback) &amp;#123;    let s = this.state;    if (!this.">
 <meta name="twitter:image" content="http://github.com/2019/08/24/getDerivedStateFromProps详解/旧版本生命周期.png">
 
 
@@ -366,7 +366,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-09-22T10:32:26+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2019-09-22T20:35:07+08:00">
                 2019-09-22
               </time>
             
@@ -438,11 +438,11 @@
         <h3 id="首先看一下新旧生命周期的对比"><a href="#首先看一下新旧生命周期的对比" class="headerlink" title="首先看一下新旧生命周期的对比"></a>首先看一下新旧生命周期的对比</h3><p><img src="/2019/08/24/getDerivedStateFromProps详解/旧版本生命周期.png" alt="React旧生命周期示意图"><br><img src="/2019/08/24/getDerivedStateFromProps详解/新版本生命周期.png" alt="React新生命周期示意图"></p>
 <ul>
 <li>目的：为 async rendering 和 fiber 调度服务的，确保渲染完成之前不做任何引发重新渲染的操作</li>
-<li><p>async rendering：react将来会采用异步渲染机制</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">setState</span>(<span class="params">state, callback</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> s = <span class="keyword">this</span>.state;</span><br><span class="line">    <span class="keyword">if</span> (!<span class="keyword">this</span>.prevState) <span class="keyword">this</span>.prevState = extend(&#123;&#125;, s);</span><br><span class="line">    extend(s, <span class="keyword">typeof</span> state===<span class="string">'function'</span> ? state(s, <span class="keyword">this</span>.props) : state);</span><br><span class="line">    <span class="keyword">if</span> (callback) <span class="keyword">this</span>._renderCallbacks.push(callback);</span><br><span class="line">  enqueueRender(<span class="keyword">this</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">enqueueRender</span>(<span class="params">component</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!component._dirty &amp;&amp; (component._dirty = <span class="literal">true</span>) &amp;&amp; items.push(component)==<span class="number">1</span>) &#123;</span><br><span class="line">        (options.debounceRendering || defer)(rerender); <span class="comment">// 异步呀</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>fiber =&gt; 节点，涉及到react渲染原理和diff算法</p>
-</li>
+<li>async rendering：react将来会采用异步渲染机制</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">setState</span>(<span class="params">state, callback</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> s = <span class="keyword">this</span>.state;</span><br><span class="line">    <span class="keyword">if</span> (!<span class="keyword">this</span>.prevState) <span class="keyword">this</span>.prevState = extend(&#123;&#125;, s);</span><br><span class="line">    extend(s, <span class="keyword">typeof</span> state===<span class="string">'function'</span> ? state(s, <span class="keyword">this</span>.props) : state);</span><br><span class="line">    <span class="keyword">if</span> (callback) <span class="keyword">this</span>._renderCallbacks.push(callback);</span><br><span class="line">  enqueueRender(<span class="keyword">this</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">enqueueRender</span>(<span class="params">component</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!component._dirty &amp;&amp; (component._dirty = <span class="literal">true</span>) &amp;&amp; items.push(component)==<span class="number">1</span>) &#123;</span><br><span class="line">        (options.debounceRendering || defer)(rerender); <span class="comment">// 异步呀</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>fiber =&gt; 节点，涉及到react渲染原理和diff算法</li>
 </ul>
 <h3 id="getDerivedStateFromProps的几个点"><a href="#getDerivedStateFromProps的几个点" class="headerlink" title="getDerivedStateFromProps的几个点"></a>getDerivedStateFromProps的几个点</h3><ol>
 <li>react16.3版本引入</li>
@@ -612,7 +612,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">31</span>
+                  <span class="site-state-item-count">32</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -634,7 +634,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-count">30</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
