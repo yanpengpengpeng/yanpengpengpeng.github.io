@@ -186,7 +186,7 @@ th {
 body {
   position: relative;
   font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
-  font-size: 14px;
+  font-size: 13px;
   line-height: 2;
   color: #555;
   background: #eee;
@@ -203,7 +203,7 @@ body {
 }
 @media (min-width: 1600px) {
   body {
-    font-size: 16px;
+    font-size: 15px;
   }
 }
 h1,
@@ -226,51 +226,51 @@ h6 {
   margin: 20px 0 15px;
 }
 h1 {
-  font-size: 22px;
-}
-@media (max-width: 767px) {
-  h1 {
-    font-size: 18px;
-  }
-}
-h2 {
-  font-size: 20px;
-}
-@media (max-width: 767px) {
-  h2 {
-    font-size: 16px;
-  }
-}
-h3 {
   font-size: 18px;
 }
 @media (max-width: 767px) {
-  h3 {
+  h1 {
     font-size: 14px;
   }
 }
-h4 {
+h2 {
   font-size: 16px;
 }
 @media (max-width: 767px) {
-  h4 {
+  h2 {
     font-size: 12px;
   }
 }
-h5 {
+h3 {
   font-size: 14px;
 }
 @media (max-width: 767px) {
-  h5 {
+  h3 {
     font-size: 10px;
   }
 }
-h6 {
+h4 {
   font-size: 12px;
 }
 @media (max-width: 767px) {
-  h6 {
+  h4 {
     font-size: 8px;
+  }
+}
+h5 {
+  font-size: 10px;
+}
+@media (max-width: 767px) {
+  h5 {
+    font-size: 6px;
+  }
+}
+h6 {
+  font-size: 8px;
+}
+@media (max-width: 767px) {
+  h6 {
+    font-size: 4px;
   }
 }
 p {
@@ -1238,7 +1238,7 @@ pre .javascript .function {
 .post-body .figure .caption {
   margin: -20px auto 15px;
   text-align: center;
-  font-size: 14px;
+  font-size: 13px;
   color: #999;
   font-weight: bold;
   line-height: 1;
@@ -1742,7 +1742,7 @@ pre .javascript .function {
   display: block;
   margin: 0 auto;
   padding: 2px;
-  max-width: 120px;
+  max-width: 100px;
   height: auto;
   border: 1px solid #eee;
 }
@@ -1780,10 +1780,10 @@ pre .javascript .function {
   text-align: center;
   color: inherit;
   font-weight: 600;
-  font-size: 16px;
+  font-size: 13px;
 }
 .site-state-item-name {
-  font-size: 13px;
+  font-size: 11px;
   color: #999;
 }
 .feed-link {
@@ -1826,7 +1826,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #e813ff;
+  background: #0efccf;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2667,7 +2667,7 @@ pre .javascript .function {
 .content-wrap {
   float: right;
   box-sizing: border-box;
-  padding: 40px;
+  padding: 30px;
   width: calc(100% - 252px);
   background: #fff;
   min-height: 700px;
@@ -2986,7 +2986,7 @@ pre .javascript .function {
   border-radius: initial;
 }
 .post-block {
-  padding: 40px;
+  padding: 30px;
   background: #fff;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12);
   border-radius: initial;
@@ -2997,7 +2997,7 @@ pre .javascript .function {
   border-radius: initial;
 }
 .comments {
-  padding: 40px;
+  padding: 30px;
   margin: initial;
   margin-top: 12px;
   background: #fff;
